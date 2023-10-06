@@ -7,20 +7,20 @@ This project was created with [Expo](https://expo.dev/).
 
 ## Repository contents
 
-- `public/`
-    - Contains public documents for the website, e.g. locales, images etc.
+- `assets/`
+    - Contains images etc.
 
 - `src/`
-    - Contains all the source code and other needed sources (e.g. fonts)
+    - Contains the source code
 
-- `.eslintrc.json`
+- `.eslintrc`
     - Contains project's ESLint configuration
 
-- `.prettierrc.json`
+- `.prettierrc`
     - Contains project's Prettier configuration
 
 - `package.json`
     - Contains project's package information and dependencies
 
 - `README.md`
-    - This file, contains overview and documentation of the project and repository
+    - This file, contains overview and documentation of the client
