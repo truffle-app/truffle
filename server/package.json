@@ -8,7 +8,7 @@
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": { "prettier": "^3.0.3" },
   "devDependencies": {
     "bun-types": "^1.0.5-canary.20231005T140125"
   },
