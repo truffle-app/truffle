@@ -10,7 +10,7 @@
   "license": "ISC",
   "dependencies": {},
   "devDependencies": {
-    "bun-types": "latest"
+    "bun-types": "^1.0.5-canary.20231005T140125"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
