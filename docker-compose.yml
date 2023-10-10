@@ -1,0 +1,40 @@
+version: '3.9'
+
+services:
+  server:
+    image: truffle-server
+    build: server
+    restart: 'no'
+    volumes:
+      - ./server:/app
+    depends_on:
+      database:
+        condition: service_healthy
+    env_file:
+      - ./server/.env
+    ports:
+      - 3001:3001
+
+  database:
+    container_name: truffle-database
+    image: postgres:15.3
+    restart: 'no'
+    env_file:
+      - ./server/.env
+    expose:
+      - 5432
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -d truffle -U user']
+      interval: 1s
+      timeout: 1s
+      retries: 30
+
+  flyway:
+    image: flyway/flyway:9.18.0-alpine
+    depends_on:
+      - database
+    volumes:
+      - ./flyway/sql/:/flyway/sql
+    command: -connectRetries=60 -baselineOnMigrate=true migrate
+    env_file:
+      - ./flyway/.env
