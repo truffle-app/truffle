@@ -1,6 +1,6 @@
 CREATE TYPE DIET AS ENUM ('omnivorous', 'vegetarian', 'vegan');
 
-CREATE TABLE truffle_user (
+CREATE TABLE user (
   id SERIAL PRIMARY KEY,
   email TEXT NOT NULL UNIQUE,
   hashed_password TEXT NOT NULL,
@@ -12,13 +12,13 @@ CREATE TABLE recipe (
   title TEXT NOT NULL,
   description TEXT,
   diet DIET NOT NULL,
-  creator SERIAL REFERENCES truffle_user(id),
-  incredients TEXT[][3],
-  methods TEXT[]
+  creator SERIAL REFERENCES user(id),
+  ingredients TEXT[][3],
+  method TEXT[]
 );
 
 
-INSERT INTO truffle_user (
+INSERT INTO user (
   email,
   hashed_password,
   username
@@ -34,8 +34,8 @@ INSERT INTO recipe (
   description,
   diet,
   creator,
-  incredients,
-  methods
+  ingredients,
+  method
 )
 VALUES (
   'Super upee nakki talo',
