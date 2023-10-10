@@ -30,7 +30,7 @@ services:
       retries: 30
 
   flyway:
-    image: flyway/flyway:9.18.0-alpine
+    image: flyway/flyway:9.22.2-alpine
     depends_on:
       - database
     volumes:
