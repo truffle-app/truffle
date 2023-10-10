@@ -18,6 +18,6 @@ const prodConfig = {
   connectionString: process.env.DATABASE_URL
 }
 
-const sql = postgres('postgres://username:password@host:port/database', devConfig)
+const sql = postgres(devConfig)
 
 export default sql

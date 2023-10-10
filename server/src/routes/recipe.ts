@@ -1,8 +1,10 @@
-import Elysia from "elysia"
+import Elysia from 'elysia'
+import recipeService from '../db/service/recipe'
 
 // GET /recipes
 const getRecipes = async() => {
-  return 'Hello recipes?'
+  const recipes = await recipeService.getRecipes()
+  return recipes
 }
 
 const recipeRouter = (app: Elysia) =>
