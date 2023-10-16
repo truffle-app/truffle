@@ -1,4 +1,4 @@
-import React, { StyleSheet, Text, View } from 'react-native'
+import React, { Text } from 'react-native'
 import PageWrapper from './PageWrapper'
 
 const ProfilePage = () => {
