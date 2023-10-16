@@ -9,8 +9,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@react-navigation/material-bottom-tabs": "^6.2.17",
+    "@react-navigation/native": "^6.1.8",
     "elysia": "0.7.16",
-    "postgres": "^3.3.5"
+    "postgres": "^3.3.5",
+    "react-native-paper": "^5.10.6",
+    "react-native-vector-icons": "^10.0.0"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^6.7.4",
