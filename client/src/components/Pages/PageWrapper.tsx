@@ -27,7 +27,9 @@ const PageWrapper = (props: any) => {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Header>{props.headerText}</Header>
+        <Header showBackButton={props.showBackButton} onBack={ () => navigate(-1)}>
+          {props.headerText}
+        </Header>
       </View>
       <View style={styles.content}>
         {props.children}

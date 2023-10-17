@@ -4,6 +4,7 @@ import LoginPage from './Pages/LoginPage'
 import Feed from './Pages/FeedPage'
 import Explore from './Pages/ExplorePage'
 import Profile from './Pages/ProfilePage'
+import Post from './Pages/PostPage'
 
 
 const Main = () => {
@@ -13,6 +14,7 @@ const Main = () => {
       <Route path="/feed" element={<Feed/>} />
       <Route path="/explore" element={<Explore/>} />
       <Route path="/profile" element={<Profile/>} />
+      <Route path="/post" element={<Post/>} />
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   )
