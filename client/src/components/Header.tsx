@@ -1,5 +1,5 @@
 import React, { View, StyleSheet, Pressable } from 'react-native'
-import HeaderText from './BigText'
+import HeaderText from './Text/BigText'
 
 const styles = StyleSheet.create({
   container: {
