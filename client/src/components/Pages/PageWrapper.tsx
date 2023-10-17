@@ -1,5 +1,5 @@
-import React, { Text, StyleSheet, View } from 'react-native'
-import Navbar from '../Navbar'
+import React, { StyleSheet, View } from 'react-native'
+import Navbar from '../Navbar/Navbar'
 import Header from '../Header'
 import { useNavigate } from 'react-router-native'
 import theme from '../../theme'

@@ -1,6 +1,6 @@
-import React, { View, StyleSheet, Pressable } from 'react-native'
-import BigText from './BigText'
-import theme from '../theme'
+import React, { View, Text, StyleSheet, Pressable } from 'react-native'
+import BigText from '../BigText'
+import theme from '../../theme'
 
 const styles = StyleSheet.create({
   tabItem: {
@@ -10,25 +10,23 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center'
   },
-  highlight: {
-    height: 0,
-    backgroundColor: '#00000'
-  }
+  activeTab: {
+    borderTopWidth: 5, // Add a border at the bottom
+    borderTopColor: theme.colors.highlightColor, // Change to your desired color
+  },
 })
 
 const NavbarTab = ({
   onPressFunction,
   text,
-  isActive = false
+  isActive
 }: {
   onPressFunction: any,
   text: string,
   isActive: boolean
 }) => {
-
   return (
-    <Pressable style={styles.tabItem} onPress={onPressFunction}>
-      <View style={styles.highlight}></View>
+    <Pressable style={[styles.tabItem, isActive && styles.activeTab]} onPress={onPressFunction}>
       <BigText>{text}</BigText>
     </Pressable>
   )

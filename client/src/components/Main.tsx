@@ -1,9 +1,10 @@
-import React, { Text } from 'react-native'
+import React from 'react-native'
 import { Route, Routes, Navigate } from 'react-router-native'
 import LoginPage from './Pages/LoginPage'
 import Feed from './Pages/FeedPage'
 import Explore from './Pages/ExplorePage'
 import Profile from './Pages/ProfilePage'
+
 
 const Main = () => {
   return (

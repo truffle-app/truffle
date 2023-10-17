@@ -3,7 +3,8 @@ const theme = {
     headerTextColor: '#FFFFFF',
     headerBackgroundColor: '#B5838D',
     navbarBackgroundColor: '#B5838D',
-    primaryColour: '#B5838D'
+    primaryColor: '#B5838D',
+    highlightColor: '#E5989B'
   },
   fontSizes: {
     headerFontSize: 20,

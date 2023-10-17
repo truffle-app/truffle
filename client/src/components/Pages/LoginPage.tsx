@@ -7,7 +7,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1, // This makes the container take up the whole screen
     flexDirection: 'column', // Stack items vertically
-    backgroundColor: theme.colors.primaryColour
+    backgroundColor: theme.colors.primaryColor
   },
   loginItem: {
     flexGrow: 1,
