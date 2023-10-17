@@ -1,5 +1,5 @@
 import React, { View, Text, StyleSheet, Pressable } from 'react-native'
-import BigText from '../BigText'
+import BigText from '../Text/BigText'
 import theme from '../../theme'
 
 const styles = StyleSheet.create({
