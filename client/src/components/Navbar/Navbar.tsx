@@ -25,7 +25,7 @@ const Navbar = ({
   return (
     <View style={styles.container}>
       <NavbarTab onPressFunction={() => navigateToLocation('/feed')} text={'Feed'} isActive={currentPath ==='/feed'}/>
-      <NavbarTab onPressFunction={() => navigateToLocation('/explore')} text={'Explore'} isActive={currentPath ==='/explore'}/>
+      <NavbarTab onPressFunction={() => navigateToLocation('/discover')} text={'Discover'} isActive={currentPath ==='/discover'}/>
       <NavbarTab onPressFunction={() => navigateToLocation('/profile')} text={'Profile'} isActive={currentPath ==='/profile'}/>
     </View>
   )
