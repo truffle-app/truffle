@@ -37,7 +37,7 @@ const FeedPost = ({ imageUrl, title }) => {
 
   const handlePress = () => {
     navigate('/Post', { state: { imageUrl, title } })
-    }
+  }
 
   return (
     <Pressable onPress={handlePress} style={styles.container}>

@@ -1,4 +1,4 @@
-import React, { StyleSheet, View } from 'react-native'
+import React, { ScrollView, StyleSheet, View } from 'react-native'
 import Navbar from '../Navbar/Navbar'
 import Header from '../Header'
 import { useNavigate } from 'react-router-native'
@@ -6,15 +6,15 @@ import theme from '../../theme'
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1, // This makes the container take up the whole screen
+    height: 757, // This makes the container take up the whole screen
     flexDirection: 'column', // Stack items vertically
   },
   header: {
-    flex: 0.1,
+    height: 60,
     backgroundColor: theme.colors.headerBackgroundColor
   },
   content: {
-    flex: 1
+    width: 400,
   },
   bottom: {
     // Bottom element styles
@@ -31,9 +31,9 @@ const PageWrapper = (props: any) => {
           {props.headerText}
         </Header>
       </View>
-      <View style={styles.content}>
+      <ScrollView style={styles.content}>
         {props.children}
-      </View>
+      </ScrollView>
       <View style={styles.bottom}>
         <Navbar navigateTo={navigate}></Navbar>
       </View>

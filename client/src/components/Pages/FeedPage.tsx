@@ -1,4 +1,4 @@
-import React, { View, ScrollView } from 'react-native'
+import React from 'react-native'
 import PageWrapper from './PageWrapper'
 import FeedPost from '../FeedPost'
 
@@ -28,11 +28,9 @@ const samplePosts = [
 const FeedPage = () => {
   return (
     <PageWrapper headerText='Feed'>
-      <ScrollView>
         {samplePosts.map(post => (
           <FeedPost key={post.id} imageUrl={post.imageUrl} title={post.title} />
         ))}
-      </ScrollView>
     </PageWrapper>
   )
 }
