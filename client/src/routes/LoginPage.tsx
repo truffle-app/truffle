@@ -1,10 +1,10 @@
 import { useState } from 'react'
 import React, { View, StyleSheet } from 'react-native'
 import { useNavigate } from "react-router-native"
-import TextInput from '../Text/TextInput'
-import theme from '../../theme'
-import SubmitButton from '../Buttons/SubmitButton'
-import BigText from '../Text/BigText'
+import TextInput from '../components/Text/TextInput'
+import theme from '../theme'
+import SubmitButton from '../components/Buttons/SubmitButton'
+import BigText from '../components/Text/BigText'
 
 const styles = StyleSheet.create({
   container: {

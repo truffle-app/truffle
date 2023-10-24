@@ -1,14 +1,7 @@
 import { ReactNode } from 'react'
-import React, { Text, StyleSheet,  } from 'react-native'
+import React, {  } from 'react-native'
 import theme from '../../theme'
-
-
-const styles = StyleSheet.create({
-  text: {
-    fontFamily: theme.fonts.mainFont,
-    fontWeight: 'bold'
-  }
-})
+import styled from 'styled-components'
 
 const BigText = ({
   textColor = theme.colors.headerTextColor,
@@ -18,14 +11,15 @@ const BigText = ({
 }: {
   textColor?: string,
   fontSize?: number,
-  children: ReactNode
+  children: ReactNode,
+  props: any
 }) => {
-  const textStyle = {
-    color: textColor,
-    fontSize: fontSize,
-    ...styles.text
-  }
-  return <Text style={textStyle} {...props}>{children}</Text>
+  return <StyledText {...props}>{children}</StyledText>
 }
+
+const StyledText = styled.Text`
+  color: ${props => props.textColor};
+  font-size: ${props => props.fontSize}px;
+`
 
 export default BigText

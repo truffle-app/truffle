@@ -1,6 +1,6 @@
 import React from 'react-native'
 import PageWrapper from './PageWrapper'
-import FeedPost from '../FeedPost'
+import FeedPost from '../components/FeedPost'
 
 const samplePosts = [
   {

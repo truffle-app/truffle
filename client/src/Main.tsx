@@ -1,10 +1,10 @@
 import React from 'react-native'
 import { Route, Routes, Navigate } from 'react-router-native'
-import LoginPage from './Pages/LoginPage'
-import Feed from './Pages/FeedPage'
-import Discover from './Pages/DiscoverPage'
-import Profile from './Pages/ProfilePage'
-import Post from './Pages/PostPage'
+import LoginPage from './routes/LoginPage'
+import Feed from './routes/FeedPage'
+import Discover from './routes/DiscoverPage'
+import Profile from './routes/ProfilePage'
+import Post from './routes/PostPage'
 
 
 const Main = () => {

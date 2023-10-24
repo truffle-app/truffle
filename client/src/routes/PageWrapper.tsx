@@ -1,8 +1,8 @@
 import React, { ScrollView, StyleSheet, View } from 'react-native'
-import Navbar from '../Navbar/Navbar'
-import Header from '../Header'
+import Navbar from '../components/Navbar/Navbar'
+import Header from '../components/Text/Header'
 import { useNavigate } from 'react-router-native'
-import theme from '../../theme'
+import theme from '../theme'
 
 const styles = StyleSheet.create({
   container: {

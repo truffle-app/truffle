@@ -1,4 +1,4 @@
-import React, { View, Text, Image, StyleSheet, Pressable } from 'react-native'
+import React, { View, Text, Image, StyleSheet } from 'react-native'
 import PageWrapper from './PageWrapper'
 import { useLocation } from 'react-router-native'
 
