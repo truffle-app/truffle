@@ -1,7 +1,6 @@
 import { ReactNode } from 'react'
-import React, {  } from 'react-native'
+import React, { Text } from 'react-native'
 import theme from '../../theme'
-import styled from 'styled-components'
 
 const BigText = ({
   textColor = theme.colors.headerTextColor,
@@ -14,12 +13,7 @@ const BigText = ({
   children: ReactNode,
   props: any
 }) => {
-  return <StyledText {...props}>{children}</StyledText>
+  return <Text {...props}>{children}</Text>
 }
-
-const StyledText = styled.Text`
-  color: ${props => props.textColor};
-  font-size: ${props => props.fontSize}px;
-`
 
 export default BigText
