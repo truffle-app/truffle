@@ -11,7 +11,10 @@
     "format": "npx prettier . --write"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
     "@expo/webpack-config": "^19.0.0",
+    "@mui/material": "^5.14.14",
     "expo": "~49.0.13",
     "expo-status-bar": "~1.6.0",
     "react": "18.2.0",
