@@ -23,7 +23,7 @@
     "experimentalDecorators": true,
     "preserveConstEnums": true,
     "allowJs": true,
-    "skipLibCheck": true,
+    "skipLibCheck": true
   },
   "filesGlob": [
     "typings/index.d.ts",

@@ -11,15 +11,15 @@
     "format": "npx prettier . --write"
   },
   "dependencies": {
+    "@emotion/native": "^11.11.0",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@expo/webpack-config": "^19.0.0",
-    "@mui/material": "^5.14.14",
     "expo": "~49.0.13",
     "expo-status-bar": "~1.6.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-native": "0.72.5",
+    "react-native": "0.72.6",
     "react-native-material-bottom-navigation": "^1.0.5",
     "react-native-web": "~0.19.6",
     "react-router-native": "^6.16.0"
