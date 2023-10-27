@@ -12,13 +12,12 @@ const styles = StyleSheet.create({
       width: 0,
       height: 1
     },
-    shadowOpacity: 0.22,
-    shadowRadius: 2.22,
-    elevation: 3
+    shadowOpacity: 0.5,
+    shadowRadius: 2.5
   },
   image: {
     width: '100%',
-    height: 200,
+    height: 250,
     borderRadius: 10,
     marginBottom: 10
   },
@@ -26,9 +25,6 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: 'bold',
     marginBottom: 20
-  },
-  text: {
-    fontSize: 14
   }
 })
 
