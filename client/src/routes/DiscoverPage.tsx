@@ -1,6 +1,5 @@
 import React, { Text, View, Image, ScrollView, StyleSheet } from 'react-native'
 import PageWrapper from './PageWrapper'
-import { Rating } from '@mui/material';
 
 const styles = StyleSheet.create({
   card: {
@@ -49,19 +48,18 @@ const DiscoverPage = () => {
   return (
     <PageWrapper headerText={'Discover'}>
       <ScrollView style={{ padding: 10 }}>
-                {mockPosts.map(post => (
-                    <View key={post.id} style={styles.card}>
-                        <Image
-                            source={{ uri: post.imageUrl }}
-                            style={styles.image}
-                        />
-                        <View style={styles.details}>
-                            <Text>{post.title}</Text>
-                            <Rating value={post.rating} readOnly size="small" />
-                        </View>
-                    </View>
-                ))}
-            </ScrollView>
+        {mockPosts.map(post => (
+          <View key={post.id} style={styles.card}>
+            <Image
+              source={{ uri: post.imageUrl }}
+              style={styles.image}
+            />
+            <View style={styles.details}>
+              <Text>{post.title}</Text>
+            </View>
+          </View>
+        ))}
+      </ScrollView>
     </PageWrapper>
   )
 }
