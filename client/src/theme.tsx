@@ -1,28 +1,31 @@
 const theme = {
   colors: {
-    headerTextColor: '#FFFFFF',
-    inputTextColor: '#6D6875',
-    headerBackgroundColor: '#B5838D',
-    navbarBackgroundColor: '#B5838D',
-    primaryColor: '#B5838D',
-    highlightColor: '#E5989B',
-    borderColor: '#6D6875',
+    highlight: '#CC6032',
+
+    primaryExtraLight: '#F5DED4',
+    primaryLight: '#E3BFAF',
+    primary: '#E8A181',
+
+    neutralLight: '#FBF9F7',
+    neutral: '#F3EBE1',
+
+    darkLight: '#8F8899',
+    dark: '#6D6875',
+    darkExtra: '#3D3A42'
   },
   fontSizes: {
-    headerFontSize: 20,
-    inputFontSize: 20,
+    extraLarge: '30px',
+    large: '25px',
+    medium: '20px',
+    small: '17px'
   },
   fonts: {
-    mainFont: 'Josefin Sans'
+    main: 'Josefin Sans'
   },
   fontWeights: {
     normal: '400',
-    bold: '700',
-  },
-  borders: {
-    borderWidth: 2,
-    borderRadius: 10,
+    bold: '700'
   }
-};
+}
 
-export default theme;
+export default theme

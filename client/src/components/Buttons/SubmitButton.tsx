@@ -1,25 +1,27 @@
-import React, { View, Pressable, StyleSheet } from 'react-native'
-import BigText from '../Text/BigText'
+import PlainText from '../Text/PlainText'
+import styled from '@emotion/native'
+import React from 'react-native'
 import theme from '../../theme'
 
+const StyledSubmitButton = styled.Pressable`
+  border-color: ${theme.colors.highlight};
+  background-color: ${theme.colors.highlight};
+  border-width: 2px;
+  border-radius: 5px;
+  padding: 10px;
+`
 
-const styles = StyleSheet.create({
-  submitButton: {
-    borderColor: theme.colors.borderColor,
-    borderWidth: theme.borders.borderWidth,
-    borderRadius: theme.borders.borderRadius,
-    backgroundColor: '#FFFFFF',
-    padding: 10,
-  }
-})
-
-const SubmitButton = ({text, onSubmit, style}: {text: string, onSubmit: () => void, style: any}) => {
+const SubmitButton = ({
+  text,
+  onSubmit
+}: {
+  text: string
+  onSubmit: () => void
+}) => {
   return (
-    <View style={style}>
-      <Pressable style={[styles.submitButton]} onPress={onSubmit}>
-        <BigText textColor={theme.colors.inputTextColor}>{text}</BigText>
-      </Pressable>
-    </View>
+    <StyledSubmitButton onPress={onSubmit}>
+      <PlainText color={theme.colors.neutralLight}>{text}</PlainText>
+    </StyledSubmitButton>
   )
 }
 

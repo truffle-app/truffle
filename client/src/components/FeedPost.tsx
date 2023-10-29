@@ -1,32 +1,26 @@
-import React, { Text, Image, StyleSheet, Pressable } from 'react-native'
 import { useNavigate } from 'react-router-native'
+import PlainText from './Text/PlainText'
+import styled from '@emotion/native'
+import React from 'react-native'
+import theme from '../theme'
 
-const styles = StyleSheet.create({
-  container: {
-    padding: 10,
-    marginBottom: 8,
-    backgroundColor: '#F2F3F5',
-    borderRadius: 5,
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 1
-    },
-    shadowOpacity: 0.5,
-    shadowRadius: 2.5
-  },
-  image: {
-    width: '100%',
-    height: 250,
-    borderRadius: 10,
-    marginBottom: 10
-  },
-  title: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    marginBottom: 20
-  }
-})
+const FeedPostContainer = styled.Pressable`
+  display: flex;
+  margin: 5px 10px 5px 10px;
+  padding: 10px;
+`
+
+const FeedPostImage = styled.Image`
+  width: 98%;
+  margin: 1%;
+  height: 250px;
+  border-radius: 2px;
+`
+
+const FeedPostInfoContainer = styled.View`
+  width: 98%;
+  margin: 1%;
+`
 
 const FeedPost = ({ imageUrl, title }) => {
   const navigate = useNavigate()
@@ -36,12 +30,13 @@ const FeedPost = ({ imageUrl, title }) => {
   }
 
   return (
-    <Pressable onPress={handlePress} style={styles.container}>
-      <Image source={{ uri: imageUrl }} style={styles.image} />
-      <Text style={styles.title}>{title}</Text>
-    </Pressable>
+    <FeedPostContainer onPress={handlePress}>
+      <FeedPostImage source={{ uri: imageUrl }} />
+      <FeedPostInfoContainer>
+        <PlainText color={theme.colors.darkExtra}>{title}</PlainText>
+      </FeedPostInfoContainer>
+    </FeedPostContainer>
   )
 }
-
 
 export default FeedPost

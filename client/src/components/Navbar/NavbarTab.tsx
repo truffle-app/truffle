@@ -1,34 +1,36 @@
-import React, { View, Text, StyleSheet, Pressable } from 'react-native'
-import BigText from '../Text/BigText'
+import PlainText from '../Text/PlainText'
+import styled from '@emotion/native'
+import React from 'react-native'
 import theme from '../../theme'
 
-const styles = StyleSheet.create({
-  tabItem: {
-    flexGrow: 1,
-    height: 60,
-    backgroundColor: theme.colors.navbarBackgroundColor,
-    alignItems: 'center',
-    justifyContent: 'center'
-  },
-  activeTab: {
-    borderTopWidth: 5, // Add a border at the bottom
-    borderTopColor: theme.colors.highlightColor, // Change to your desired color
-  },
-})
+type NavbarProps = {
+  isActive: boolean
+}
+
+const StyledNavbar = styled.Pressable`
+  flex-grow: 1;
+  height: 60px;
+  background-color: ${theme.colors.primaryLight};
+  align-items: center;
+  justify-content: center;
+  border-top-width: 5px;
+  border-top-color: ${(props: NavbarProps) =>
+    props.isActive ? theme.colors.highlight : theme.colors.primaryLight};
+`
 
 const NavbarTab = ({
   onPressFunction,
   text,
   isActive
 }: {
-  onPressFunction: any,
-  text: string,
+  onPressFunction: any
+  text: string
   isActive: boolean
 }) => {
   return (
-    <Pressable style={[styles.tabItem, isActive && styles.activeTab]} onPress={onPressFunction}>
-      <BigText>{text}</BigText>
-    </Pressable>
+    <StyledNavbar isActive={isActive} onPress={onPressFunction}>
+      <PlainText color={theme.colors.darkExtra}>{text}</PlainText>
+    </StyledNavbar>
   )
 }
 

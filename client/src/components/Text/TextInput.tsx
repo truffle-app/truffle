@@ -1,23 +1,24 @@
-import React, { TextInput as NativeTextInput, StyleSheet } from 'react-native'
+import styled, { css } from '@emotion/native'
+import React from 'react-native'
 import theme from '../../theme'
 
-const styles = StyleSheet.create({
-  input: {
-    color: theme.colors.inputTextColor,
-    textAlign: 'center',
-    fontFamily: theme.fonts.mainFont,
-    fontWeight: 'bold',
-    fontSize: theme.fontSizes.inputFontSize,
-    borderColor: theme.colors.borderColor,
-    borderWidth: theme.borders.borderWidth,
-    borderRadius: theme.borders.borderRadius,
-    padding: 10,
-    backgroundColor: '#FFFFFF',
-  }
-})
+const Input = styled.TextInput`
+  display: flex;
+  text-align: center;
+  color: ${theme.colors.dark};
+  background-color: #ffffff;
+  font-family: ${theme.fonts.main};
+  font-weight: bold;
+  font-size: ${theme.fontSizes.small};
+  border-color: ${theme.colors.dark};
+  border-width: 1px;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 1px;
+`
 
 const TextInput = ({ ...props }) => {
-  return <NativeTextInput style={styles.input} selectionColor={theme.colors.primaryColor} {...props} />
+  return <Input {...props} />
 }
 
 export default TextInput

@@ -1,5 +1,5 @@
+import PageWrapper from '../components/PageWrapper'
 import React, { Text } from 'react-native'
-import PageWrapper from './PageWrapper'
 
 const ProfilePage = () => {
   return (

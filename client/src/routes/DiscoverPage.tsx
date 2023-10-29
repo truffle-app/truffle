@@ -1,30 +1,31 @@
 import React, { Text, View, Image, ScrollView, StyleSheet } from 'react-native'
-import PageWrapper from './PageWrapper'
+import PageWrapper from '../components/PageWrapper'
 
 const styles = StyleSheet.create({
   card: {
-      flexDirection: 'row',
-      padding: 5,
-      marginBottom: 5,
-      backgroundColor: 'white',
-      borderRadius: 10,
+    flexDirection: 'row',
+    padding: 5,
+    marginBottom: 5,
+    backgroundColor: 'white',
+    borderRadius: 10
   },
   image: {
-      width: 60,
-      height: 60,
-      borderRadius: 10,
-      marginRight: 10
+    width: 60,
+    height: 60,
+    borderRadius: 10,
+    marginRight: 10
   },
   details: {
-      flex: 1,
-      justifyContent: 'center'
+    flex: 1,
+    justifyContent: 'center'
   }
-});
+})
 
 const mockPosts = [
   {
     id: 1,
-    imageUrl: 'https://www.kotikokki.net/media/cache/large_1024/recipeimage/large_1024/52d6e25bd074a9ec0e0d0a75/original.jpg',
+    imageUrl:
+      'https://www.kotikokki.net/media/cache/large_1024/recipeimage/large_1024/52d6e25bd074a9ec0e0d0a75/original.jpg',
     title: 'Super upee nakkitalo'
   },
   {
@@ -34,7 +35,8 @@ const mockPosts = [
   },
   {
     id: 3,
-    imageUrl: 'https://i0.wp.com/farm8.staticflickr.com/7394/11685132493_ea57a29235.jpg',
+    imageUrl:
+      'https://i0.wp.com/farm8.staticflickr.com/7394/11685132493_ea57a29235.jpg',
     title: 'Kebuuu'
   },
   {
@@ -48,12 +50,9 @@ const DiscoverPage = () => {
   return (
     <PageWrapper headerText={'Discover'}>
       <ScrollView style={{ padding: 10 }}>
-        {mockPosts.map(post => (
+        {mockPosts.map((post) => (
           <View key={post.id} style={styles.card}>
-            <Image
-              source={{ uri: post.imageUrl }}
-              style={styles.image}
-            />
+            <Image source={{ uri: post.imageUrl }} style={styles.image} />
             <View style={styles.details}>
               <Text>{post.title}</Text>
             </View>

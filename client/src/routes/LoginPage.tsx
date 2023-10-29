@@ -1,35 +1,36 @@
-import { useState } from 'react'
-import React, { View, StyleSheet } from 'react-native'
-import { useNavigate } from "react-router-native"
-import TextInput from '../components/Text/TextInput'
-import theme from '../theme'
 import SubmitButton from '../components/Buttons/SubmitButton'
-import BigText from '../components/Text/BigText'
+import TextInput from '../components/Text/TextInput'
+import PlainText from '../components/Text/PlainText'
+import { useNavigate } from 'react-router-native'
+import React, { View } from 'react-native'
+import styled from '@emotion/native'
+import { useState } from 'react'
+import theme from '../theme'
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    flexDirection: 'column',
-    backgroundColor: theme.colors.primaryColor
-  },
-  formItem: {
-    flexGrow: 1,
-    justifyContent: 'flex-end',
-    alignItems: 'center'
-  },
-  submitItem: {
-    flexGrow: 1,
-    paddingTop: 20,
-    justifyContent: 'flex-start',
-    alignItems: 'center'
-  },
-  headerItem: {
-    flexGrow: 1,
-    paddingBottom: 20,
-    justifyContent: 'flex-start',
-    alignItems: 'center'
-  }
-})
+const Background = styled.View`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: ${theme.colors.primaryLight};
+  width: 100%;
+`
+
+const LoginContainer = styled.View`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: ${theme.colors.neutralLight};
+  width: 80%;
+  height: 30%;
+  border-radius: 3px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+`
+
+const LoginItemContainer = styled.View`
+  display flex;
+  margin: 10px;
+`
 
 const LoginPage = () => {
   const navigate = useNavigate()
@@ -45,26 +46,29 @@ const LoginPage = () => {
   }
 
   return (
-    <View style={styles.container}>
-      <View style={[styles.formItem, styles.container]}>
-        <BigText fontSize={30}>
-          Login
-        </BigText>
+    <Background>
+      <LoginContainer>
+        <LoginItemContainer>
+          <PlainText fontSize={theme.fontSizes.extraLarge}>Sign in</PlainText>
+        </LoginItemContainer>
         <TextInput
-          placeholder='username'
+          placeholder="username"
           value={username}
           onChangeText={setUsername}
         />
+
         <TextInput
-          placeholder='password'
+          placeholder="password"
           value={password}
           onChangeText={setPassword}
           secureTextEntry={true}
         />
-      </View>
 
-      <SubmitButton text='Login' onSubmit={onSubmit} style={styles.submitItem}/>
-    </View>
+        <LoginItemContainer>
+          <SubmitButton text="Sign in" onSubmit={onSubmit} />
+        </LoginItemContainer>
+      </LoginContainer>
+    </Background>
   )
 }
 
