@@ -1,9 +1,9 @@
 import { Route, Routes, Navigate } from 'react-router-native'
 import Discover from './routes/DiscoverPage'
+import RecipePage from './routes/RecipePage'
 import Profile from './routes/ProfilePage'
 import LoginPage from './routes/LoginPage'
 import Feed from './routes/FeedPage'
-import Post from './routes/PostPage'
 import React from 'react-native'
 
 const Main = () => {
@@ -13,7 +13,7 @@ const Main = () => {
       <Route path="/feed" element={<Feed />} />
       <Route path="/discover" element={<Discover />} />
       <Route path="/profile" element={<Profile />} />
-      <Route path="/post" element={<Post />} />
+      <Route path="/recipe/:id" element={<RecipePage />} />
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   )
