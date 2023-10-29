@@ -4,6 +4,9 @@ import React from 'react-native'
 import theme from '../theme'
 
 const HeaderSection = styled.View`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   padding: 20px;
   background-color: ${theme.colors.primaryExtraLight};
   border-bottom-width: 1px;

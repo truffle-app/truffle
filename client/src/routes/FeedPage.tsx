@@ -24,7 +24,12 @@ const FeedPage = () => {
       </HeaderWrapper>
       <ScrollViewWrapper>
         {recipeService.getRecipes().map((post) => (
-          <FeedPost key={post.id} imageUrl={post.imageUrl} title={post.title} />
+          <FeedPost
+            key={post.id}
+            id={post.id}
+            imageUrl={post.imageUrl}
+            title={post.title}
+          />
         ))}
       </ScrollViewWrapper>
       <Navbar navigateTo={navigate}></Navbar>

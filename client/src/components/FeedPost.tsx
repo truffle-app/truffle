@@ -22,11 +22,19 @@ const FeedPostInfoContainer = styled.View`
   margin: 1%;
 `
 
-const FeedPost = ({ imageUrl, title }: { imageUrl: string; title: string }) => {
+const FeedPost = ({
+  id,
+  imageUrl,
+  title
+}: {
+  id: number
+  imageUrl: string
+  title: string
+}) => {
   const navigate = useNavigate()
 
   const handlePress = () => {
-    navigate('/recipe/1')
+    navigate(`/recipe/${id}`)
   }
 
   return (

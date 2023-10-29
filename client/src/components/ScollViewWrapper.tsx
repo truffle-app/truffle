@@ -4,7 +4,7 @@ import React from 'react-native'
 import theme from '../theme'
 
 const ScrollviewSection = styled.ScrollView`
-  height: 400px;
+  height: 200px;
   justify-items: center;
   background-color: ${theme.colors.neutralLight};
 `

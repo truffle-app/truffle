@@ -3,7 +3,7 @@ import React, { Text } from 'react-native'
 
 const ProfilePage = () => {
   return (
-    <PageWrapper headerText={'Profile'}>
+    <PageWrapper>
       <Text>Here is your profile</Text>
     </PageWrapper>
   )
