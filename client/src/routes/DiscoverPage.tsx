@@ -1,40 +1,35 @@
-import React, { Text, View, Image, ScrollView, StyleSheet } from 'react-native'
+import SmallRecipeDisplay from '../components/SmallRecipeDisplay'
+import ScrollViewWrapper from '../components/ScollViewWrapper'
+import HeaderWrapper from '../components/HeaderWrapper'
 import recipeService from '../services/recipeService'
+import PlainText from '../components/Text/PlainText'
 import PageWrapper from '../components/PageWrapper'
-
-const styles = StyleSheet.create({
-  card: {
-    flexDirection: 'row',
-    padding: 5,
-    marginBottom: 5,
-    backgroundColor: 'white',
-    borderRadius: 10
-  },
-  image: {
-    width: 60,
-    height: 60,
-    borderRadius: 10,
-    marginRight: 10
-  },
-  details: {
-    flex: 1,
-    justifyContent: 'center'
-  }
-})
+import { useNavigate } from 'react-router-native'
+import Navbar from '../components/Navbar/Navbar'
+import React from 'react-native'
+import theme from '../theme'
 
 const DiscoverPage = () => {
+  const navigate = useNavigate()
+
   return (
     <PageWrapper>
-      <ScrollView style={{ padding: 10 }}>
-        {recipeService.getRecipes().map((post) => (
-          <View key={post.id} style={styles.card}>
-            <Image source={{ uri: post.imageUrl }} style={styles.image} />
-            <View style={styles.details}>
-              <Text>{post.title}</Text>
-            </View>
-          </View>
-        ))}
-      </ScrollView>
+      <HeaderWrapper>
+        <PlainText
+          color={theme.colors.darkExtra}
+          fontSize={theme.fontSizes.large}
+        >
+          Profile
+        </PlainText>
+      </HeaderWrapper>
+      <ScrollViewWrapper>
+        <PlainText>
+          {recipeService.getRecipes().map((recipe) => (
+            <SmallRecipeDisplay recipe={recipe}></SmallRecipeDisplay>
+          ))}
+        </PlainText>
+      </ScrollViewWrapper>
+      <Navbar navigateTo={navigate}></Navbar>
     </PageWrapper>
   )
 }

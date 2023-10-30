@@ -1,4 +1,5 @@
 import { Route, Routes, Navigate } from 'react-router-native'
+import AddRecipePage from './routes/AddRecipePage'
 import Discover from './routes/DiscoverPage'
 import RecipePage from './routes/RecipePage'
 import Profile from './routes/ProfilePage'
@@ -14,6 +15,7 @@ const Main = () => {
       <Route path="/discover" element={<Discover />} />
       <Route path="/profile" element={<Profile />} />
       <Route path="/recipe/:id" element={<RecipePage />} />
+      <Route path="/recipe/add" element={<AddRecipePage />} />
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   )
