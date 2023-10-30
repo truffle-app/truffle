@@ -1,4 +1,5 @@
 import ScrollViewWrapper from '../components/ScollViewWrapper'
+import AddRecipeButton from '../components/AddRecipeButton'
 import HeaderWrapper from '../components/HeaderWrapper'
 import PlainText from '../components/Text/PlainText'
 import PageWrapper from '../components/PageWrapper'
@@ -25,6 +26,7 @@ const ProfilePage = () => {
           Add contents of profile here, probably as multiple components
         </PlainText>
       </ScrollViewWrapper>
+      <AddRecipeButton previousLocation={'/profile'}></AddRecipeButton>
       <Navbar navigateTo={navigate}></Navbar>
     </PageWrapper>
   )

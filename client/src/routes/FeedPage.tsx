@@ -13,6 +13,14 @@ import theme from '../theme'
 const FeedPage = () => {
   const navigate = useNavigate()
 
+  const handlePressFeedPost = (id: number) => {
+    navigate(`/recipe/${id}`, {
+      state: {
+        previousLocation: '/feed'
+      }
+    })
+  }
+
   return (
     <PageWrapper>
       <HeaderWrapper>
@@ -30,12 +38,11 @@ const FeedPage = () => {
             id={post.id}
             imageUrl={post.imageUrl}
             title={post.title}
+            onPress={handlePressFeedPost}
           />
         ))}
       </ScrollViewWrapper>
-      <AddRecipeButton
-        onPress={() => navigate('/recipe/add')}
-      ></AddRecipeButton>
+      <AddRecipeButton previousLocation={'/feed'}></AddRecipeButton>
       <Navbar navigateTo={navigate}></Navbar>
     </PageWrapper>
   )

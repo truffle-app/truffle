@@ -1,19 +1,29 @@
+import { useNavigate } from 'react-router-native'
 import { AntDesign } from '@expo/vector-icons'
 import { Pressable } from 'react-native'
 import styled from '@emotion/native'
 import theme from '../theme'
 import React from 'react'
 
-// Styled components for FAB
 const FabContainer = styled(Pressable)`
   position: absolute;
-  bottom: 100px;
-  right: 30px;
+  bottom: 105px;
+  right: 20px;
 `
 
-const AddRecipeButton = ({ onPress }: { onPress: any }) => {
+const AddRecipeButton = ({ previousLocation }: { previousLocation: any }) => {
+  const navigate = useNavigate()
+
+  const addRecipePressed = () => {
+    navigate('/recipe/add', {
+      state: {
+        previousLocation: previousLocation
+      }
+    })
+  }
+
   return (
-    <FabContainer onPress={onPress}>
+    <FabContainer onPress={addRecipePressed}>
       <AntDesign name="pluscircle" size={60} color={theme.colors.highlight} />
     </FabContainer>
   )

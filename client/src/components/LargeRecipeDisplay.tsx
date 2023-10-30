@@ -1,7 +1,6 @@
-import { useNavigate } from 'react-router-native'
+import React, { GestureResponderEvent } from 'react-native'
 import PlainText from './Text/PlainText'
 import styled from '@emotion/native'
-import React from 'react-native'
 import theme from '../theme'
 
 const FeedPostContainer = styled.Pressable`
@@ -25,20 +24,16 @@ const FeedPostInfoContainer = styled.View`
 const FeedPost = ({
   id,
   imageUrl,
-  title
+  title,
+  onPress
 }: {
   id: number
   imageUrl: string
   title: string
+  onPress: (id: number) => void
 }) => {
-  const navigate = useNavigate()
-
-  const handlePress = () => {
-    navigate(`/recipe/${id}`)
-  }
-
   return (
-    <FeedPostContainer onPress={handlePress}>
+    <FeedPostContainer onPress={() => onPress(id)}>
       <FeedPostImage source={{ uri: imageUrl }} />
       <FeedPostInfoContainer>
         <PlainText color={theme.colors.darkExtra}>{title}</PlainText>
