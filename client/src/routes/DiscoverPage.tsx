@@ -24,8 +24,11 @@ const DiscoverPage = () => {
       </HeaderWrapper>
       <ScrollViewWrapper>
         <PlainText>
-          {recipeService.getRecipes().map((recipe) => (
-            <SmallRecipeDisplay recipe={recipe}></SmallRecipeDisplay>
+          {recipeService.getRecipes().map((recipe, index) => (
+            <SmallRecipeDisplay
+              key={index}
+              recipe={recipe}
+            ></SmallRecipeDisplay>
           ))}
         </PlainText>
       </ScrollViewWrapper>

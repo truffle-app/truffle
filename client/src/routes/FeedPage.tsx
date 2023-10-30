@@ -32,9 +32,9 @@ const FeedPage = () => {
         </PlainText>
       </HeaderWrapper>
       <ScrollViewWrapper>
-        {recipeService.getRecipes().map((post) => (
+        {recipeService.getRecipes().map((post, index) => (
           <FeedPost
-            key={post.id}
+            key={index}
             id={post.id}
             imageUrl={post.imageUrl}
             title={post.title}
