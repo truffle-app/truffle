@@ -1,6 +1,6 @@
+import LargeRecipeDisplay from '../components/LargeRecipeDisplay'
 import ScrollViewWrapper from '../components/ScollViewWrapper'
 import AddRecipeButton from '../components/AddRecipeButton'
-import FeedPost from '../components/LargeRecipeDisplay'
 import HeaderWrapper from '../components/HeaderWrapper'
 import recipeService from '../services/recipeService'
 import PlainText from '../components/Text/PlainText'
@@ -32,12 +32,10 @@ const FeedPage = () => {
         </PlainText>
       </HeaderWrapper>
       <ScrollViewWrapper>
-        {recipeService.getRecipes().map((post, index) => (
-          <FeedPost
+        {recipeService.getRecipes().map((recipe, index) => (
+          <LargeRecipeDisplay
             key={index}
-            id={post.id}
-            imageUrl={post.imageUrl}
-            title={post.title}
+            recipe={recipe}
             onPress={handlePressFeedPost}
           />
         ))}

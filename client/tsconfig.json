@@ -29,7 +29,8 @@
     "typings/index.d.ts",
     "src/**/*.ts",
     "src/**/*.tsx",
-    "node_modules/typescript/lib/lib.es6.d.ts"
+    "node_modules/typescript/lib/lib.es6.d.ts",
+    "types/global.d.ts"
   ],
   "types": [
     "react",

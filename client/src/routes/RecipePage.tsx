@@ -6,6 +6,7 @@ import recipeService from '../services/recipeService'
 import PlainText from '../components/Text/PlainText'
 import PageWrapper from '../components/PageWrapper'
 import Navbar from '../components/Navbar/Navbar'
+import { useEffect, useState } from 'react'
 import styled from '@emotion/native'
 import React from 'react-native'
 import theme from '../theme'
@@ -20,7 +21,12 @@ const RecipePageImage = styled.Image`
 const RecipePage = () => {
   const navigate = useNavigate()
   const { id } = useParams()
-  const recipe = recipeService.getRecipe(Number(id))
+  const [recipe, setRecipe] = useState<RecipeObject | undefined>(undefined)
+
+  useEffect(() => {
+    const recipe = recipeService.getRecipe(Number(id))
+    setRecipe(recipe)
+  }, [])
 
   if (recipe) {
     return (
@@ -35,8 +41,8 @@ const RecipePage = () => {
           </PlainText>
         </HeaderWrapper>
         <ScrollViewWrapper>
-          <RecipePageImage source={{ uri: recipe.imageUrl }} />
-          <PlainText>{recipe.title}</PlainText>
+          <RecipePageImage source={{ uri: recipe?.imageUrl }} />
+          <PlainText>{recipe?.title}</PlainText>
         </ScrollViewWrapper>
         <Navbar navigateTo={navigate}></Navbar>
       </PageWrapper>

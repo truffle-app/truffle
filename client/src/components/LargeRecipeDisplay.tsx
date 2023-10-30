@@ -3,43 +3,43 @@ import PlainText from './Text/PlainText'
 import styled from '@emotion/native'
 import theme from '../theme'
 
-const FeedPostContainer = styled.Pressable`
+const LargeRecipeContainer = styled.Pressable`
   display: flex;
   margin: 5px 10px 5px 10px;
   padding: 10px;
 `
 
-const FeedPostImage = styled.Image`
+const LargeRecipeImage = styled.Image`
   width: 98%;
   margin: 1%;
   height: 250px;
   border-radius: 2px;
 `
 
-const FeedPostInfoContainer = styled.View`
+const LargeRecipeInfoContainer = styled.View`
   width: 98%;
   margin: 1%;
 `
 
-const FeedPost = ({
-  id,
-  imageUrl,
-  title,
+const LargeRecipeDisplay = ({
+  recipe,
   onPress
 }: {
-  id: number
-  imageUrl: string
-  title: string
+  recipe: RecipeObject
   onPress: (id: number) => void
 }) => {
   return (
-    <FeedPostContainer onPress={() => onPress(id)}>
-      <FeedPostImage source={{ uri: imageUrl }} />
-      <FeedPostInfoContainer>
-        <PlainText color={theme.colors.darkExtra}>{title}</PlainText>
-      </FeedPostInfoContainer>
-    </FeedPostContainer>
+    <LargeRecipeContainer
+      onPress={() => {
+        onPress(recipe.id)
+      }}
+    >
+      <LargeRecipeImage source={{ uri: recipe.imageUrl }} />
+      <LargeRecipeInfoContainer>
+        <PlainText color={theme.colors.darkExtra}>{recipe.title}</PlainText>
+      </LargeRecipeInfoContainer>
+    </LargeRecipeContainer>
   )
 }
 
-export default FeedPost
+export default LargeRecipeDisplay

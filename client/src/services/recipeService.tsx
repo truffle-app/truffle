@@ -1,5 +1,5 @@
 // Replace with actual database calls later
-const samplePosts = [
+const sampleRecipes = [
   {
     id: 1,
     imageUrl:
@@ -25,11 +25,11 @@ const samplePosts = [
 ]
 
 const getRecipes = () => {
-  return samplePosts
+  return sampleRecipes
 }
 
 const getRecipe = (id: number) => {
-  return samplePosts.find((post) => (post.id = id))
+  return sampleRecipes.find((recipe) => recipe.id === id)
 }
 
 export default { getRecipes, getRecipe }
