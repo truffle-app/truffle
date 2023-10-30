@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-native'
 import { AntDesign } from '@expo/vector-icons'
 import { Pressable } from 'react-native'
 import styled from '@emotion/native'
-import theme from '../theme'
+import theme from '../../theme'
 import React from 'react'
 
 const FabContainer = styled(Pressable)`

@@ -1,7 +1,7 @@
 import React, { GestureResponderEvent } from 'react-native'
-import PlainText from './Text/PlainText'
+import PlainText from '../Text/PlainText'
 import styled from '@emotion/native'
-import theme from '../theme'
+import theme from '../../theme'
 
 const LargeRecipeContainer = styled.Pressable`
   display: flex;

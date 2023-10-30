@@ -1,7 +1,7 @@
 import { PropsWithChildren } from 'react'
 import styled from '@emotion/native'
 import React from 'react-native'
-import theme from '../theme'
+import theme from '../../theme'
 
 const ScrollviewSection = styled.ScrollView`
   height: 200px;
