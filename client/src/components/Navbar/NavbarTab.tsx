@@ -1,5 +1,6 @@
 import PlainText from '../Text/PlainText'
 import styled from '@emotion/native'
+import { ReactNode } from 'react'
 import React from 'react-native'
 import theme from '../../theme'
 
@@ -19,16 +20,16 @@ const StyledNavbar = styled.Pressable`
 
 const NavbarTab = ({
   onPressFunction,
-  text,
-  isActive
+  isActive,
+  children
 }: {
   onPressFunction: any
-  text: string
   isActive: boolean
+  children?: ReactNode
 }) => {
   return (
     <StyledNavbar isActive={isActive} onPress={onPressFunction}>
-      <PlainText color={theme.colors.darkExtra}>{text}</PlainText>
+      {children}
     </StyledNavbar>
   )
 }

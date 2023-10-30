@@ -1,4 +1,5 @@
 import { useLocation, NavigateFunction } from 'react-router-native'
+import PlainText from '../Text/PlainText'
 import styled from '@emotion/native'
 import NavbarTab from './NavbarTab'
 import React from 'react-native'
@@ -23,19 +24,22 @@ const Navbar = ({ navigateTo }: { navigateTo: NavigateFunction }) => {
     <NavbarContainer>
       <NavbarTab
         onPressFunction={() => navigateToLocation('/feed')}
-        text={'Feed'}
         isActive={currentPath === '/feed'}
-      />
+      >
+        <PlainText color={theme.colors.darkExtra}>Feed</PlainText>
+      </NavbarTab>
       <NavbarTab
         onPressFunction={() => navigateToLocation('/discover')}
-        text={'Discover'}
         isActive={currentPath === '/discover'}
-      />
+      >
+        <PlainText color={theme.colors.darkExtra}>Discover</PlainText>
+      </NavbarTab>
       <NavbarTab
         onPressFunction={() => navigateToLocation('/profile')}
-        text={'Profile'}
         isActive={currentPath === '/profile'}
-      />
+      >
+        <PlainText color={theme.colors.darkExtra}>Profile</PlainText>
+      </NavbarTab>
     </NavbarContainer>
   )
 }
