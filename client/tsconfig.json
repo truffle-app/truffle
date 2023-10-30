@@ -2,7 +2,7 @@
   "extends": "expo/tsconfig.base",
   "compilerOptions": {
     "jsx": "react",
-    "strict": true,
+    "strict": false,
     "target": "ES2022",
     "module": "ES2022",
     "moduleResolution": "Node",

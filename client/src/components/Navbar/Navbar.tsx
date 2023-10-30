@@ -2,10 +2,13 @@ import { useLocation, NavigateFunction } from 'react-router-native'
 import styled from '@emotion/native'
 import NavbarTab from './NavbarTab'
 import React from 'react-native'
+import theme from '../../theme'
 
 const NavbarContainer = styled.View`
   display: flex;
   flex-direction: row;
+  height: 90px;
+  background-color: ${theme.colors.primaryLight};
 `
 
 const Navbar = ({ navigateTo }: { navigateTo: NavigateFunction }) => {

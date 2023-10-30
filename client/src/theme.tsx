@@ -20,7 +20,7 @@ const theme = {
     small: '17px'
   },
   fonts: {
-    main: 'Josefin Sans'
+    main: 'Arial'
   },
   fontWeights: {
     normal: '400',

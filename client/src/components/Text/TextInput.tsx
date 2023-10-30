@@ -3,7 +3,6 @@ import React from 'react-native'
 import theme from '../../theme'
 
 const Input = styled.TextInput`
-  display: flex;
   text-align: center;
   color: ${theme.colors.dark};
   background-color: #ffffff;

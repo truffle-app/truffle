@@ -24,7 +24,6 @@ const RecipePageImage = styled.Image`
 const RecipePage = (props: any) => {
   const navigate = useNavigate()
   const { id } = useParams()
-  console.log(id)
   const recipe = recipeService.getRecipe(Number(id))
 
   const navigateBack = () => {

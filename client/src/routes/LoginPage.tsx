@@ -2,8 +2,8 @@ import SubmitButton from '../components/Buttons/SubmitButton'
 import TextInput from '../components/Text/TextInput'
 import PlainText from '../components/Text/PlainText'
 import { useNavigate } from 'react-router-native'
+import styled, { css } from '@emotion/native'
 import React, { View } from 'react-native'
-import styled from '@emotion/native'
 import { useState } from 'react'
 import theme from '../theme'
 
@@ -13,6 +13,7 @@ const Background = styled.View`
   align-items: center;
   background-color: ${theme.colors.primaryLight};
   width: 100%;
+  height: 100%;
 `
 
 const LoginContainer = styled.View`
@@ -28,7 +29,7 @@ const LoginContainer = styled.View`
 `
 
 const LoginItemContainer = styled.View`
-  display flex;
+  display block;
   margin: 10px;
 `
 
@@ -41,7 +42,6 @@ const LoginPage = () => {
 
   const onSubmit = () => {
     // Authenticate user from database
-    console.log(password)
     navigate('/feed')
   }
 
@@ -52,12 +52,18 @@ const LoginPage = () => {
           <PlainText fontSize={theme.fontSizes.extraLarge}>Sign in</PlainText>
         </LoginItemContainer>
         <TextInput
+          style={css`
+            width: 50%;
+          `}
           placeholder="username"
           value={username}
           onChangeText={setUsername}
         />
 
         <TextInput
+          style={css`
+            width: 50%;
+          `}
           placeholder="password"
           value={password}
           onChangeText={setPassword}

@@ -9,10 +9,9 @@ type NavbarProps = {
 
 const StyledNavbar = styled.Pressable`
   flex-grow: 1;
-  height: 60px;
-  background-color: ${theme.colors.primaryLight};
   align-items: center;
   justify-content: center;
+  padding-bottom: 30px;
   border-top-width: 5px;
   border-top-color: ${(props: NavbarProps) =>
     props.isActive ? theme.colors.highlight : theme.colors.primaryLight};
