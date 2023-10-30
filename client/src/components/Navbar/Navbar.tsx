@@ -12,9 +12,15 @@ const NavbarContainer = styled.View`
   background-color: ${theme.colors.primaryLight};
 `
 
+const tabLocations = ['/feed', '/discover', '/profile']
+
 const Navbar = ({ navigateTo }: { navigateTo: NavigateFunction }) => {
   const location = useLocation()
-  const currentPath = location.pathname
+  let currentPath = location.pathname
+
+  if (!tabLocations.some((tab) => currentPath === tab)) {
+    currentPath = location.state?.previousLocation
+  }
 
   const navigateToLocation = (location: string) => {
     navigateTo(location)
@@ -23,20 +29,20 @@ const Navbar = ({ navigateTo }: { navigateTo: NavigateFunction }) => {
   return (
     <NavbarContainer>
       <NavbarTab
-        onPressFunction={() => navigateToLocation('/feed')}
-        isActive={currentPath === '/feed'}
+        onPressFunction={() => navigateToLocation(tabLocations[0])}
+        isActive={currentPath === tabLocations[0]}
       >
         <PlainText color={theme.colors.darkExtra}>Feed</PlainText>
       </NavbarTab>
       <NavbarTab
-        onPressFunction={() => navigateToLocation('/discover')}
-        isActive={currentPath === '/discover'}
+        onPressFunction={() => navigateToLocation(tabLocations[1])}
+        isActive={currentPath === tabLocations[1]}
       >
         <PlainText color={theme.colors.darkExtra}>Discover</PlainText>
       </NavbarTab>
       <NavbarTab
-        onPressFunction={() => navigateToLocation('/profile')}
-        isActive={currentPath === '/profile'}
+        onPressFunction={() => navigateToLocation(tabLocations[2])}
+        isActive={currentPath === tabLocations[2]}
       >
         <PlainText color={theme.colors.darkExtra}>Profile</PlainText>
       </NavbarTab>
