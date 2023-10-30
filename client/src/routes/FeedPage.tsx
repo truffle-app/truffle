@@ -1,4 +1,5 @@
 import ScrollViewWrapper from '../components/ScollViewWrapper'
+import AddRecipeButton from '../components/AddRecipeButton'
 import HeaderWrapper from '../components/HeaderWrapper'
 import recipeService from '../services/recipeService'
 import PlainText from '../components/Text/PlainText'
@@ -32,6 +33,7 @@ const FeedPage = () => {
           />
         ))}
       </ScrollViewWrapper>
+      <AddRecipeButton onPress={() => console.log('hello??')}></AddRecipeButton>
       <Navbar navigateTo={navigate}></Navbar>
     </PageWrapper>
   )
