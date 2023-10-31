@@ -8,8 +8,8 @@ import theme from '../../theme'
 const NavbarContainer = styled.SafeAreaView`
   display: flex;
   flex-direction: row;
-  height: max-content;
   background-color: ${theme.colors.primaryLight};
+  padding-bottom: 30px;
 `
 
 const tabLocations = ['/feed', '/discover', '/profile']
@@ -29,19 +29,19 @@ const Navbar = ({ navigateTo }: { navigateTo: NavigateFunction }) => {
   return (
     <NavbarContainer>
       <NavbarTab
-        onPressFunction={() => navigateToLocation(tabLocations[0])}
+        onPress={() => navigateToLocation(tabLocations[0])}
         isActive={currentPath === tabLocations[0]}
       >
         <Ionicons name="newspaper" size={32} color={theme.colors.darkExtra} />
       </NavbarTab>
       <NavbarTab
-        onPressFunction={() => navigateToLocation(tabLocations[1])}
+        onPress={() => navigateToLocation(tabLocations[1])}
         isActive={currentPath === tabLocations[1]}
       >
         <Ionicons name="search" size={35} color={theme.colors.darkExtra} />
       </NavbarTab>
       <NavbarTab
-        onPressFunction={() => navigateToLocation(tabLocations[2])}
+        onPress={() => navigateToLocation(tabLocations[2])}
         isActive={currentPath === tabLocations[2]}
       >
         <Ionicons

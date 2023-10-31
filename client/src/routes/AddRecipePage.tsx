@@ -1,29 +1,85 @@
-import ScrollViewWrapper from '../components/Wrappers/ScollViewWrapper'
-import HeaderWrapper from '../components/Wrappers/HeaderWrapper'
-import PageWrapper from '../components/Wrappers/PageWrapper'
+import HeaderWrapperSpaceBetween from '../components/Wrappers/HeaderWrapperSpaceBetween'
+import RecipeFormFields from '../components/Forms/AddRecipeForm/RecipeFormFields'
+import PostFormFields from '../components/Forms/AddRecipeForm/PostFormFields'
+import NavBackButton from '../components/Buttons/NavBackButton'
+import SubmitButton from '../components/Buttons/SubmitButton'
 import BackButton from '../components/Buttons/BackButton'
-import PlainText from '../components/Text/PlainText'
 import { useNavigate } from 'react-router-native'
-import Navbar from '../components/Navbar/Navbar'
 import { useTranslation } from 'react-i18next'
 import Title from '../components/Text/Title'
-import React from 'react-native'
+import React, { useState } from 'react'
+import { Formik } from 'formik'
+import * as yup from 'yup'
+
+export interface FormValues {
+  name: string
+  description: string
+  tags: string
+  activeTab: string
+  ingredients: [{ quantity: string; unit: string; ingredient: string }]
+  methods: [{ method: string }]
+}
+
+const initialValues = {
+  name: '',
+  description: '',
+  tags: '',
+  activeTab: 'Ingredients',
+  ingredients: [{ quantity: '', unit: '', ingredient: '' }],
+  methods: [{ method: '' }],
+  post_text: ''
+}
+
+const validationSchema = yup.object().shape({
+  name: yup.string().min(4, 'Name must contain at least 4 characters')
+})
 
 const AddRecipePage = () => {
+  const [page, setPage] = useState<number>(0)
   const navigate = useNavigate()
   const { t } = useTranslation()
 
+  const onSubmit = (values: any) => {
+    console.log(`Submitted a recipe.`)
+    console.log(values)
+    // Send form content to server here
+    navigate('/Feed')
+  }
+
   return (
-    <PageWrapper>
-      <HeaderWrapper>
-        <BackButton />
-        <Title>{t('add-recipe')}</Title>
-      </HeaderWrapper>
-      <ScrollViewWrapper>
-        <PlainText>Add recipe form here as separate component</PlainText>
-      </ScrollViewWrapper>
-      <Navbar navigateTo={navigate}></Navbar>
-    </PageWrapper>
+    <Formik
+      initialValues={initialValues}
+      onSubmit={(values) => {
+        onSubmit(values)
+        // Handle form submission logic here
+        console.log(values)
+      }}
+    >
+      {({ values, handleChange, handleSubmit }) =>
+        (page === 0 && (
+          <>
+            <HeaderWrapperSpaceBetween>
+              <NavBackButton />
+              <Title>{t('add-recipe')}</Title>
+              <SubmitButton onPress={handleSubmit}>Post</SubmitButton>
+            </HeaderWrapperSpaceBetween>
+
+            <RecipeFormFields values={values} handleChange={handleChange} />
+          </>
+        )) ||
+        (page === 1 && (
+          <>
+            <HeaderWrapperSpaceBetween>
+              <BackButton onPress={() => setPage(0)} />
+              <Title>{t('post-recipe')}</Title>
+              <SubmitButton onPress={handleSubmit}>Post</SubmitButton>
+            </HeaderWrapperSpaceBetween>
+
+            <PostFormFields />
+          </>
+        ))
+      }
+    </Formik>
   )
 }
 

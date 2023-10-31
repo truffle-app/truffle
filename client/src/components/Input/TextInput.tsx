@@ -3,7 +3,7 @@ import React from 'react-native'
 import theme from '../../theme'
 
 const Input = styled.TextInput`
-  text-align: center;
+  text-align: justify;
   color: ${theme.colors.dark};
   background-color: #ffffff;
   font-family: ${theme.fonts.main};

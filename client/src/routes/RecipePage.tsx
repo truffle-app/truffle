@@ -1,10 +1,10 @@
 import ScrollViewWrapper from '../components/Wrappers/ScollViewWrapper'
 import HeaderWrapper from '../components/Wrappers/HeaderWrapper'
 import ProfileButton from '../components/Buttons/ProfileButton'
+import NavBackButton from '../components/Buttons/NavBackButton'
 import RatingButton from '../components/Buttons/RatingButton'
 import PageWrapper from '../components/Wrappers/PageWrapper'
 import { useNavigate, useParams } from 'react-router-native'
-import BackButton from '../components/Buttons/BackButton'
 import recipeService from '../services/recipeService'
 import PlainText from '../components/Text/PlainText'
 import Navbar from '../components/Navbar/Navbar'
@@ -50,7 +50,7 @@ const RecipePage = () => {
     return (
       <PageWrapper>
         <HeaderWrapper>
-          <BackButton />
+          <NavBackButton />
         </HeaderWrapper>
         <ScrollViewWrapper>
           <RecipePageImage source={{ uri: recipe?.imageUrl }} />

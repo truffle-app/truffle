@@ -1,5 +1,6 @@
 import PlainText from '../Text/PlainText'
 import styled from '@emotion/native'
+import { ReactNode } from 'react'
 import React from 'react-native'
 import theme from '../../theme'
 
@@ -8,19 +9,20 @@ const StyledSubmitButton = styled.Pressable`
   background-color: ${theme.colors.highlight};
   border-width: 2px;
   border-radius: 5px;
-  padding: 10px;
+  text-align: center;
+  padding: 10px 12px 10px 20px;
 `
 
 const SubmitButton = ({
-  text,
-  onSubmit
+  children,
+  onPress
 }: {
-  text: string
-  onSubmit: () => void
+  children: ReactNode
+  onPress: () => void
 }) => {
   return (
-    <StyledSubmitButton onPress={onSubmit}>
-      <PlainText color={theme.colors.neutralLight}>{text}</PlainText>
+    <StyledSubmitButton onPress={onPress}>
+      <PlainText color={theme.colors.neutralLight}>{children}</PlainText>
     </StyledSubmitButton>
   )
 }

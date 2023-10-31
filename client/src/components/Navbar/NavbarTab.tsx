@@ -1,4 +1,5 @@
-import styled from '@emotion/native'
+import styled, { ReactNativeStyle } from '@emotion/native'
+import { GestureResponderEvent } from 'react-native'
 import { ReactNode } from 'react'
 import React from 'react-native'
 import theme from '../../theme'
@@ -19,16 +20,18 @@ const StyledNavbar = styled.Pressable`
 `
 
 const NavbarTab = ({
-  onPressFunction,
+  onPress,
   isActive,
-  children
+  children,
+  style
 }: {
-  onPressFunction: any
+  onPress: (event: GestureResponderEvent) => void
   isActive: boolean
   children?: ReactNode
+  style?: ReactNativeStyle
 }) => {
   return (
-    <StyledNavbar isActive={isActive} onPress={onPressFunction}>
+    <StyledNavbar style={style} isActive={isActive} onPress={onPress}>
       {children}
     </StyledNavbar>
   )
