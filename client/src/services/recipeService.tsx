@@ -4,23 +4,31 @@ const sampleRecipes = [
     id: 1,
     imageUrl:
       'https://www.kotikokki.net/media/cache/large_1024/recipeimage/large_1024/52d6e25bd074a9ec0e0d0a75/original.jpg',
-    title: 'Super upee nakkitalo'
+    title: 'Super upee nakkitalo',
+    rating: 4.2,
+    profile: 'Casper'
   },
   {
     id: 2,
     imageUrl: 'https://grillax.com/wp-content/uploads/2020/03/FatNasty2_0.png',
-    title: 'Herkku herkku'
+    title: 'Herkku herkku',
+    rating: 3.5,
+    profile: 'Jesper'
   },
   {
     id: 3,
     imageUrl:
       'https://i0.wp.com/farm8.staticflickr.com/7394/11685132493_ea57a29235.jpg',
-    title: 'Kebuuu'
+    title: 'Kebuuu',
+    rating: 3.5,
+    profile: 'Joonatan'
   },
   {
     id: 4,
     imageUrl: 'http://cdn.firstwefeast.com/assets/2015/07/badpizza-500x375.jpg',
-    title: 'Naminami pizza'
+    title: 'Naminami pizza',
+    rating: 3.5,
+    profile: 'UnwantedBrother'
   }
 ]
 
