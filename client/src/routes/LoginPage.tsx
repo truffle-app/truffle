@@ -2,6 +2,7 @@ import SubmitButton from '../components/Buttons/SubmitButton'
 import TextInput from '../components/Text/TextInput'
 import PlainText from '../components/Text/PlainText'
 import { useNavigate } from 'react-router-native'
+import { useTranslation } from 'react-i18next'
 import styled, { css } from '@emotion/native'
 import React, { View } from 'react-native'
 import { useState } from 'react'
@@ -29,7 +30,7 @@ const LoginContainer = styled.View`
 `
 
 const LoginItemContainer = styled.View`
-  display block;
+  display: block;
   margin: 10px;
 `
 
@@ -37,6 +38,8 @@ const LoginPage = () => {
   const navigate = useNavigate()
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
+
+  const { t } = useTranslation()
 
   // Add a hook here to check if user is already authenticated, if so, navigate straight to app
 
@@ -49,7 +52,9 @@ const LoginPage = () => {
     <Background>
       <LoginContainer>
         <LoginItemContainer>
-          <PlainText fontSize={theme.fontSizes.extraLarge}>Sign in</PlainText>
+          <PlainText fontSize={theme.fontSizes.extraLarge}>
+            {t('sign-in')}
+          </PlainText>
         </LoginItemContainer>
         <TextInput
           style={css`

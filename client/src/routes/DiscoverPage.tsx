@@ -1,5 +1,5 @@
-import ScrollViewWrapper from '../components/Wrappers/ScollViewWrapper'
 import SmallRecipeDisplay from '../components/Displays/SmallRecipeDisplay'
+import ScrollViewWrapper from '../components/Wrappers/ScollViewWrapper'
 import HeaderWrapper from '../components/Wrappers/HeaderWrapper'
 import PageWrapper from '../components/Wrappers/PageWrapper'
 import recipeService from '../services/recipeService'
