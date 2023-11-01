@@ -5,6 +5,7 @@ import theme from '../../theme'
 
 type TextProps = {
   fontSize?: string
+  fontFamily?: string
   color?: string
   children?: ReactNode | undefined
 }
@@ -14,8 +15,8 @@ const Text = styled.Text`
   text-align: center;
   color: ${(props: TextProps) =>
     props.color ? props.color : theme.colors.dark};
-  font-family: ${theme.fonts.main};
-  font-weight: bold;
+  font-family: ${(props: TextProps) =>
+    props.fontFamily ? props.fontFamily : theme.fonts.main};
   font-size: ${(props: TextProps) =>
     props.fontSize ? props.fontSize : theme.fontSizes.medium};
 `

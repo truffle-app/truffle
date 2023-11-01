@@ -7,6 +7,7 @@ i18n
   .use(Backend)
   .use(initReactI18next)
   .init({
+    compatibilityJSON: 'v3',
     lng: 'en',
     resources: {
       en: {

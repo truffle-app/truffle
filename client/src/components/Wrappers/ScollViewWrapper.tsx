@@ -1,5 +1,5 @@
-import styled from '@emotion/native'
 import { PropsWithChildren } from 'react'
+import styled from '@emotion/native'
 import React from 'react-native'
 import theme from '../../theme'
 

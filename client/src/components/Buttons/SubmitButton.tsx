@@ -1,7 +1,7 @@
+import PlainText from '../Text/PlainText'
 import styled from '@emotion/native'
 import React from 'react-native'
 import theme from '../../theme'
-import PlainText from '../Text/PlainText'
 
 const StyledSubmitButton = styled.Pressable`
   border-color: ${theme.colors.highlight};

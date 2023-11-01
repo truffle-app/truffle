@@ -1,11 +1,11 @@
-import styled, { css } from '@emotion/native'
-import { useState } from 'react'
-import { useTranslation } from 'react-i18next'
-import React from 'react-native'
-import { useNavigate } from 'react-router-native'
 import SubmitButton from '../components/Buttons/SubmitButton'
 import PlainText from '../components/Text/PlainText'
 import TextInput from '../components/Text/TextInput'
+import { useNavigate } from 'react-router-native'
+import { useTranslation } from 'react-i18next'
+import styled, { css } from '@emotion/native'
+import React from 'react-native'
+import { useState } from 'react'
 import theme from '../theme'
 
 const Background = styled.View`
@@ -52,7 +52,10 @@ const LoginPage = () => {
     <Background>
       <LoginContainer>
         <LoginItemContainer>
-          <PlainText fontSize={theme.fontSizes.extraLarge}>
+          <PlainText
+            fontFamily={theme.fonts.title}
+            fontSize={theme.fontSizes.extraLarge}
+          >
             {t('sign-in')}
           </PlainText>
         </LoginItemContainer>

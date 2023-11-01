@@ -7,7 +7,6 @@ const Input = styled.TextInput`
   color: ${theme.colors.dark};
   background-color: #ffffff;
   font-family: ${theme.fonts.main};
-  font-weight: bold;
   font-size: ${theme.fontSizes.small};
   border-color: ${theme.colors.dark};
   border-width: 1px;

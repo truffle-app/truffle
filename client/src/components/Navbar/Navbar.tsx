@@ -1,10 +1,9 @@
-import styled from '@emotion/native'
-import { Ionicons } from '@expo/vector-icons'
-import React from 'react-native'
 import { NavigateFunction, useLocation } from 'react-router-native'
-import theme from '../../theme'
-import PlainText from '../Text/PlainText'
+import { Ionicons } from '@expo/vector-icons'
+import styled from '@emotion/native'
 import NavbarTab from './NavbarTab'
+import React from 'react-native'
+import theme from '../../theme'
 
 const NavbarContainer = styled.SafeAreaView`
   display: flex;
@@ -33,7 +32,7 @@ const Navbar = ({ navigateTo }: { navigateTo: NavigateFunction }) => {
         onPressFunction={() => navigateToLocation(tabLocations[0])}
         isActive={currentPath === tabLocations[0]}
       >
-        <PlainText color={theme.colors.darkExtra}>Feed</PlainText>
+        <Ionicons name="newspaper" size={32} color={theme.colors.darkExtra} />
       </NavbarTab>
       <NavbarTab
         onPressFunction={() => navigateToLocation(tabLocations[1])}

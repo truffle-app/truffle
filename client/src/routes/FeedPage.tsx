@@ -1,13 +1,13 @@
-import React from 'react-native'
-import { useNavigate } from 'react-router-native'
-import AddRecipeButton from '../components/Buttons/AddRecipeButton'
 import LargeRecipeDisplay from '../components/Displays/LargeRecipeDisplay'
-import Navbar from '../components/Navbar/Navbar'
-import PlainText from '../components/Text/PlainText'
+import ScrollViewWrapper from '../components/Wrappers/ScollViewWrapper'
+import AddRecipeButton from '../components/Buttons/AddRecipeButton'
 import HeaderWrapper from '../components/Wrappers/HeaderWrapper'
 import PageWrapper from '../components/Wrappers/PageWrapper'
-import ScrollViewWrapper from '../components/Wrappers/ScollViewWrapper'
 import recipeService from '../services/recipeService'
+import PlainText from '../components/Text/PlainText'
+import { useNavigate } from 'react-router-native'
+import Navbar from '../components/Navbar/Navbar'
+import React from 'react-native'
 import theme from '../theme'
 
 const FeedPage = () => {
@@ -27,6 +27,7 @@ const FeedPage = () => {
         <PlainText
           color={theme.colors.darkExtra}
           fontSize={theme.fontSizes.large}
+          fontFamily={theme.fonts.title}
         >
           Feed
         </PlainText>

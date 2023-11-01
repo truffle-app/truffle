@@ -20,11 +20,12 @@ const theme = {
     small: '17px'
   },
   fonts: {
-    main: 'Arial'
+    main: 'Noto Sans',
+    title: 'Noto Sans Bold'
   },
   fontWeights: {
-    normal: '400',
-    bold: '700'
+    normal: 'normal',
+    bold: 'bold'
   }
 }
 

@@ -1,13 +1,13 @@
-import styled from '@emotion/native'
-import { AntDesign } from '@expo/vector-icons'
-import React from 'react'
-import { Pressable } from 'react-native'
 import { useNavigate } from 'react-router-native'
+import { AntDesign } from '@expo/vector-icons'
+import { Pressable } from 'react-native'
+import styled from '@emotion/native'
 import theme from '../../theme'
+import React from 'react'
 
 const FabContainer = styled(Pressable)`
   position: absolute;
-  bottom: 105px;
+  bottom: 75px;
   right: 20px;
 `
 
