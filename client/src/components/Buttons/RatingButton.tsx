@@ -1,9 +1,9 @@
-import styled from '@emotion/native'
 import { Octicons } from '@expo/vector-icons'
-import React from 'react'
-import { Pressable } from 'react-native'
-import theme from '../../theme'
 import PlainText from '../Text/PlainText'
+import { Pressable } from 'react-native'
+import styled from '@emotion/native'
+import theme from '../../theme'
+import React from 'react'
 
 const RatingContainer = styled.View`
   display: flex;
@@ -19,22 +19,22 @@ const RatingText = styled(PlainText)`
 `
 
 const RatingButton = ({ rating, pressable, onPress }) => {
-    const ratingContent = (
-        <>
-            <Octicons name='star-fill' size={22} color={theme.colors.primary} />
-            <RatingText>{rating}</RatingText>
-        </>
-    )
+  const ratingContent = (
+    <>
+      <Octicons name="star-fill" size={22} color={theme.colors.primary} />
+      <RatingText>{rating}</RatingText>
+    </>
+  )
 
-    if (pressable) {
-        return (
-            <Pressable onPress={onPress}>
-            <RatingContainer>{ratingContent}</RatingContainer>
-          </Pressable>
-        )
-    } else {
-        return <RatingContainer>{ratingContent}</RatingContainer>
-    }
+  if (pressable) {
+    return (
+      <Pressable onPress={onPress}>
+        <RatingContainer>{ratingContent}</RatingContainer>
+      </Pressable>
+    )
+  } else {
+    return <RatingContainer>{ratingContent}</RatingContainer>
+  }
 }
 
 export default RatingButton

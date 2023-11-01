@@ -1,9 +1,9 @@
+import ProfileButton from '../Buttons/ProfileButton'
+import RatingButton from '../Buttons/RatingButton'
 import PlainText from '../Text/PlainText'
 import styled from '@emotion/native'
 import React from 'react-native'
 import theme from '../../theme'
-import ProfileButton from '../Buttons/ProfileButton'
-import RatingButton from '../Buttons/RatingButton'
 
 const LargeRecipeContainer = styled.Pressable`
   display: flex;
@@ -30,7 +30,6 @@ const InfoContainer = styled.View`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  margin-top: 5px;
 `
 
 const LargeRecipeDisplay = ({
@@ -48,7 +47,12 @@ const LargeRecipeDisplay = ({
     >
       <LargeRecipeImage source={{ uri: recipe.imageUrl }} />
       <LargeRecipeInfoContainer>
-        <PlainText color={theme.colors.darkExtra}>{recipe.title}</PlainText>
+        <PlainText
+          color={theme.colors.darkExtra}
+          fontFamily={theme.fonts.title}
+        >
+          {recipe.title}
+        </PlainText>
         <InfoContainer>
           <RatingButton rating={recipe.rating} />
           <ProfileButton profile={recipe.profile} />

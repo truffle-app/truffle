@@ -4,4 +4,5 @@ interface RecipeObject {
   title: string
   rating: number
   profile: string
+  description: string
 }

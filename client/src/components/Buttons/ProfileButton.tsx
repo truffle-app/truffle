@@ -1,15 +1,14 @@
-import styled from '@emotion/native'
 import { Ionicons } from '@expo/vector-icons'
-import React from 'react'
-import { Pressable } from 'react-native'
-import theme from '../../theme'
 import PlainText from '../Text/PlainText'
+import { Pressable } from 'react-native'
+import styled from '@emotion/native'
+import theme from '../../theme'
+import React from 'react'
 
 const ProfileContainer = styled.View`
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-left: 10px;
 `
 
 const ProfileText = styled(PlainText)`
@@ -20,22 +19,22 @@ const ProfileText = styled(PlainText)`
 `
 
 const ProfileButton = ({ profile, pressable, onPress }) => {
-    const profileContent = (
-        <>
-            <Ionicons name='person' size={18} color={theme.colors.darkExtra} />
-            <ProfileText>{profile}</ProfileText>
-        </>
-    )
+  const profileContent = (
+    <>
+      <Ionicons name="person" size={18} color={theme.colors.darkExtra} />
+      <ProfileText>{profile}</ProfileText>
+    </>
+  )
 
-    if (pressable) {
-        return (
-            <Pressable onPress={onPress}>
-            <ProfileContainer>{profileContent}</ProfileContainer>
-          </Pressable>
-        )
-    } else {
-        return <ProfileContainer>{profileContent}</ProfileContainer>
-    }
+  if (pressable) {
+    return (
+      <Pressable onPress={onPress}>
+        <ProfileContainer>{profileContent}</ProfileContainer>
+      </Pressable>
+    )
+  } else {
+    return <ProfileContainer>{profileContent}</ProfileContainer>
+  }
 }
 
 export default ProfileButton

@@ -12,7 +12,8 @@ type TextProps = {
 
 const Text = styled.Text`
   display: flex;
-  text-align: center;
+  text-align: left;
+  margin-right: 10px;
   color: ${(props: TextProps) =>
     props.color ? props.color : theme.colors.dark};
   font-family: ${(props: TextProps) =>

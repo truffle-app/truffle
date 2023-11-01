@@ -1,5 +1,7 @@
 import ScrollViewWrapper from '../components/Wrappers/ScollViewWrapper'
 import HeaderWrapper from '../components/Wrappers/HeaderWrapper'
+import ProfileButton from '../components/Buttons/ProfileButton'
+import RatingButton from '../components/Buttons/RatingButton'
 import PageWrapper from '../components/Wrappers/PageWrapper'
 import { useNavigate, useParams } from 'react-router-native'
 import BackButton from '../components/Buttons/BackButton'
@@ -9,8 +11,6 @@ import Navbar from '../components/Navbar/Navbar'
 import { useEffect, useState } from 'react'
 import styled from '@emotion/native'
 import React from 'react-native'
-import ProfileButton from '../components/Buttons/ProfileButton'
-import RatingButton from '../components/Buttons/RatingButton'
 import theme from '../theme'
 
 const RecipePageImage = styled.Image`
@@ -25,7 +25,7 @@ const LargeRecipeInfoContainer = styled.View`
   margin: 1%;
   align-items: flex-start;
   justify-content: flex-start;
-  margin-left: 15px;
+  margin-left: 10px;
 `
 
 const InfoContainer = styled.View`
@@ -55,18 +55,28 @@ const RecipePage = () => {
         <ScrollViewWrapper>
           <RecipePageImage source={{ uri: recipe?.imageUrl }} />
           <LargeRecipeInfoContainer>
-            <PlainText color={theme.colors.darkExtra}>{recipe?.title}</PlainText>
+            <PlainText
+              color={theme.colors.darkExtra}
+              fontFamily={theme.fonts.title}
+            >
+              {recipe?.title}
+            </PlainText>
+            <PlainText color={theme.colors.darkExtra} fontSize="16px">
+              {recipe?.description}
+            </PlainText>
             <InfoContainer>
               <RatingButton
                 rating={recipe?.rating}
                 pressable={true}
-                onPress={() => {console.log('RatingButton pressed!')
+                onPress={() => {
+                  console.log('RatingButton pressed!')
                 }}
               />
               <ProfileButton
                 profile={recipe?.profile}
                 pressable={true}
-                onPress={() => {console.log('ProfileButton pressed!')
+                onPress={() => {
+                  console.log('ProfileButton pressed!')
                 }}
               />
             </InfoContainer>
