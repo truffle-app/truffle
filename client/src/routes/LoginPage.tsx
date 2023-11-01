@@ -1,11 +1,11 @@
-import SubmitButton from '../components/Buttons/SubmitButton'
-import TextInput from '../components/Text/TextInput'
-import PlainText from '../components/Text/PlainText'
-import { useNavigate } from 'react-router-native'
-import { useTranslation } from 'react-i18next'
 import styled, { css } from '@emotion/native'
-import React, { View } from 'react-native'
 import { useState } from 'react'
+import { useTranslation } from 'react-i18next'
+import React from 'react-native'
+import { useNavigate } from 'react-router-native'
+import SubmitButton from '../components/Buttons/SubmitButton'
+import PlainText from '../components/Text/PlainText'
+import TextInput from '../components/Text/TextInput'
 import theme from '../theme'
 
 const Background = styled.View`

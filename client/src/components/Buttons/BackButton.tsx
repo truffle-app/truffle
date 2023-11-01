@@ -1,5 +1,5 @@
 import { useLocation, useNavigate } from 'react-router-native'
-import { AntDesign } from '@expo/vector-icons'
+import { Ionicons } from '@expo/vector-icons'
 import styled from '@emotion/native'
 import React from 'react-native'
 import theme from '../../theme'
@@ -18,7 +18,7 @@ const BackButton = () => {
 
   return (
     <StyledBackButton onPress={navigateBack}>
-      <AntDesign name="left" size={25} color={theme.colors.darkExtra} />
+      <Ionicons name="chevron-back" size={25} color={theme.colors.darkExtra} />
     </StyledBackButton>
   )
 }

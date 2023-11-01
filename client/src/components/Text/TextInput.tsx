@@ -1,4 +1,4 @@
-import styled, { css } from '@emotion/native'
+import styled from '@emotion/native'
 import React from 'react-native'
 import theme from '../../theme'
 

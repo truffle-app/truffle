@@ -1,14 +1,14 @@
-import ScrollViewWrapper from '../components/Wrappers/ScollViewWrapper'
-import HeaderWrapper from '../components/Wrappers/HeaderWrapper'
-import PageWrapper from '../components/Wrappers/PageWrapper'
+import styled from '@emotion/native'
+import { useEffect, useState } from 'react'
+import React from 'react-native'
 import { useNavigate, useParams } from 'react-router-native'
 import BackButton from '../components/Buttons/BackButton'
-import recipeService from '../services/recipeService'
-import PlainText from '../components/Text/PlainText'
 import Navbar from '../components/Navbar/Navbar'
-import { useEffect, useState } from 'react'
-import styled from '@emotion/native'
-import React from 'react-native'
+import PlainText from '../components/Text/PlainText'
+import HeaderWrapper from '../components/Wrappers/HeaderWrapper'
+import PageWrapper from '../components/Wrappers/PageWrapper'
+import ScrollViewWrapper from '../components/Wrappers/ScollViewWrapper'
+import recipeService from '../services/recipeService'
 
 const RecipePageImage = styled.Image`
   width: 98%;

@@ -1,14 +1,15 @@
-import { useLocation, NavigateFunction } from 'react-router-native'
-import PlainText from '../Text/PlainText'
 import styled from '@emotion/native'
-import NavbarTab from './NavbarTab'
+import { Ionicons } from '@expo/vector-icons'
 import React from 'react-native'
+import { NavigateFunction, useLocation } from 'react-router-native'
 import theme from '../../theme'
+import PlainText from '../Text/PlainText'
+import NavbarTab from './NavbarTab'
 
-const NavbarContainer = styled.View`
+const NavbarContainer = styled.SafeAreaView`
   display: flex;
   flex-direction: row;
-  height: 90px;
+  height: max-content;
   background-color: ${theme.colors.primaryLight};
 `
 
@@ -38,13 +39,17 @@ const Navbar = ({ navigateTo }: { navigateTo: NavigateFunction }) => {
         onPressFunction={() => navigateToLocation(tabLocations[1])}
         isActive={currentPath === tabLocations[1]}
       >
-        <PlainText color={theme.colors.darkExtra}>Discover</PlainText>
+        <Ionicons name="search" size={35} color={theme.colors.darkExtra} />
       </NavbarTab>
       <NavbarTab
         onPressFunction={() => navigateToLocation(tabLocations[2])}
         isActive={currentPath === tabLocations[2]}
       >
-        <PlainText color={theme.colors.darkExtra}>Profile</PlainText>
+        <Ionicons
+          name="person-circle-outline"
+          size={40}
+          color={theme.colors.darkExtra}
+        />
       </NavbarTab>
     </NavbarContainer>
   )

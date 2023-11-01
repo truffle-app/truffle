@@ -1,11 +1,10 @@
-import { PropsWithChildren } from 'react'
 import styled from '@emotion/native'
+import { PropsWithChildren } from 'react'
 import React from 'react-native'
-import theme from '../../theme'
 
 const PageLayout = styled.View`
   display: flex;
-  display-direction: column;
+  flex-direction: column;
   width: 100%;
   height: 100%;
 `

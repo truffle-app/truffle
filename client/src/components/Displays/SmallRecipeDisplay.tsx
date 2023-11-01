@@ -1,4 +1,4 @@
-import React, { View, Image, Text } from 'react-native'
+import React, { Image, Text, View } from 'react-native'
 
 const SmallRecipeDisplay = ({ recipe }: { recipe: any }) => {
   return (

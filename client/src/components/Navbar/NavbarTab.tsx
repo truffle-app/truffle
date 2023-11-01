@@ -1,4 +1,3 @@
-import PlainText from '../Text/PlainText'
 import styled from '@emotion/native'
 import { ReactNode } from 'react'
 import React from 'react-native'
@@ -12,7 +11,8 @@ const StyledNavbar = styled.Pressable`
   flex-grow: 1;
   align-items: center;
   justify-content: center;
-  padding-bottom: 30px;
+  padding-top: 3px;
+  padding-bottom: 8px;
   border-top-width: 5px;
   border-top-color: ${(props: NavbarProps) =>
     props.isActive ? theme.colors.highlight : theme.colors.primaryLight};

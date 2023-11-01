@@ -8,6 +8,9 @@
       "column": 80
     }
   ],
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": true
+  },
   "[html]": {
     "editor.tabSize": 2
   },
