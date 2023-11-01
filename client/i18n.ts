@@ -3,7 +3,7 @@ import en from './locales/en/translation.json'
 import Backend from 'i18next-http-backend'
 import i18n from 'i18next'
 
-await i18n
+i18n
   .use(Backend)
   .use(initReactI18next)
   .init({
