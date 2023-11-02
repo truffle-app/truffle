@@ -5,21 +5,18 @@ import PageWrapper from '../components/Wrappers/PageWrapper'
 import PlainText from '../components/Text/PlainText'
 import { useNavigate } from 'react-router-native'
 import Navbar from '../components/Navbar/Navbar'
+import { useTranslation } from 'react-i18next'
+import Title from '../components/Text/Title'
 import React from 'react-native'
-import theme from '../theme'
 
 const ProfilePage = () => {
   const navigate = useNavigate()
+  const { t } = useTranslation()
 
   return (
     <PageWrapper>
       <HeaderWrapper>
-        <PlainText
-          color={theme.colors.darkExtra}
-          fontSize={theme.fontSizes.large}
-        >
-          Profile
-        </PlainText>
+        <Title>{t('profile')}</Title>
       </HeaderWrapper>
       <ScrollViewWrapper>
         <PlainText>

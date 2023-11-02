@@ -4,14 +4,15 @@ import AddRecipeButton from '../components/Buttons/AddRecipeButton'
 import HeaderWrapper from '../components/Wrappers/HeaderWrapper'
 import PageWrapper from '../components/Wrappers/PageWrapper'
 import recipeService from '../services/recipeService'
-import PlainText from '../components/Text/PlainText'
 import { useNavigate } from 'react-router-native'
 import Navbar from '../components/Navbar/Navbar'
+import { useTranslation } from 'react-i18next'
+import Title from '../components/Text/Title'
 import React from 'react-native'
-import theme from '../theme'
 
 const FeedPage = () => {
   const navigate = useNavigate()
+  const { t } = useTranslation()
 
   const handlePressFeedPost = (id: number) => {
     navigate(`/recipe/${id}`, {
@@ -24,13 +25,7 @@ const FeedPage = () => {
   return (
     <PageWrapper>
       <HeaderWrapper>
-        <PlainText
-          color={theme.colors.darkExtra}
-          fontSize={theme.fontSizes.large}
-          fontFamily={theme.fonts.title}
-        >
-          Feed
-        </PlainText>
+        <Title>{t('feed')}</Title>
       </HeaderWrapper>
       <ScrollViewWrapper>
         {recipeService.getRecipes().map((recipe, index) => (

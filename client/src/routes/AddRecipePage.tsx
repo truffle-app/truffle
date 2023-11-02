@@ -5,22 +5,19 @@ import BackButton from '../components/Buttons/BackButton'
 import PlainText from '../components/Text/PlainText'
 import { useNavigate } from 'react-router-native'
 import Navbar from '../components/Navbar/Navbar'
+import { useTranslation } from 'react-i18next'
+import Title from '../components/Text/Title'
 import React from 'react-native'
-import theme from '../theme'
 
 const AddRecipePage = () => {
   const navigate = useNavigate()
+  const { t } = useTranslation()
 
   return (
     <PageWrapper>
       <HeaderWrapper>
         <BackButton />
-        <PlainText
-          color={theme.colors.darkExtra}
-          fontSize={theme.fontSizes.large}
-        >
-          Add recipe
-        </PlainText>
+        <Title>{t('add-recipe')}</Title>
       </HeaderWrapper>
       <ScrollViewWrapper>
         <PlainText>Add recipe form here as separate component</PlainText>

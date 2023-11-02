@@ -35,10 +35,10 @@ const LoginItemContainer = styled.View`
 `
 
 const LoginPage = () => {
-  const navigate = useNavigate()
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
 
+  const navigate = useNavigate()
   const { t } = useTranslation()
 
   // Add a hook here to check if user is already authenticated, if so, navigate straight to app
