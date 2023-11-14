@@ -9,6 +9,17 @@ const FabContainer = styled(Pressable)`
   position: absolute;
   bottom: 75px;
   right: 20px;
+  align-items: center;
+  justify-content: center;
+`
+
+const StyledIconBackground = styled.View`
+  background-color: white;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  z-index: -1;
 `
 
 const AddRecipeButton = ({ previousLocation }: { previousLocation: any }) => {
@@ -24,6 +35,7 @@ const AddRecipeButton = ({ previousLocation }: { previousLocation: any }) => {
 
   return (
     <FabContainer onPress={addRecipePressed}>
+      <StyledIconBackground></StyledIconBackground>
       <AntDesign name="pluscircle" size={60} color={theme.colors.highlight} />
     </FabContainer>
   )
