@@ -43,7 +43,7 @@ const AddRecipePage = () => {
     console.log(`Submitted a recipe.`)
     console.log(values)
     // Send form content to server here
-    navigate('/Feed')
+    navigate('/feed')
   }
 
   return (
@@ -54,6 +54,7 @@ const AddRecipePage = () => {
         // Handle form submission logic here
         console.log(values)
       }}
+      validationSchema={validationSchema}
     >
       {({ values, handleChange, handleSubmit }) =>
         (page === 0 && (
