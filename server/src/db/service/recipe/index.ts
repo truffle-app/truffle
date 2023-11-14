@@ -1,4 +1,3 @@
-import { execPath } from 'process'
 import sql from '../../../db'
 
 const getRecipes = async () => {
