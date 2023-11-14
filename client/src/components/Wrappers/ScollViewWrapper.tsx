@@ -10,7 +10,14 @@ const ScrollviewSection = styled.ScrollView`
 `
 
 const ScrollViewWrapper = (props: PropsWithChildren) => {
-  return <ScrollviewSection>{props.children}</ScrollviewSection>
+  return (
+    <ScrollviewSection
+      showsVerticalScrollIndicator={false}
+      showsHorizontalScrollIndicator={false}
+    >
+      {props.children}
+    </ScrollviewSection>
+  )
 }
 
 export default ScrollViewWrapper
