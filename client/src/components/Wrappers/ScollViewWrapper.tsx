@@ -7,6 +7,8 @@ const ScrollviewSection = styled.ScrollView`
   height: 200px;
   justify-items: center;
   background-color: ${theme.colors.neutralLight};
+  keyboardShouldPersistTaps: 'handled',
+  ContentContainerStyle: { paddingBottom: 100 },
 `
 
 const ScrollViewWrapper = (props: PropsWithChildren) => {

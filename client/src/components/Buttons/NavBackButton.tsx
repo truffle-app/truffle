@@ -4,10 +4,11 @@ import React from 'react-native'
 
 const NavBackButton = () => {
   const navigate = useNavigate()
-  const location = useLocation()
+  //const location = useLocation()
 
   const navigateBack = () => {
-    navigate(location.state?.previousLocation)
+    //navigate(location.state?.previousLocation)
+    navigate(-1)
   }
 
   return <BackButton onPress={navigateBack}></BackButton>
