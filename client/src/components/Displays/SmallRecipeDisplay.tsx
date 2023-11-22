@@ -1,13 +1,60 @@
-import React, { Image, Text, View } from 'react-native'
+import ProfileButton from '../Buttons/ProfileButton'
+import RatingButton from '../Buttons/RatingButton'
+import PlainText from '../Text/PlainText'
+import styled from '@emotion/native'
+import React from 'react-native'
+import theme from '../../theme'
 
-const SmallRecipeDisplay = ({ recipe }: { recipe: any }) => {
+const SmallRecipeContainer = styled.Pressable`
+  flex-direction: row;
+  margin: 5px;
+  padding: 2px;
+  align-items: center;
+`
+
+const SmallRecipeImage = styled.Image`
+  width: 80px;
+  height: 80px;
+  border-radius: 5px;
+`
+
+const SmallRecipeInfoContainer = styled.View`
+  flex: 1;
+  margin-left: 10px;
+  align-items: flex-start;
+  justify-content: center;
+`
+
+const InfoContainer = styled.View`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 2px;
+`
+
+const SmallRecipeDisplay = ({
+  recipe,
+  onPress
+}: {
+  recipe: RecipeObject
+  onPress: (id: number) => void
+}) => {
   return (
-    <View key={recipe.id}>
-      <Image source={{ uri: recipe.imageUrl }} />
-      <View>
-        <Text>{recipe.title}</Text>
-      </View>
-    </View>
+    <SmallRecipeContainer onPress={() => onPress(recipe.id)}>
+      <SmallRecipeImage source={{ uri: recipe.imageUrl }} />
+      <SmallRecipeInfoContainer>
+        <PlainText
+          color={theme.colors.darkExtra}
+          fontFamily={theme.fonts.title}
+        >
+          {recipe.title}
+        </PlainText>
+        <InfoContainer style={{ marginBottom: 12 }}>
+          <RatingButton rating={recipe.rating} />
+          <ProfileButton profile={recipe.profile} />
+        </InfoContainer>
+      </SmallRecipeInfoContainer>
+    </SmallRecipeContainer>
   )
 }
 
