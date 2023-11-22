@@ -1,4 +1,4 @@
-import { View, KeyboardAvoidingView, Keyboard, Platform } from 'react-native'
+import { KeyboardAvoidingView, Keyboard, Platform } from 'react-native'
 import SmallRecipeDisplay from '../components/Displays/SmallRecipeDisplay'
 import ScrollViewWrapper from '../components/Wrappers/ScollViewWrapper'
 import HeaderWrapper from '../components/Wrappers/HeaderWrapper'
@@ -10,11 +10,20 @@ import { useNavigate } from 'react-router-native'
 import Navbar from '../components/Navbar/Navbar'
 import { useTranslation } from 'react-i18next'
 import Title from '../components/Text/Title'
+import styled from '@emotion/native'
+
+const StyledSearchContainer = styled.View`
+  padding-horizontal: 10px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: ${({ keyboardVisible }) => (keyboardVisible ? '10px' : '5px')};
+`
 
 const DiscoverPage = () => {
   const navigate = useNavigate()
   const { t } = useTranslation()
-  const [searchQuery, setSearchQuery] = React.useState('')
+  const [searchQuery, setSearchQuery] = useState('')
   const [keyboardVisible, setKeyboardVisible] = useState(false)
 
   useEffect(() => {
@@ -67,21 +76,13 @@ const DiscoverPage = () => {
             />
           ))}
         </ScrollViewWrapper>
-        <View
-          style={{
-            paddingHorizontal: 10,
-            position: 'absolute',
-            left: 0,
-            right: 0,
-            bottom: keyboardVisible ? 10 : 5
-          }}
-        >
+        <StyledSearchContainer keyboardVisible={keyboardVisible}>
           <TextInput
             placeholder="Search recipes, profiles or tags"
             value={searchQuery}
             onChangeText={handleSearchChange}
           />
-        </View>
+        </StyledSearchContainer>
       </KeyboardAvoidingView>
       <Navbar navigateTo={navigate}></Navbar>
     </PageWrapper>
