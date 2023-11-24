@@ -19,6 +19,8 @@ const FeedPage = () => {
   useEffect(() => {
     const fetchRecipes = async () => {
       const fetchedRecipes = await recipeService.getRecipes()
+      console.log('Fetched recipes:')
+      console.log(fetchedRecipes)
       setRecipes(fetchedRecipes)
     }
 

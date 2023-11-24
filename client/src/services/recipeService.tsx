@@ -1,9 +1,10 @@
 import axios from 'axios'
 
-const baseUrl = 'http://localhost:3001/api/recipes'
+const baseUrl = 'http://192.168.0.103:3001/api/recipes'
 
 const getRecipes = async () => {
   try {
+    console.log('getting recipes...')
     const res = await axios.get(baseUrl)
     console.log(res.data)
     return res.data

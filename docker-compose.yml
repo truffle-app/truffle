@@ -46,6 +46,7 @@ services:
         - NODE_ENV=development
     environment:
       - NODE_ENV=development
+      - EDITOR=nano
     tty: true
     ports:
       - "19006:19006"
