@@ -4,6 +4,7 @@ import PostFormFields from '../components/Forms/AddRecipeForm/PostFormFields'
 import NavBackButton from '../components/Buttons/NavBackButton'
 import SubmitButton from '../components/Buttons/SubmitButton'
 import BackButton from '../components/Buttons/BackButton'
+import recipeService from '../services/recipeService'
 import { useNavigate } from 'react-router-native'
 import { useTranslation } from 'react-i18next'
 import Title from '../components/Text/Title'
@@ -21,12 +22,12 @@ export interface FormValues {
 }
 
 const initialValues = {
-  name: '',
+  title: '',
   description: '',
   tags: '',
   activeTab: 'Ingredients',
   ingredients: [{ quantity: '', unit: '', ingredient: '' }],
-  methods: [{ method: '' }],
+  methods: [''],
   post_text: ''
 }
 
@@ -39,10 +40,10 @@ const AddRecipePage = () => {
   const navigate = useNavigate()
   const { t } = useTranslation()
 
-  const onSubmit = (values: any) => {
+  const onSubmit = async (values: any) => {
     console.log(`Submitted a recipe.`)
     console.log(values)
-    // Send form content to server here
+    const res = await recipeService.addRecipe(values)
     navigate('/feed')
   }
 

@@ -21,6 +21,7 @@ const StyledSearchContainer = styled.View`
 `
 
 const DiscoverPage = () => {
+  const [recipes, setRecipes] = useState<RecipeObject[]>()
   const navigate = useNavigate()
   const { t } = useTranslation()
   const [searchQuery, setSearchQuery] = useState('')
@@ -54,6 +55,15 @@ const DiscoverPage = () => {
     navigate(`/recipe/${id}`)
   }
 
+  useEffect(() => {
+    const fetchRecipes = async () => {
+      const fetchedRecipes = await recipeService.getRecipes()
+      setRecipes(fetchedRecipes)
+    }
+
+    fetchRecipes()
+  }, [])
+
   return (
     <PageWrapper>
       <HeaderWrapper>
@@ -63,8 +73,8 @@ const DiscoverPage = () => {
         behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
         style={{ flex: 1 }}
       >
-        <ScrollViewWrapper>
-          {recipeService.getRecipes().map((recipe, index) => (
+      <ScrollViewWrapper>
+          {recipes?.map((recipe, index) => (
             <SmallRecipeDisplay
               key={index}
               recipe={recipe}
