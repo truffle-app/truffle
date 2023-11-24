@@ -10,7 +10,7 @@ const StyledImageInput = styled.Pressable`
 `
 
 const ImageInput = ({ ...props }) => {
-  const [image, setImage] = useState<string | undefined>(undefined)
+  const [image, setImage] = useState<ImagePicker.ImagePickerSuccessResult | null>(null)
 
   const handlePress = async () => {
     let result = await ImagePicker.launchImageLibraryAsync({
@@ -21,7 +21,8 @@ const ImageInput = ({ ...props }) => {
     })
 
     if (!result.canceled) {
-      setImage(result.assets[0].uri)
+      console.log(result)
+      setImage(result)
     }
   }
 
@@ -35,7 +36,7 @@ const ImageInput = ({ ...props }) => {
         />
       )}
       {image && (
-        <Image source={{ uri: image }} style={{ width: 200, height: 200 }} />
+        <Image source={{ uri: image.assets[0].uri }} style={{ width: 200, height: 200 }} />
       )}
     </StyledImageInput>
   )

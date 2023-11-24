@@ -1,7 +1,7 @@
 interface RecipeObject {
   id: number
-  imageUrl: string
-  title: string
+  imageurl: string
+  name: string
   rating: number
   profile: string
   description: string

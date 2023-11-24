@@ -30,4 +30,4 @@ WORKDIR /opt/client/app
 # for development, we bind mount volumes; comment out for production
 COPY . .
 
-ENTRYPOINT ["npm", "start"]
+ENTRYPOINT ["npm", "run", "web"]

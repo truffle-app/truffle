@@ -9,12 +9,14 @@ CREATE TABLE truffle_user (
 
 CREATE TABLE recipe (
   id SERIAL PRIMARY KEY,
-  title TEXT NOT NULL,
+  name TEXT NOT NULL,
   description TEXT,
   diet DIET NOT NULL,
   creator SERIAL REFERENCES truffle_user(id),
   ingredients TEXT[][3],
-  methods TEXT[]
+  methods TEXT[],
+  rating DECIMAL,
+  imageurl TEXT
 );
 
 INSERT INTO truffle_user (email, hashed_password, username)

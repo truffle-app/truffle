@@ -45,13 +45,13 @@ const LargeRecipeDisplay = ({
         onPress(recipe.id)
       }}
     >
-      <LargeRecipeImage source={{ uri: recipe.imageUrl }} />
+      <LargeRecipeImage source={{ uri: recipe.imageurl }} />
       <LargeRecipeInfoContainer>
         <PlainText
           color={theme.colors.darkExtra}
           fontFamily={theme.fonts.title}
         >
-          {recipe.title}
+          {recipe.name}
         </PlainText>
         <InfoContainer>
           <RatingButton rating={recipe.rating} />

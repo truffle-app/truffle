@@ -125,6 +125,7 @@ const MethodSection = ({
 }
 
 const RecipeFormFields = ({ values, handleChange }: any) => {
+  const [imageField, imageMeta, imageHelpers] = useField('image')
   const [nameField, nameMeta, nameHelpers] = useField('name')
   const [descriptionField, descriptionMeta, descriptionHelpers] =
     useField('description')

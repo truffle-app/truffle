@@ -1,10 +1,10 @@
 import axios from 'axios'
 
-const baseUrl = 'http://192.168.0.103:3001/api/recipes'
+// This is hardcoded atm. and needs to be changed to server's ipv4 address
+const baseUrl = 'http://172.23.0.1:3001/api/recipes'
 
 const getRecipes = async () => {
   try {
-    console.log('getting recipes...')
     const res = await axios.get(baseUrl)
     console.log(res.data)
     return res.data
@@ -16,7 +16,7 @@ const getRecipes = async () => {
 const getRecipe = async (id: number) => {
   try {
     const res = await axios.get(baseUrl + `/${id}`)
-    return res.data
+    return res.data[0]
   } catch (error) {
     console.error(error)
   }

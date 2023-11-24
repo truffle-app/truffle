@@ -1,10 +1,10 @@
-import Elysia from 'elysia'
 import recipeService from '../db/service/recipe'
 
 // GET /recipes
 const getRecipes = async({set}: {set: any}) => {
   try {
     const recipes = await recipeService.getRecipes()
+    console.log(recipes)
     set.status = 200
     return recipes
   } catch(error) {
@@ -24,20 +24,18 @@ const getRecipeByID = async({params, set}: {params: any, set: any}) => {
     set.status = 500
     return ''
   }
-
 }
 
-const postRecipe = async({request, set}: {request: any, set: any}) => {
+const postRecipe = async({request, set, body}: {request: any, set: any; body: any}) => {
   try {
-    console.log(request)
+    const newRecipe = await recipeService.addRecipe(body.recipe)
     set.status = 200
-    return ''
+    return newRecipe
   } catch (error) {
     console.log(error)
     set.status = 500
     return ''
   }
-  // const newRecipe = await recipeService.addRecipe(body.recipe)
 }
 
 

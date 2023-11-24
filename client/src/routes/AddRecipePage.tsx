@@ -22,13 +22,15 @@ export interface FormValues {
 }
 
 const initialValues = {
-  title: '',
+  name: '',
   description: '',
   tags: '',
   activeTab: 'Ingredients',
   ingredients: [{ quantity: '', unit: '', ingredient: '' }],
   methods: [''],
-  post_text: ''
+  post_text: '',
+  rating: 3,
+  imageUrl: 'https://img.ilcdn.fi/ggz4rnfnXvGUZIxsuSB61dJJf2M=/full-fit-in/920x0/img-s3.ilcdn.fi/66cd116ed50e1b40e6f2b7f7341f2da616c495c622dacb2746350268eaa797df.jpg'
 }
 
 const validationSchema = yup.object().shape({
@@ -41,8 +43,6 @@ const AddRecipePage = () => {
   const { t } = useTranslation()
 
   const onSubmit = async (values: any) => {
-    console.log(`Submitted a recipe.`)
-    console.log(values)
     const res = await recipeService.addRecipe(values)
     navigate('/feed')
   }
@@ -52,8 +52,6 @@ const AddRecipePage = () => {
       initialValues={initialValues}
       onSubmit={(values) => {
         onSubmit(values)
-        // Handle form submission logic here
-        console.log(values)
       }}
       validationSchema={validationSchema}
     >
