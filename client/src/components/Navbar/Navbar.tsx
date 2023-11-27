@@ -9,7 +9,6 @@ const NavbarContainer = styled.SafeAreaView`
   display: flex;
   flex-direction: row;
   background-color: ${theme.colors.primaryLight};
-  padding-bottom: 30px;
 `
 
 const tabLocations = ['/feed', '/discover', '/profile']

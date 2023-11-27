@@ -2,7 +2,6 @@ import styled, { css } from '@emotion/native'
 import PlainText from '../Text/PlainText'
 import NavbarTab from './NavbarTab'
 import React from 'react-native'
-import { useState } from 'react'
 import theme from '../../theme'
 
 const SectionNavbarContainer = styled.View`
@@ -25,6 +24,7 @@ const SectionNavbar = ({
         <NavbarTab
           key={i}
           style={css`
+            margin-top: 10px;
             padding-top: 10px;
             padding-bottom: 20px;
           `}

@@ -7,7 +7,7 @@ import React from 'react'
 
 const FabContainer = styled(Pressable)`
   position: absolute;
-  bottom: 100px;
+  bottom: 80px;
   right: 20px;
   align-items: center;
   justify-content: center;

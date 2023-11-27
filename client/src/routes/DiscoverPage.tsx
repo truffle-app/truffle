@@ -1,6 +1,6 @@
-import { KeyboardAvoidingView, Keyboard, Platform } from 'react-native'
 import SmallRecipeDisplay from '../components/Displays/SmallRecipeDisplay'
 import ScrollViewWrapper from '../components/Wrappers/ScollViewWrapper'
+import { KeyboardAvoidingView, Keyboard, Platform } from 'react-native'
 import HeaderWrapper from '../components/Wrappers/HeaderWrapper'
 import PageWrapper from '../components/Wrappers/PageWrapper'
 import TextInput from '../components/Input/TextInput'

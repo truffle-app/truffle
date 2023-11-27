@@ -3,6 +3,7 @@ import GreyAddButton from '../../Buttons/GreyAddButton'
 import SectionNavbar from '../../Navbar/SectionNavbar'
 import DeleteButton from '../../Buttons/DeleteButton'
 import ImageInput from '../../Input/ImageInput'
+import { useTranslation } from 'react-i18next'
 import TextInput from '../../Input/TextInput'
 import styled, { css } from '@emotion/native'
 import { FieldArray, useField } from 'formik'
@@ -81,7 +82,7 @@ const IncredientsSection = ({
   )
 }
 
-const MethodsSection = ({
+const MethodSection = ({
   values,
   handleChange
 }: {
@@ -90,7 +91,7 @@ const MethodsSection = ({
 }) => {
   return (
     <FieldArray
-      name="methods"
+      name="method"
       render={({ push, remove }) => (
         <>
           {values.methods.map((method: string, index: number) => (
@@ -124,14 +125,15 @@ const MethodsSection = ({
   )
 }
 
-const tabs = ['Ingredients', 'Methods']
-
 const RecipeFormFields = ({ values, handleChange }: any) => {
   const [nameField, nameMeta, nameHelpers] = useField('name')
   const [descriptionField, descriptionMeta, descriptionHelpers] =
     useField('description')
   const [tagField, tagMeta, tagHelpers] = useField('tags')
   const [activeTab, activeTabMeta, activeTabHelpers] = useField('activeTab')
+  const { t } = useTranslation()
+
+  const tabs = [t('ingredients'), t('method')]
 
   return (
     <ScrollViewWrapper>
@@ -141,7 +143,7 @@ const RecipeFormFields = ({ values, handleChange }: any) => {
           style={css`
             width: 80%;
           `}
-          placeholder="name of the recipe"
+          placeholder={t('recipe-name')}
           value={nameField.value.toString()}
           onChangeText={(text: string) => nameHelpers.setValue(text)}
         />
@@ -151,7 +153,7 @@ const RecipeFormFields = ({ values, handleChange }: any) => {
             height: 80px;
           `}
           multiline={true}
-          placeholder="description"
+          placeholder={t('description')}
           value={descriptionField.value.toString()}
           onChangeText={(text: string) => descriptionHelpers.setValue(text)}
         />
@@ -173,7 +175,7 @@ const RecipeFormFields = ({ values, handleChange }: any) => {
           <IncredientsSection values={values} handleChange={handleChange} />
         )}
         {activeTab.value === tabs[1] && (
-          <MethodsSection values={values} handleChange={handleChange} />
+          <MethodSection values={values} handleChange={handleChange} />
         )}
       </FormContainer>
     </ScrollViewWrapper>

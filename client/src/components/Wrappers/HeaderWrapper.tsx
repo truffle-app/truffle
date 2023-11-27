@@ -4,12 +4,13 @@ import styled from '@emotion/native'
 import React from 'react-native'
 import theme from '../../theme'
 
-const HeaderSection = styled(SafeAreaView)`
+export const HeaderSection = styled(SafeAreaView)`
   display: flex;
   flex-direction: row;
   align-items: center;
   padding-left: 25px;
   padding-top: 18px;
+  padding-bottom: 15px;
   background-color: ${theme.colors.primaryExtraLight};
   border-bottom-width: 1px;
   border-bottom-color: ${theme.colors.darkLight};
