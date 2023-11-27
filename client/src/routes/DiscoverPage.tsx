@@ -78,7 +78,7 @@ const DiscoverPage = () => {
         </ScrollViewWrapper>
         <StyledSearchContainer keyboardVisible={keyboardVisible}>
           <TextInput
-            placeholder="Search recipes, profiles or tags"
+            placeholder={t('search-placeholder')}
             value={searchQuery}
             onChangeText={handleSearchChange}
           />
