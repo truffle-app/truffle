@@ -3,10 +3,11 @@ import { useNavigate } from 'react-router-native'
 import React from 'react'
 
 interface RecipesProps {
-  recipes: RecipeObject[]
+  recipes: RecipeObject[];
+  previousLocation: string;
 }
 
-const Recipes = ({ recipes }: RecipesProps) => {
+const Recipes = ({ recipes, previousLocation }: RecipesProps) => {
   const navigate = useNavigate()
 
   const handlePressFeedPost = (id: number) => {
