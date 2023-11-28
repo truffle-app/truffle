@@ -4,7 +4,7 @@ import styled from '@emotion/native'
 import React from 'react-native'
 import theme from '../../theme'
 
-export const HeaderSection = styled(SafeAreaView)`
+const HeaderSection = styled(SafeAreaView)`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -16,8 +16,15 @@ export const HeaderSection = styled(SafeAreaView)`
   border-bottom-color: ${theme.colors.darkLight};
 `
 
-const HeaderWrapper = (props: PropsWithChildren) => {
+const SpacedHeaderSection = styled(HeaderSection)`
+  justify-content: space-between;
+  padding-right: 25px;
+`
+
+export const HeaderWrapper = (props: PropsWithChildren) => {
   return <HeaderSection>{props.children}</HeaderSection>
 }
 
-export default HeaderWrapper
+export const HeaderWrapperSpaceBetween = (props: PropsWithChildren) => {
+  return <SpacedHeaderSection>{props.children}</SpacedHeaderSection>
+}

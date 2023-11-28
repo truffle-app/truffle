@@ -1,5 +1,5 @@
-import HeaderWrapperSpaceBetween from '../components/Wrappers/HeaderWrapperSpaceBetween'
 import RecipeFormFields from '../components/Forms/AddRecipeForm/RecipeFormFields'
+import { HeaderWrapperSpaceBetween } from '../components/Wrappers/HeaderWrapper'
 import PostFormFields from '../components/Forms/AddRecipeForm/PostFormFields'
 import NavBackButton from '../components/Buttons/NavBackButton'
 import SubmitButton from '../components/Buttons/SubmitButton'
