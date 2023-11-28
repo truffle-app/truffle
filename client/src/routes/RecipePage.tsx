@@ -2,19 +2,19 @@ import ScrollViewWrapper from '../components/Wrappers/ScollViewWrapper'
 import { HeaderWrapper } from '../components/Wrappers/HeaderWrapper'
 import ProfileButton from '../components/Buttons/ProfileButton'
 import NavBackButton from '../components/Buttons/NavBackButton'
+import SectionNavbar from '../components/Navbar/SectionNavbar'
 import RatingButton from '../components/Buttons/RatingButton'
 import PageWrapper from '../components/Wrappers/PageWrapper'
 import { useNavigate, useParams } from 'react-router-native'
 import recipeService from '../services/recipeService'
 import PlainText from '../components/Text/PlainText'
 import Navbar from '../components/Navbar/Navbar'
+import { FontAwesome } from '@expo/vector-icons'
+import { useTranslation } from 'react-i18next'
 import { useEffect, useState } from 'react'
 import styled from '@emotion/native'
 import React from 'react-native'
 import theme from '../theme'
-import SectionNavbar from '../components/Navbar/SectionNavbar'
-import { useTranslation } from 'react-i18next'
-import { FontAwesome } from '@expo/vector-icons'
 
 const RecipePageImage = styled.Image`
   width: 98%;
@@ -60,21 +60,21 @@ const Quantity = styled.Text`
   flex: 1;
   text-align: center;
   color: ${theme.colors.darkExtra};
-  fontSize: ${theme.fontSizes.medium};
+  fontsize: ${theme.fontSizes.medium};
 `
 
 const Unit = styled.Text`
   flex: 1;
   text-align: center;
   color: ${theme.colors.darkExtra};
-  fontSize: ${theme.fontSizes.medium};
+  fontsize: ${theme.fontSizes.medium};
 `
 
 const IngredientName = styled.Text`
   flex: 3;
   text-align: left;
   color: ${theme.colors.darkExtra};
-  fontSize: ${theme.fontSizes.medium};
+  fontsize: ${theme.fontSizes.medium};
 `
 
 const MethodContainer = styled.Pressable`
@@ -102,8 +102,13 @@ const StepDescriptionCompleted = styled(StepDescription)`
   text-decoration-line: line-through;
 `
 
-const MethodStep = ({ stepNumber, description, onPress, completed }: MethodStepProps) => {
-  return(
+const MethodStep = ({
+  stepNumber,
+  description,
+  onPress,
+  completed
+}: MethodStepProps) => {
+  return (
     <MethodContainer onPress={onPress}>
       <StepLabel>{`Step ${stepNumber}: `}</StepLabel>
       {completed ? (
@@ -122,12 +127,12 @@ const RecipePage = () => {
   const [recipe, setRecipe] = useState<RecipeObject | undefined>(undefined)
   const [activeTab, setActiveTab] = useState<string>(t('ingredients'))
   const tabs = [t('ingredients'), t('method')]
-  const [isBookmarked, setIsBookmarked] = useState(false);
+  const [isBookmarked, setIsBookmarked] = useState(false)
   const [completedSteps, setCompletedSteps] = useState(new Set())
 
   const toggleBookmark = () => {
-    setIsBookmarked(!isBookmarked);
-  };
+    setIsBookmarked(!isBookmarked)
+  }
 
   const toggleStepCompletion = (index: number) => {
     setCompletedSteps((prevSteps) => {
@@ -165,7 +170,10 @@ const RecipePage = () => {
             >
               {recipe?.name}
             </PlainText>
-            <PlainText color={theme.colors.darkExtra} fontSize={theme.fontSizes.small}>
+            <PlainText
+              color={theme.colors.darkExtra}
+              fontSize={theme.fontSizes.small}
+            >
               {recipe?.description}
             </PlainText>
           </LargeRecipeInfoContainer>
@@ -198,7 +206,7 @@ const RecipePage = () => {
             activeTab={activeTab}
             setActiveTab={setActiveTab}
           />
-          {activeTab === tabs[0] &&
+          {activeTab === tabs[0] && (
             <TabContainer>
               {recipe.ingredients.map((ingredients, index) => (
                 <IngredientContainer key={index}>
@@ -206,22 +214,22 @@ const RecipePage = () => {
                   <Unit>{ingredients.unit}</Unit>
                   <IngredientName>{ingredients.name}</IngredientName>
                 </IngredientContainer>
-          ))}
+              ))}
             </TabContainer>
-          }
-          {activeTab === tabs[1] &&
+          )}
+          {activeTab === tabs[1] && (
             <TabContainer>
-            {recipe.method.map((method, index) => (
-              <MethodStep
-                key={index}
-                stepNumber={index + 1}
-                description={method.description}
-                onPress={() => toggleStepCompletion(index)}
-                completed= {completedSteps.has(index)}
+              {recipe.method.map((method, index) => (
+                <MethodStep
+                  key={index}
+                  stepNumber={index + 1}
+                  description={method.description}
+                  onPress={() => toggleStepCompletion(index)}
+                  completed={completedSteps.has(index)}
                 />
-            ))}
-          </TabContainer>
-          }
+              ))}
+            </TabContainer>
+          )}
         </ScrollViewWrapper>
         <Navbar navigateTo={navigate}></Navbar>
       </PageWrapper>

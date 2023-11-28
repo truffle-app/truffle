@@ -11,18 +11,21 @@ const sampleRecipes = [
     profile: 'Casper',
     description:
       'Todella hieno ja maukas nakkitalo, joka on alunperin arkkitehti Alvar Aallon suunnittelema! Voit nauttia ruuasta JA pitää hauskaa samaan aikaan!asdasdasdasdasd',
-      ingredients: [
-        { quantity: 1, unit: 'kg', name: 'nakkeja' },
-        { quantity: 5000, unit: 'g', name: 'ranskalaisia' },
-        { quantity: 200, unit: 'kpl', name: 'Ketsuppia' }
-      ],
-      method: [
-        { step: 1, description: 'Paista ranskalaiset uunissa ohjeen mukaan.' },
-        { step: 2, description: 'Grillaa nakit parilalla.' },
-        { step: 3, description: 'Kokoa nakkitalo haluamallasi tavalla.' },
-        { step: 4, description: 'Viimeistele ketsupilla, sinapilla ja majoneesilla.' }
-      ]
-    },
+    ingredients: [
+      { quantity: 1, unit: 'kg', name: 'nakkeja' },
+      { quantity: 5000, unit: 'g', name: 'ranskalaisia' },
+      { quantity: 200, unit: 'kpl', name: 'Ketsuppia' }
+    ],
+    method: [
+      { step: 1, description: 'Paista ranskalaiset uunissa ohjeen mukaan.' },
+      { step: 2, description: 'Grillaa nakit parilalla.' },
+      { step: 3, description: 'Kokoa nakkitalo haluamallasi tavalla.' },
+      {
+        step: 4,
+        description: 'Viimeistele ketsupilla, sinapilla ja majoneesilla.'
+      }
+    ]
+  },
   {
     id: 2,
     imageUrl: 'https://grillax.com/wp-content/uploads/2020/03/FatNasty2_0.png',
@@ -39,7 +42,10 @@ const sampleRecipes = [
       { step: 1, description: 'Paista ranskalaiset uunissa ohjeen mukaan.' },
       { step: 2, description: 'Grillaa nakit parilalla.' },
       { step: 3, description: 'Kokoa nakkitalo haluamallasi tavalla.' },
-      { step: 4, description: 'Viimeistele ketsupilla, sinapilla ja majoneesilla.' }
+      {
+        step: 4,
+        description: 'Viimeistele ketsupilla, sinapilla ja majoneesilla.'
+      }
     ]
   },
   {
@@ -62,7 +68,10 @@ const sampleRecipes = [
       { step: 1, description: 'Paista ranskalaiset uunissa ohjeen mukaan.' },
       { step: 2, description: 'Grillaa nakit parilalla.' },
       { step: 3, description: 'Kokoa nakkitalo haluamallasi tavalla.' },
-      { step: 4, description: 'Viimeistele ketsupilla, sinapilla ja majoneesilla.' }
+      {
+        step: 4,
+        description: 'Viimeistele ketsupilla, sinapilla ja majoneesilla.'
+      }
     ]
   },
   {
@@ -81,7 +90,10 @@ const sampleRecipes = [
       { step: 1, description: 'Paista ranskalaiset uunissa ohjeen mukaan.' },
       { step: 2, description: 'Grillaa nakit parilalla.' },
       { step: 3, description: 'Kokoa nakkitalo haluamallasi tavalla.' },
-      { step: 4, description: 'Viimeistele ketsupilla, sinapilla ja majoneesilla.' }
+      {
+        step: 4,
+        description: 'Viimeistele ketsupilla, sinapilla ja majoneesilla.'
+      }
     ]
   }
 ]
