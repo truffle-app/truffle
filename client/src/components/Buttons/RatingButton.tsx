@@ -18,7 +18,7 @@ const RatingText = styled(PlainText)`
   margin-left: 3px;
 `
 
-const RatingButton = ({ rating, pressable, onPress }) => {
+const RatingButton = ({ rating, pressable, onPress, style }: RatingButton) => {
   const ratingContent = (
     <>
       <Octicons name="star-fill" size={22} color={theme.colors.primary} />
@@ -29,11 +29,11 @@ const RatingButton = ({ rating, pressable, onPress }) => {
   if (pressable) {
     return (
       <Pressable onPress={onPress}>
-        <RatingContainer>{ratingContent}</RatingContainer>
+        <RatingContainer style={style}>{ratingContent}</RatingContainer>
       </Pressable>
     )
   } else {
-    return <RatingContainer>{ratingContent}</RatingContainer>
+    return <RatingContainer style={style}>{ratingContent}</RatingContainer>
   }
 }
 

@@ -18,7 +18,7 @@ const ProfileText = styled(PlainText)`
   margin-left: 2px;
 `
 
-const ProfileButton = ({ profile, pressable, onPress }) => {
+const ProfileButton = ({ profile, pressable, onPress }: ProfileButton) => {
   const profileContent = (
     <>
       <Ionicons name="person" size={18} color={theme.colors.darkExtra} />
