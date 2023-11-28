@@ -22,15 +22,11 @@ const StyledIconBackground = styled.View`
   z-index: -1;
 `
 
-const AddRecipeButton = ({ previousLocation }: { previousLocation: any }) => {
+const AddRecipeButton = () => {
   const navigate = useNavigate()
 
   const addRecipePressed = () => {
-    navigate('/recipe/add', {
-      state: {
-        previousLocation: previousLocation
-      }
-    })
+    navigate('/recipe/add')
   }
 
   return (

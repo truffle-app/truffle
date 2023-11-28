@@ -49,9 +49,9 @@ const ProfilePage = () => {
           activeTab={activeTab}
           setActiveTab={setActiveTab}
         />
-        {activeTab === tabs[0] && <Recipes recipes={recipes} previousLocation={'/profile'} />}
+        {activeTab === tabs[0] && <Recipes recipes={recipes} />}
       </ScrollViewWrapper>
-      <AddRecipeButton previousLocation={'/profile'}></AddRecipeButton>
+      <AddRecipeButton />
       <Navbar navigateTo={navigate}></Navbar>
     </PageWrapper>
   )

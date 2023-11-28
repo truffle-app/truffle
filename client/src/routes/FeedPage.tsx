@@ -15,11 +15,7 @@ const FeedPage = () => {
   const { t } = useTranslation()
 
   const handlePressFeedPost = (id: number) => {
-    navigate(`/recipe/${id}`, {
-      state: {
-        previousLocation: '/feed'
-      }
-    })
+    navigate(`/recipe/${id}`)
   }
 
   return (
@@ -36,7 +32,7 @@ const FeedPage = () => {
           />
         ))}
       </ScrollViewWrapper>
-      <AddRecipeButton previousLocation={'/feed'}></AddRecipeButton>
+      <AddRecipeButton />
       <Navbar navigateTo={navigate}></Navbar>
     </PageWrapper>
   )

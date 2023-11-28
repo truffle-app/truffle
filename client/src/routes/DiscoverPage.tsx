@@ -51,11 +51,7 @@ const DiscoverPage = () => {
   }
 
   const handlePressFeedPost = (id: number) => {
-    navigate(`/recipe/${id}`, {
-      state: {
-        previousLocation: '/feed'
-      }
-    })
+    navigate(`/recipe/${id}`)
   }
 
   return (
