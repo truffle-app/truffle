@@ -6,7 +6,7 @@ const AvatarImage = styled(Image)`
   height: 100%;
   width: 100%;
   margin: 0 auto;
-  resizemode: cover;
+  resizeMode: cover;
 `
 
 const CircularCrop = styled.View`
