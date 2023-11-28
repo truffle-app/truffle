@@ -91,7 +91,7 @@ const MethodSection = ({
 }) => {
   return (
     <FieldArray
-      name="method"
+      name="methods"
       render={({ push, remove }) => (
         <>
           {values.methods.map((method: string, index: number) => (
@@ -106,7 +106,7 @@ const MethodSection = ({
                   width: 74%;
                 `}
                 onSubmitEditing={() => {
-                  push({ method: '' })
+                  push('')
                 }}
                 autoFocus
               />
