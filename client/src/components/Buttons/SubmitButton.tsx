@@ -10,7 +10,7 @@ const StyledSubmitButton = styled.Pressable`
   border-width: 2px;
   border-radius: 5px;
   text-align: center;
-  padding: 0px 5px 3px 15px;
+  padding: 0px 5px 3px 5px;
 `
 
 const SubmitButton = ({

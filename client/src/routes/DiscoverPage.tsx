@@ -51,11 +51,7 @@ const DiscoverPage = () => {
   }
 
   const handlePressFeedPost = (id: number) => {
-    navigate(`/recipe/${id}`, {
-      state: {
-        previousLocation: '/feed'
-      }
-    })
+    navigate(`/recipe/${id}`)
   }
 
   return (
@@ -78,7 +74,7 @@ const DiscoverPage = () => {
         </ScrollViewWrapper>
         <StyledSearchContainer keyboardVisible={keyboardVisible}>
           <TextInput
-            placeholder="Search recipes, profiles or tags"
+            placeholder={t('search-placeholder')}
             value={searchQuery}
             onChangeText={handleSearchChange}
           />
