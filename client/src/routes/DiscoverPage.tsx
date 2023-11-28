@@ -3,13 +3,15 @@ import ScrollViewWrapper from '../components/Wrappers/ScollViewWrapper'
 import { KeyboardAvoidingView, Keyboard, Platform } from 'react-native'
 import { HeaderWrapper } from '../components/Wrappers/HeaderWrapper'
 import PageWrapper from '../components/Wrappers/PageWrapper'
+import { initRecipes } from '../reducers/recipeReducer'
 import TextInput from '../components/Input/TextInput'
-import recipeService from '../services/recipeService'
+import { RootState, useAppDispatch } from '../store'
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-native'
 import Navbar from '../components/Navbar/Navbar'
 import { useTranslation } from 'react-i18next'
 import Title from '../components/Text/Title'
+import { useSelector } from 'react-redux'
 import styled from '@emotion/native'
 
 const StyledSearchContainer = styled.View`
@@ -26,6 +28,16 @@ const DiscoverPage = () => {
   const { t } = useTranslation()
   const [searchQuery, setSearchQuery] = useState('')
   const [keyboardVisible, setKeyboardVisible] = useState(false)
+
+  const dispatch = useAppDispatch()
+
+  useEffect(() => {
+    dispatch(initRecipes())
+  }, [])
+
+  const recipes: RecipeObject[] = useSelector(
+    (state: RootState) => state.recipes
+  )
 
   useEffect(() => {
     const keyboardDidShowListener = Keyboard.addListener(
@@ -74,7 +86,7 @@ const DiscoverPage = () => {
         style={{ flex: 1 }}
       >
         <ScrollViewWrapper>
-          {recipes?.map((recipe, index) => (
+          {recipes.map((recipe, index) => (
             <SmallRecipeDisplay
               key={index}
               recipe={recipe}
