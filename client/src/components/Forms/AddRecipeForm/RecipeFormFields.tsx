@@ -91,7 +91,7 @@ const MethodSection = ({
 }) => {
   return (
     <FieldArray
-      name="method"
+      name="methods"
       render={({ push, remove }) => (
         <>
           {values.methods.map((method: string, index: number) => (
@@ -99,14 +99,14 @@ const MethodSection = ({
               <DeleteButton onPress={() => remove(index)} />
               <PlainText>{String(index + 1) + '.'}</PlainText>
               <TextInput
-                onChangeText={handleChange(`methods[${index}].method`)}
-                value={values.methods[index].method}
+                onChangeText={handleChange(`methods[${index}]`)}
+                value={values.methods[index]}
                 placeholder="Type instructions here ..."
                 style={css`
                   width: 74%;
                 `}
                 onSubmitEditing={() => {
-                  push({ method: '' })
+                  push('')
                 }}
                 autoFocus
               />
@@ -114,8 +114,7 @@ const MethodSection = ({
           ))}
           <GreyAddButton
             onPress={() => {
-              push({ method: '' })
-              values.methods
+              push('')
             }}
           />
           <ScrollableSpace />
@@ -126,6 +125,7 @@ const MethodSection = ({
 }
 
 const RecipeFormFields = ({ values, handleChange }: any) => {
+  const [imageField, imageMeta, imageHelpers] = useField('image')
   const [nameField, nameMeta, nameHelpers] = useField('name')
   const [descriptionField, descriptionMeta, descriptionHelpers] =
     useField('description')
@@ -144,7 +144,7 @@ const RecipeFormFields = ({ values, handleChange }: any) => {
             width: 80%;
           `}
           placeholder={t('recipe-name')}
-          value={nameField.value.toString()}
+          value={nameField.value?.toString()}
           onChangeText={(text: string) => nameHelpers.setValue(text)}
         />
         <TextInput
@@ -154,7 +154,7 @@ const RecipeFormFields = ({ values, handleChange }: any) => {
           `}
           multiline={true}
           placeholder={t('description')}
-          value={descriptionField.value.toString()}
+          value={descriptionField.value?.toString()}
           onChangeText={(text: string) => descriptionHelpers.setValue(text)}
         />
         <TextInput
@@ -163,7 +163,7 @@ const RecipeFormFields = ({ values, handleChange }: any) => {
             margin-bottom: 8px;
           `}
           placeholder="#tags"
-          value={tagField.value.toString()}
+          value={tagField.value?.toString()}
           onChangeText={(text: string) => tagHelpers.setValue(text)}
         />
         <SectionNavbar

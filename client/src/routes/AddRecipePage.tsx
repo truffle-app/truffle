@@ -4,6 +4,7 @@ import PostFormFields from '../components/Forms/AddRecipeForm/PostFormFields'
 import NavBackButton from '../components/Buttons/NavBackButton'
 import SubmitButton from '../components/Buttons/SubmitButton'
 import BackButton from '../components/Buttons/BackButton'
+import recipeService from '../services/recipeService'
 import { useNavigate } from 'react-router-native'
 import { useTranslation } from 'react-i18next'
 import Title from '../components/Text/Title'
@@ -26,8 +27,10 @@ const initialValues = {
   tags: '',
   activeTab: 'Ingredients',
   ingredients: [{ quantity: '', unit: '', ingredient: '' }],
-  methods: [{ method: '' }],
-  post_text: ''
+  methods: [''],
+  post_text: '',
+  rating: 3,
+  imageUrl: 'https://img.ilcdn.fi/ggz4rnfnXvGUZIxsuSB61dJJf2M=/full-fit-in/920x0/img-s3.ilcdn.fi/66cd116ed50e1b40e6f2b7f7341f2da616c495c622dacb2746350268eaa797df.jpg'
 }
 
 const validationSchema = yup.object().shape({
@@ -39,10 +42,8 @@ const AddRecipePage = () => {
   const navigate = useNavigate()
   const { t } = useTranslation()
 
-  const onSubmit = (values: any) => {
-    console.log(`Submitted a recipe.`)
-    console.log(values)
-    // Send form content to server here
+  const onSubmit = async (values: any) => {
+    const res = await recipeService.addRecipe(values)
     navigate('/feed')
   }
 
@@ -51,8 +52,6 @@ const AddRecipePage = () => {
       initialValues={initialValues}
       onSubmit={(values) => {
         onSubmit(values)
-        // Handle form submission logic here
-        console.log(values)
       }}
       validationSchema={validationSchema}
     >

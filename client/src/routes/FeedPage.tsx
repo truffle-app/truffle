@@ -8,11 +8,22 @@ import { useNavigate } from 'react-router-native'
 import Navbar from '../components/Navbar/Navbar'
 import { useTranslation } from 'react-i18next'
 import Title from '../components/Text/Title'
+import { useEffect, useState } from 'react'
 import React from 'react-native'
 
 const FeedPage = () => {
+  const [recipes, setRecipes] = useState<RecipeObject[]>()
   const navigate = useNavigate()
   const { t } = useTranslation()
+
+  useEffect(() => {
+    const fetchRecipes = async () => {
+      const fetchedRecipes = await recipeService.getRecipes()
+      setRecipes(fetchedRecipes)
+    }
+
+    fetchRecipes()
+  }, [])
 
   const handlePressFeedPost = (id: number) => {
     navigate(`/recipe/${id}`)
@@ -24,7 +35,7 @@ const FeedPage = () => {
         <Title>{t('feed')}</Title>
       </HeaderWrapper>
       <ScrollViewWrapper>
-        {recipeService.getRecipes().map((recipe, index) => (
+        {recipes?.map((recipe, index) => (
           <LargeRecipeDisplay
             key={index}
             recipe={recipe}

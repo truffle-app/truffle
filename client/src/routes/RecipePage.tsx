@@ -42,8 +42,12 @@ const RecipePage = () => {
   const [recipe, setRecipe] = useState<RecipeObject | undefined>(undefined)
 
   useEffect(() => {
-    const recipe = recipeService.getRecipe(Number(id))
-    setRecipe(recipe)
+    const fetchRecipe = async (id: number) => {
+      const fetchedRecipe = await recipeService.getRecipe(id)
+      setRecipe(fetchedRecipe)
+    }
+
+    fetchRecipe(Number(id))
   }, [])
 
   if (recipe) {
@@ -53,13 +57,13 @@ const RecipePage = () => {
           <NavBackButton />
         </HeaderWrapper>
         <ScrollViewWrapper>
-          <RecipePageImage source={{ uri: recipe?.imageUrl }} />
+          <RecipePageImage source={{ uri: recipe?.imageurl }} />
           <LargeRecipeInfoContainer>
             <PlainText
               color={theme.colors.darkExtra}
               fontFamily={theme.fonts.title}
             >
-              {recipe?.title}
+              {recipe?.name}
             </PlainText>
             <PlainText color={theme.colors.darkExtra} fontSize="16px">
               {recipe?.description}

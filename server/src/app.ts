@@ -1,15 +1,18 @@
 import { Elysia } from "elysia"
 import recipeRouter from './routes/recipe'
+import { cors } from '@elysiajs/cors'
+import { logger } from '@grotto/logysia'
 
-// Initialize Elysia
+// Initialize Elysia and add routes
 const app = new Elysia()
-
-app.get('/', () => 'Welcome')
-
-// Add routers to app
-app.group('/api', app =>
-  app.use(recipeRouter)
-)
-
+  .use(cors())
+  .use(logger())
+  .get('/', () => 'Welcome')
+  .group('/api', app => app
+    .group('/recipes', app => app
+      .get('/', recipeRouter.getRecipes)
+      .get('/:id', recipeRouter.getRecipeByID)
+      .post('', recipeRouter.postRecipe))
+  )
 // Export configured Elysia app
 export default app

@@ -41,13 +41,13 @@ const SmallRecipeDisplay = ({
 }) => {
   return (
     <SmallRecipeContainer onPress={() => onPress(recipe.id)}>
-      <SmallRecipeImage source={{ uri: recipe.imageUrl }} />
+      <SmallRecipeImage source={{ uri: recipe.imageurl }} />
       <SmallRecipeInfoContainer>
         <PlainText
           color={theme.colors.darkExtra}
           fontFamily={theme.fonts.title}
         >
-          {recipe.title}
+          {recipe.name}
         </PlainText>
         <InfoContainer style={{ marginBottom: 12 }}>
           <RatingButton rating={recipe.rating} />

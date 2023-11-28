@@ -7,6 +7,12 @@ Simple social media app for creating, sharing and rating recipes with your frien
 ## Installation
 
 1. Clone git repository
+2. Copy .env.sample and rename to => .env in client, server and flyway
+3. Run "docker compose up --build"
+4. Read QR code with Expo Go to test app
+or
+4. Change "npm start" in client/dockerfile to "npm run web" to test via browser
+5. Make sure not to commit this change
 
 ### Server
 
