@@ -1,15 +1,16 @@
 {
   "add-recipe": "Add recipe",
+  "bookmarks": "Bookmarks",
   "description": "Description",
   "discover": "Discover",
   "feed": "Feed",
   "ingredients": "Ingredients",
   "method": "Method",
+  "my-recipes": "My recipes",
   "post-recipe": "Post recipe",
   "profile": "Profile",
   "recipe-name": "Name of the recipe",
+  "register": "Register",
   "search-placeholder": "Search recipes, profiles or tags",
-  "sign-in": "Sign in",
-  "my-recipes": "My recipes",
-  "bookmarks": "Bookmarks"
+  "sign-in": "Sign in"
 }

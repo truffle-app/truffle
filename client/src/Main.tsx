@@ -6,11 +6,13 @@ import RecipePage from './routes/RecipePage'
 import LoginPage from './routes/LoginPage'
 import Feed from './routes/FeedPage'
 import React from 'react-native'
+import RegisterPage from './routes/RegisterPage'
 
 const Main = () => {
   return (
     <Routes>
       <Route path="/" element={<LoginPage />} />
+      <Route path="/register" element={<RegisterPage />} />
       <Route path="/feed" element={<Feed />} />
       <Route path="/discover" element={<DiscoverPage />} />
       <Route path="/profile" element={<ProfilePage />} />
