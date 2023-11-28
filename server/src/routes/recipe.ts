@@ -4,7 +4,6 @@ import recipeService from '../db/service/recipe'
 const getRecipes = async({set}: {set: any}) => {
   try {
     const recipes = await recipeService.getRecipes()
-    console.log(recipes)
     set.status = 200
     return recipes
   } catch(error) {
@@ -20,7 +19,7 @@ const getRecipeByID = async({params, set}: {params: any, set: any}) => {
     set.status = 200
     return recipes
   } catch (error) {
-    console.log(error)
+    console.error(error)
     set.status = 500
     return ''
   }
@@ -32,7 +31,7 @@ const postRecipe = async({request, set, body}: {request: any, set: any; body: an
     set.status = 200
     return newRecipe
   } catch (error) {
-    console.log(error)
+    console.error(error)
     set.status = 500
     return ''
   }

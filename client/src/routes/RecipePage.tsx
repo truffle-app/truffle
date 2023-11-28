@@ -50,8 +50,6 @@ const RecipePage = () => {
     fetchRecipe(Number(id))
   }, [])
 
-  console.log(recipe)
-
   if (recipe) {
     return (
       <PageWrapper>

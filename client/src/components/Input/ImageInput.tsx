@@ -21,7 +21,6 @@ const ImageInput = ({ ...props }) => {
     })
 
     if (!result.canceled) {
-      console.log(result)
       setImage(result)
     }
   }
