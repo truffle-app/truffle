@@ -1,5 +1,5 @@
 import ScrollViewWrapper from '../components/Wrappers/ScollViewWrapper'
-import HeaderWrapper from '../components/Wrappers/HeaderWrapper'
+import { HeaderWrapper } from '../components/Wrappers/HeaderWrapper'
 import ProfileButton from '../components/Buttons/ProfileButton'
 import NavBackButton from '../components/Buttons/NavBackButton'
 import RatingButton from '../components/Buttons/RatingButton'
