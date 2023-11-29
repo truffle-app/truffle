@@ -3,8 +3,8 @@ FROM oven/bun
 WORKDIR /app
 
 COPY package*.json bun.lockb ./
-RUN bun install
 COPY . .
+RUN bun install
 
 ENV NODE_ENV production
 
