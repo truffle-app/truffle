@@ -45,7 +45,7 @@ const LargeRecipeDisplay = ({
         onPress(recipe.id)
       }}
     >
-      <LargeRecipeImage source={{ uri: recipe.imageurl }} />
+      <LargeRecipeImage source={{ uri: recipe.imageUrl }} />
       <LargeRecipeInfoContainer>
         <PlainText
           color={theme.colors.darkExtra}

@@ -31,7 +31,12 @@ const ProfilePage = () => {
   const tabs = [t('my-recipes')] //, t('bookmarks')]
 
   useEffect(() => {
-    setRecipes(recipeService.getRecipes())
+    const fetchRecipes = async () => {
+      const fetchedRecipes = await recipeService.getRecipes()
+      setRecipes(fetchedRecipes)
+    }
+
+    fetchRecipes()
   }, [])
 
   return (

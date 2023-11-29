@@ -11,7 +11,7 @@ interface Method {
 
 interface RecipeObject {
   id: number
-  imageurl: string
+  imageUrl: string
   name: string
   rating: number
   profile: string

@@ -162,7 +162,7 @@ const RecipePage = () => {
           <NavBackButton />
         </HeaderWrapper>
         <ScrollViewWrapper>
-          <RecipePageImage source={{ uri: recipe?.imageurl }} />
+          <RecipePageImage source={{ uri: recipe?.imageUrl }} />
           <LargeRecipeInfoContainer>
             <PlainText
               color={theme.colors.darkExtra}
