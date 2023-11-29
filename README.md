@@ -33,8 +33,14 @@ or
 
 ### Rebasing
 
+```sh
     git branch -u origin/main
 
     git rebase origin/main
 
+    # After solving merge conflicts
+
+    git rebase --continue
+
     git push --force-with-lease origin <branch>
+```
