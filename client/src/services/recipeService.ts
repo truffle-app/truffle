@@ -5,10 +5,7 @@ const baseUrl = `http://192.168.0.103:3001/api/recipes`
 
 const getRecipes = async () => {
   try {
-    console.log('Fetching recipes from ' + baseUrl + '...')
     const res = await axios.get(baseUrl)
-    console.log('Found recipes:')
-    console.log(res.data)
     return res.data
   } catch (error) {
     console.error(error)

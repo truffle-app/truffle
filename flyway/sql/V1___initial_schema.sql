@@ -16,7 +16,7 @@ CREATE TABLE recipe (
   ingredients TEXT[][3],
   methods TEXT[],
   rating DECIMAL,
-  imageurl TEXT
+  image_url TEXT
 );
 
 INSERT INTO truffle_user (email, hashed_password, username)

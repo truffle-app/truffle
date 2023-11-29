@@ -41,7 +41,7 @@ const SmallRecipeDisplay = ({
 }) => {
   return (
     <SmallRecipeContainer onPress={() => onPress(recipe.id)}>
-      <SmallRecipeImage source={{ uri: recipe.imageurl }} />
+      <SmallRecipeImage source={{ uri: recipe.imageUrl }} />
       <SmallRecipeInfoContainer>
         <PlainText
           color={theme.colors.darkExtra}
