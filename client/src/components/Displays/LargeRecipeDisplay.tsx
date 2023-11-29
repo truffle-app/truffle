@@ -54,7 +54,7 @@ const LargeRecipeDisplay = ({
           {recipe.name}
         </PlainText>
         <InfoContainer>
-          <RatingButton rating={recipe.rating} />
+          <RatingButton rating={recipe.rating} style={{ marginRight: 8 }} />
           <ProfileButton profile={recipe.profile} />
         </InfoContainer>
       </LargeRecipeInfoContainer>
