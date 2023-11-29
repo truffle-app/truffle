@@ -23,11 +23,10 @@ const StyledSearchContainer = styled.View`
 `
 
 const DiscoverPage = () => {
-  const [recipes, setRecipes] = useState<RecipeObject[]>()
-  const navigate = useNavigate()
-  const { t } = useTranslation()
   const [searchQuery, setSearchQuery] = useState('')
   const [keyboardVisible, setKeyboardVisible] = useState(false)
+  const navigate = useNavigate()
+  const { t } = useTranslation()
 
   const dispatch = useAppDispatch()
 
@@ -66,15 +65,6 @@ const DiscoverPage = () => {
   const handlePressFeedPost = (id: number) => {
     navigate(`/recipe/${id}`)
   }
-
-  useEffect(() => {
-    const fetchRecipes = async () => {
-      const fetchedRecipes = await recipeService.getRecipes()
-      setRecipes(fetchedRecipes)
-    }
-
-    fetchRecipes()
-  }, [])
 
   return (
     <PageWrapper>
