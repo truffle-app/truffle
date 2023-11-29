@@ -4,9 +4,10 @@ import { ReactNode } from 'react'
 import React from 'react-native'
 import theme from '../../theme'
 
-const DefaultSubmitButton = styled.Pressable<{hollow: boolean | undefined}>`
+const DefaultSubmitButton = styled.Pressable<{ hollow: boolean | undefined }>`
   border-color: ${theme.colors.highlight};
-  background-color: ${props => (props.hollow ? 'transparent' : theme.colors.highlight)};
+  background-color: ${(props) =>
+    props.hollow ? 'transparent' : theme.colors.highlight};
   border-width: 2px;
   border-radius: 5px;
   text-align: center;

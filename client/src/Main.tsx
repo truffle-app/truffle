@@ -1,12 +1,12 @@
 import { Navigate, Route, Routes } from 'react-router-native'
 import AddRecipePage from './routes/AddRecipePage'
 import DiscoverPage from './routes/DiscoverPage'
+import RegisterPage from './routes/RegisterPage'
 import ProfilePage from './routes/ProfilePage'
 import RecipePage from './routes/RecipePage'
 import LoginPage from './routes/LoginPage'
 import Feed from './routes/FeedPage'
 import React from 'react-native'
-import RegisterPage from './routes/RegisterPage'
 
 const Main = () => {
   return (

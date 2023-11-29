@@ -30,7 +30,8 @@ const initialValues = {
   methods: [''],
   post_text: '',
   rating: 3,
-  imageUrl: 'https://img.ilcdn.fi/ggz4rnfnXvGUZIxsuSB61dJJf2M=/full-fit-in/920x0/img-s3.ilcdn.fi/66cd116ed50e1b40e6f2b7f7341f2da616c495c622dacb2746350268eaa797df.jpg'
+  imageUrl:
+    'https://img.ilcdn.fi/ggz4rnfnXvGUZIxsuSB61dJJf2M=/full-fit-in/920x0/img-s3.ilcdn.fi/66cd116ed50e1b40e6f2b7f7341f2da616c495c622dacb2746350268eaa797df.jpg'
 }
 
 const validationSchema = yup.object().shape({

@@ -73,7 +73,7 @@ const DiscoverPage = () => {
         behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
         style={{ flex: 1 }}
       >
-      <ScrollViewWrapper>
+        <ScrollViewWrapper>
           {recipes?.map((recipe, index) => (
             <SmallRecipeDisplay
               key={index}

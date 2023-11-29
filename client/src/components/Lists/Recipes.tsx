@@ -3,8 +3,8 @@ import { useNavigate } from 'react-router-native'
 import React from 'react'
 
 interface RecipesProps {
-  recipes: RecipeObject[];
-  previousLocation: string;
+  recipes: RecipeObject[]
+  previousLocation: string
 }
 
 const Recipes = ({ recipes, previousLocation }: RecipesProps) => {

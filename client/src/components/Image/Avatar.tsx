@@ -6,6 +6,7 @@ const AvatarImage = styled(Image)`
   height: 100%;
   width: 100%;
   margin: 0 auto;
+  // prettier-ignore
   resizeMode: cover;
 `
 

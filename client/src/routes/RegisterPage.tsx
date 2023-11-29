@@ -1,3 +1,4 @@
+import NavBackButton from '../components/Buttons/NavBackButton'
 import SubmitButton from '../components/Buttons/SubmitButton'
 import TextInput from '../components/Input/TextInput'
 import PlainText from '../components/Text/PlainText'
@@ -7,7 +8,6 @@ import styled, { css } from '@emotion/native'
 import React from 'react-native'
 import { useState } from 'react'
 import theme from '../theme'
-import NavBackButton from '../components/Buttons/NavBackButton'
 
 const Background = styled.View`
   display: flex;
@@ -57,7 +57,11 @@ const RegisterPage = () => {
   return (
     <Background>
       <RegisterContainer>
-        <RegisterItemContainer style={css`justify-content: center`}>
+        <RegisterItemContainer
+          style={css`
+            justify-content: center;
+          `}
+        >
           <PlainText
             fontFamily={theme.fonts.title}
             fontSize={theme.fontSizes.extraLarge}
@@ -117,8 +121,14 @@ const RegisterPage = () => {
           />
         </RegisterItemContainer>
 
-        <RegisterItemContainer style={ css`margin-top: 10px`}>
-          <SubmitButton onPress={() => navigate(-1)} hollow={true}>Back</SubmitButton>
+        <RegisterItemContainer
+          style={css`
+            margin-top: 10px;
+          `}
+        >
+          <SubmitButton onPress={() => navigate(-1)} hollow={true}>
+            Back
+          </SubmitButton>
           <SubmitButton onPress={onSubmit}>Register</SubmitButton>
         </RegisterItemContainer>
       </RegisterContainer>

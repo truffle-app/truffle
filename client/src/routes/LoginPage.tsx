@@ -54,7 +54,11 @@ const LoginPage = () => {
   return (
     <Background>
       <LoginContainer>
-        <LoginItemContainer style={css`justify-content: center`}>
+        <LoginItemContainer
+          style={css`
+            justify-content: center;
+          `}
+        >
           <PlainText
             fontFamily={theme.fonts.title}
             fontSize={theme.fontSizes.extraLarge}
@@ -87,8 +91,14 @@ const LoginPage = () => {
           />
         </LoginItemContainer>
 
-        <LoginItemContainer style={ css`margin-top: 10px`}>
-          <SubmitButton onPress={() => navigate('/register')} hollow={true}>Register</SubmitButton>
+        <LoginItemContainer
+          style={css`
+            margin-top: 10px;
+          `}
+        >
+          <SubmitButton onPress={() => navigate('/register')} hollow={true}>
+            Register
+          </SubmitButton>
           <SubmitButton onPress={onSubmit}> Sign in </SubmitButton>
         </LoginItemContainer>
       </LoginContainer>
