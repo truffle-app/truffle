@@ -40,7 +40,18 @@ const getRecipeByID = async (id: string) => {
   }
 }
 
-const addRecipe = async (recipe: any) => {
+const getRecipesByUser = async (userId: string) => {
+  try {
+    const recipes = await sql`
+      SELECT * FROM recipe WHERE creator = ${userId}
+    `
+    return recipes
+  } catch (error) {
+    throw error
+  }
+}
+
+const addRecipe = async (recipe: Recipe) => {
   try {
     const newRecipe = await sql`
       INSERT INTO recipe (
@@ -52,12 +63,11 @@ const addRecipe = async (recipe: any) => {
         steps,
         rating,
         image_url
-      )
-      VALUES (
+      ) VALUES (
         ${recipe.name},
         ${recipe.description},
-        ${'vegan'},
-        ${1},
+        ${Diet.omnivorous},
+        ${recipe.creator},
         ${recipe.ingredients.map((recipe: any) => [recipe.quantity, recipe.unit, recipe.ingredient])},
         ${recipe.steps},
         ${recipe.rating},
@@ -65,13 +75,14 @@ const addRecipe = async (recipe: any) => {
       )
     `
     return newRecipe
-  } catch(error) {
+  } catch (error) {
     throw error
   }
 }
 
 export default {
-  getRecipes: getRecipes,
-  getRecipeByID: getRecipeByID,
-  addRecipe: addRecipe
+  getRecipes,
+  getRecipeByID,
+  getRecipesByUser,
+  addRecipe
 }
