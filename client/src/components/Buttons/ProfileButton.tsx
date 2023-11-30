@@ -2,7 +2,7 @@ import { Ionicons } from '@expo/vector-icons'
 import PlainText from '../Text/PlainText'
 import { Pressable } from 'react-native'
 import styled from '@emotion/native'
-import theme from '../../theme'
+import theme from '@theme'
 import React from 'react'
 
 const ProfileContainer = styled.View`

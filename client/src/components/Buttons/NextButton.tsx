@@ -1,8 +1,8 @@
 import { GestureResponderEvent } from 'react-native'
+import PlainText from '@components/Text/PlainText'
 import React, { Pressable } from 'react-native'
-import PlainText from '../Text/PlainText'
 import styled from '@emotion/native'
-import theme from '../../theme'
+import theme from '@theme'
 
 const StyledNextButton = styled.Pressable`
   border-color: ${theme.colors.darkExtra};

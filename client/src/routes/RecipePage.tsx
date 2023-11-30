@@ -1,20 +1,20 @@
-import ScrollViewWrapper from '../components/Wrappers/ScollViewWrapper'
-import { HeaderWrapper } from '../components/Wrappers/HeaderWrapper'
-import ProfileButton from '../components/Buttons/ProfileButton'
-import NavBackButton from '../components/Buttons/NavBackButton'
-import SectionNavbar from '../components/Navbar/SectionNavbar'
-import RatingButton from '../components/Buttons/RatingButton'
-import PageWrapper from '../components/Wrappers/PageWrapper'
+import ScrollViewWrapper from '@components/Wrappers/ScollViewWrapper'
+import { HeaderWrapper } from '@components/Wrappers/HeaderWrapper'
+import ProfileButton from '@components/Buttons/ProfileButton'
+import NavBackButton from '@components/Buttons/NavBackButton'
+import SectionNavbar from '@components/Navbar/SectionNavbar'
 import { useNavigate, useParams } from 'react-router-native'
-import recipeService from '../services/recipeService'
-import PlainText from '../components/Text/PlainText'
-import Navbar from '../components/Navbar/Navbar'
+import RatingButton from '@components/Buttons/RatingButton'
+import PageWrapper from '@components/Wrappers/PageWrapper'
+import recipeService from '@services/recipeService'
+import PlainText from '@components/Text/PlainText'
 import { FontAwesome } from '@expo/vector-icons'
+import Navbar from '@components/Navbar/Navbar'
 import { useTranslation } from 'react-i18next'
 import { useEffect, useState } from 'react'
 import styled from '@emotion/native'
 import React from 'react-native'
-import theme from '../theme'
+import theme from '@theme'
 
 const RecipePageImage = styled.Image`
   width: 98%;
@@ -149,10 +149,12 @@ const RecipePage = () => {
   useEffect(() => {
     const fetchRecipe = async (id: number) => {
       const fetchedRecipe = await recipeService.getRecipe(id)
-      const transformedSteps = fetchedRecipe.steps.map((step: number, index: number) => ({
-        step: index + 1,
-        description: step
-      }))
+      const transformedSteps = fetchedRecipe.steps.map(
+        (step: number, index: number) => ({
+          step: index + 1,
+          description: step
+        })
+      )
       setRecipe({
         ...fetchedRecipe,
         steps: transformedSteps

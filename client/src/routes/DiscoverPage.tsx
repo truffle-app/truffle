@@ -1,16 +1,17 @@
-import SmallRecipeDisplay from '../components/Displays/SmallRecipeDisplay'
-import ScrollViewWrapper from '../components/Wrappers/ScollViewWrapper'
-import { KeyboardAvoidingView, Keyboard } from 'react-native'
-import { HeaderWrapper } from '../components/Wrappers/HeaderWrapper'
-import { initRecipes } from '../reducers/discoverRecipeReducer'
-import PageWrapper from '../components/Wrappers/PageWrapper'
-import TextInput from '../components/Input/TextInput'
-import { RootState, useAppDispatch } from '../store'
+import SmallRecipeDisplay from '@components/Displays/SmallRecipeDisplay'
+import { KeyboardAvoidingView, Keyboard, Platform } from 'react-native'
+import ScrollViewWrapper from '@components/Wrappers/ScollViewWrapper'
+import { HeaderWrapper } from '@components/Wrappers/HeaderWrapper'
+import { initRecipes } from '@reducers/discoverRecipeReducer'
+import PageWrapper from '@components/Wrappers/PageWrapper'
+import TextInput from '@components/Input/TextInput'
+import { StyledSearchContainerProps } from '@types'
+import { RootState, useAppDispatch } from '@store'
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-native'
-import Navbar from '../components/Navbar/Navbar'
+import Navbar from '@components/Navbar/Navbar'
 import { useTranslation } from 'react-i18next'
-import Title from '../components/Text/Title'
+import Title from '@components/Text/Title'
 import { useSelector } from 'react-redux'
 import styled from '@emotion/native'
 
@@ -71,10 +72,7 @@ const DiscoverPage = () => {
       <HeaderWrapper>
         <Title>{t('discover')}</Title>
       </HeaderWrapper>
-      <KeyboardAvoidingView
-        behavior='height'
-        style={{ flex: 1 }}
-      >
+      <KeyboardAvoidingView behavior="height" style={{ flex: 1 }}>
         <ScrollViewWrapper>
           {recipes?.map((recipe, index) => (
             <SmallRecipeDisplay

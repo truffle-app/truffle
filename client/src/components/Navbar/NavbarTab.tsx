@@ -2,7 +2,7 @@ import styled, { ReactNativeStyle } from '@emotion/native'
 import { GestureResponderEvent } from 'react-native'
 import { ReactNode } from 'react'
 import React from 'react-native'
-import theme from '../../theme'
+import theme from '@theme'
 
 type NavbarProps = {
   isActive: boolean

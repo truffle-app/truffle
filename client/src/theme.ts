@@ -11,7 +11,9 @@ const theme = {
 
     darkLight: '#8F8899',
     dark: '#6D6875',
-    darkExtra: '#3D3A42'
+    darkExtra: '#3D3A42',
+
+    red: 'red'
   },
   fontSizes: {
     extraLarge: '30px',

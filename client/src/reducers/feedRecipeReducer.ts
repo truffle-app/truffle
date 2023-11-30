@@ -1,6 +1,7 @@
 import { CaseReducer, PayloadAction, createSlice } from '@reduxjs/toolkit'
-import recipeService from '../services/recipeService'
-import { AppDispatch } from '../store'
+import recipeService from '@services/recipeService'
+import { RecipeObject } from '@types'
+import { AppDispatch } from '@store'
 
 type State = RecipeObject[]
 

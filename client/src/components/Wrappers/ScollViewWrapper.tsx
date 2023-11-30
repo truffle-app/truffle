@@ -1,7 +1,7 @@
 import React, { KeyboardAvoidingView, Platform } from 'react-native'
 import { PropsWithChildren } from 'react'
 import styled from '@emotion/native'
-import theme from '../../theme'
+import theme from '@theme'
 
 const ScrollviewSection = styled.ScrollView`
   height: 200px;

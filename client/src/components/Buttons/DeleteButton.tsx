@@ -2,7 +2,7 @@ import { GestureResponderEvent } from 'react-native'
 import React, { Pressable } from 'react-native'
 import { AntDesign } from '@expo/vector-icons'
 import styled from '@emotion/native'
-import theme from '../../theme'
+import theme from '@theme'
 
 const StyledDeleteButton = styled.Pressable`
   margin-right: 5px;

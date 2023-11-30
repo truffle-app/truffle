@@ -1,7 +1,7 @@
-import recipeRouter from './routes/recipe'
+import recipeRouter from '@routes/recipe'
 import { logger } from '@grotto/logysia'
-import userRouter from './routes/user'
 import { cors } from '@elysiajs/cors'
+import userRouter from '@routes/user'
 import { Elysia } from 'elysia'
 
 const app = new Elysia()

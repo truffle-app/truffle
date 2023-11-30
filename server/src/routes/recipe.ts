@@ -1,4 +1,5 @@
-import recipeService from '../db/service/recipe'
+import recipeService from '@database/service/recipe'
+import { Recipe } from '@types'
 
 const getRecipes = async ({ set }: { set: any }) => {
   try {

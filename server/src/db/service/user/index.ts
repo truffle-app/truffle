@@ -1,5 +1,5 @@
-import { User } from '../../../types/global'
-import sql from '../../../db'
+import sql from '@database/.'
+import { User } from '@types'
 
 const getUserByID = async (id: string) => {
   try {

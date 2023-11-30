@@ -1,15 +1,17 @@
-interface Ingredient {
+import { StyleProp, ViewStyle } from 'react-native'
+
+export interface Ingredient {
   quantity: string
   unit: string
   ingredient: string
 }
 
-interface Steps {
+export interface Steps {
   step: number
   description: string
 }
 
-interface RecipeObject {
+export interface RecipeObject {
   id: number
   imageUrl: string
   name: string
@@ -20,26 +22,26 @@ interface RecipeObject {
   steps: Steps[]
 }
 
-interface ProfileButtonProps {
+export interface ProfileButtonProps {
   profile: string
   pressable?: boolean
   onPress: () => void
 }
 
-interface RatingButtonProps {
+export interface RatingButtonProps {
   rating: number
   pressable?: boolean
   onPress: () => void
   style: StyleProp<ViewStyle>
 }
 
-interface StepNumberProps {
+export interface StepNumberProps {
   stepNumber: number
   description: string
   onPress: () => void
   completed: boolean
 }
 
-interface StyledSearchContainerProps {
+export interface StyledSearchContainerProps {
   keyboardVisible: boolean
 }

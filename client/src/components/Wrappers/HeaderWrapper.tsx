@@ -2,7 +2,7 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 import React, { Platform } from 'react-native'
 import { PropsWithChildren } from 'react'
 import styled from '@emotion/native'
-import theme from '../../theme'
+import theme from '@theme'
 
 const HeaderSection = styled(SafeAreaView)`
   display: flex;

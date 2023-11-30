@@ -1,8 +1,8 @@
-import PlainText from '../Text/PlainText'
+import PlainText from '@components/Text/PlainText'
 import styled from '@emotion/native'
 import { ReactNode } from 'react'
 import React from 'react-native'
-import theme from '../../theme'
+import theme from '@theme'
 
 const EnabledSubmitButton = styled.Pressable<{ hollow: boolean | undefined }>`
   border-color: ${theme.colors.highlight};
@@ -15,12 +15,12 @@ const EnabledSubmitButton = styled.Pressable<{ hollow: boolean | undefined }>`
 `
 
 const DisabledSubmitButton = styled.Pressable<{ hollow: boolean | undefined }>`
-border-color: ${theme.colors.highlight};
-background-color: 'transparent';
-border-width: 2px;
-border-radius: 5px;
-text-align: center;
-padding: 0px 5px 3px 15px;
+  border-color: ${theme.colors.highlight};
+  background-color: 'transparent';
+  border-width: 2px;
+  border-radius: 5px;
+  text-align: center;
+  padding: 0px 5px 3px 15px;
 `
 
 const SubmitButton = ({
@@ -37,12 +37,16 @@ const SubmitButton = ({
   const textColor = hollow ? theme.colors.highlight : theme.colors.neutralLight
   return (
     <>
-      {enabled && <EnabledSubmitButton hollow={hollow} onPress={onPress}>
-        <PlainText color={textColor}>{children}</PlainText>
-      </EnabledSubmitButton>}
-      {!enabled && <DisabledSubmitButton hollow={hollow}>
-        <PlainText color={textColor}>{children}</PlainText>
-      </DisabledSubmitButton>}
+      {enabled && (
+        <EnabledSubmitButton hollow={hollow} onPress={onPress}>
+          <PlainText color={textColor}>{children}</PlainText>
+        </EnabledSubmitButton>
+      )}
+      {!enabled && (
+        <DisabledSubmitButton hollow={hollow}>
+          <PlainText color={textColor}>{children}</PlainText>
+        </DisabledSubmitButton>
+      )}
     </>
   )
 }

@@ -1,4 +1,4 @@
-import userService from '../db/service/user'
+import userService from '@database/service/user'
 
 const getUserByID = async ({ params, set }: { params: any; set: any }) => {
   try {

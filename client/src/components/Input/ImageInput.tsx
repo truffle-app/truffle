@@ -1,9 +1,8 @@
 import { MaterialCommunityIcons } from '@expo/vector-icons'
 import * as ImagePicker from 'expo-image-picker'
-import styled, { css } from '@emotion/native'
 import React, { Image } from 'react-native'
+import styled from '@emotion/native'
 import { useState } from 'react'
-import theme from '../../theme'
 
 const StyledImageInput = styled.Pressable`
   padding: 10px;
