@@ -36,7 +36,7 @@ const FeedPage = () => {
         <Title>{t('feed')}</Title>
       </HeaderWrapper>
       <ScrollViewWrapper>
-        {recipes.map((recipe, index) => (
+        {recipes?.map((recipe, index) => (
           <LargeRecipeDisplay
             key={index}
             recipe={recipe}

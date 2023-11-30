@@ -76,7 +76,7 @@ const DiscoverPage = () => {
         style={{ flex: 1 }}
       >
         <ScrollViewWrapper>
-          {recipes.map((recipe, index) => (
+          {recipes?.map((recipe, index) => (
             <SmallRecipeDisplay
               key={index}
               recipe={recipe}
