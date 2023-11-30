@@ -14,8 +14,8 @@ const append: CaseReducer<State, PayloadAction<RecipeObject>> = (
   action
 ) => [...state, action.payload]
 
-const recipeSlice = createSlice({
-  name: 'recipes',
+const bookmarkSlice = createSlice({
+  name: 'bookmarks',
   initialState: [] as State,
   reducers: {
     setRecipes: set,
@@ -23,13 +23,13 @@ const recipeSlice = createSlice({
   }
 })
 
-export const { setRecipes, appendRecipe } = recipeSlice.actions
+export const { setRecipes, appendRecipe } = bookmarkSlice.actions
 
-export const initRecipes = () => {
+export const initBookmarks = () => {
   return async (dispatch: AppDispatch) => {
     const recipes = await recipeService.getRecipes()
     dispatch(setRecipes(recipes))
   }
 }
 
-export default recipeSlice.reducer
+export default bookmarkSlice.reducer

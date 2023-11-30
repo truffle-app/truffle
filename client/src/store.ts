@@ -1,11 +1,17 @@
-import recipeReducer from './reducers/recipeReducer'
+import discoverRecipeReducer from './reducers/discoverRecipeReducer'
+import feedRecipeReducer from './reducers/feedRecipeReducer'
+import userRecipeReducer from './reducers/userRecipeReducer'
+import bookmarkReducer from './reducers/bookmarkReducer'
 import { configureStore } from '@reduxjs/toolkit'
 import userReducer from './reducers/userReducer'
 import { useDispatch } from 'react-redux'
 
 const store = configureStore({
   reducer: {
-    recipes: recipeReducer,
+    feedRecipes: feedRecipeReducer,
+    discoverRecipes: discoverRecipeReducer,
+    userRecipes: userRecipeReducer,
+    bookmarks: bookmarkReducer,
     user: userReducer
   }
 })

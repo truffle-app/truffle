@@ -2,8 +2,8 @@ import SmallRecipeDisplay from '../components/Displays/SmallRecipeDisplay'
 import ScrollViewWrapper from '../components/Wrappers/ScollViewWrapper'
 import { KeyboardAvoidingView, Keyboard, Platform } from 'react-native'
 import { HeaderWrapper } from '../components/Wrappers/HeaderWrapper'
+import { initRecipes } from '../reducers/discoverRecipeReducer'
 import PageWrapper from '../components/Wrappers/PageWrapper'
-import { initRecipes } from '../reducers/recipeReducer'
 import TextInput from '../components/Input/TextInput'
 import { RootState, useAppDispatch } from '../store'
 import React, { useEffect, useState } from 'react'
@@ -35,7 +35,7 @@ const DiscoverPage = () => {
   }, [])
 
   const recipes: RecipeObject[] = useSelector(
-    (state: RootState) => state.recipes
+    (state: RootState) => state.discoverRecipes
   )
 
   useEffect(() => {

@@ -3,7 +3,7 @@ import { HeaderWrapper } from '../components/Wrappers/HeaderWrapper'
 import AddRecipeButton from '../components/Buttons/AddRecipeButton'
 import SectionNavbar from '../components/Navbar/SectionNavbar'
 import PageWrapper from '../components/Wrappers/PageWrapper'
-import { initRecipes } from '../reducers/recipeReducer'
+import { initRecipes } from '../reducers/userRecipeReducer'
 import { RootState, useAppDispatch } from '../store'
 import Recipes from '../components/Lists/Recipes'
 import { useNavigate } from 'react-router-native'
@@ -38,8 +38,12 @@ const ProfilePage = () => {
   }, [])
 
   const recipes: RecipeObject[] = useSelector(
-    (state: RootState) => state.recipes
+    (state: RootState) => state.userRecipes
   )
+
+  /* const bookmarks: RecipeObject[] = useSelector(
+    (state: RootState) => state.bookmarks
+  ) */
 
   return (
     <PageWrapper>

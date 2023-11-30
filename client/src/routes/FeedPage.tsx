@@ -3,7 +3,7 @@ import ScrollViewWrapper from '../components/Wrappers/ScollViewWrapper'
 import { HeaderWrapper } from '../components/Wrappers/HeaderWrapper'
 import AddRecipeButton from '../components/Buttons/AddRecipeButton'
 import PageWrapper from '../components/Wrappers/PageWrapper'
-import { initRecipes } from '../reducers/recipeReducer'
+import { initRecipes } from '../reducers/feedRecipeReducer'
 import { RootState, useAppDispatch } from '../store'
 import { useNavigate } from 'react-router-native'
 import Navbar from '../components/Navbar/Navbar'
@@ -23,7 +23,7 @@ const FeedPage = () => {
   }, [])
 
   const recipes: RecipeObject[] = useSelector(
-    (state: RootState) => state.recipes
+    (state: RootState) => state.feedRecipes
   )
 
   const handlePressFeedPost = (id: number) => {
