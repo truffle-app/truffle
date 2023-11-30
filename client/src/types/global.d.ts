@@ -4,7 +4,7 @@ interface Ingredients {
   name: string
 }
 
-interface Methods {
+interface Steps {
   step: number
   description: string
 }
@@ -17,7 +17,7 @@ interface RecipeObject {
   profile: string
   description: string
   ingredients: Ingredients[]
-  methods: Methods[]
+  steps: Steps[]
 }
 
 interface ProfileButton {
@@ -33,7 +33,7 @@ interface RatingButton {
   style: StyleProp<ViewStyle>
 }
 
-interface MethodStepProps {
+interface StepNumberProps {
   stepNumber: number
   description: string
   onPress: () => void

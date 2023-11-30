@@ -82,7 +82,7 @@ const IncredientsSection = ({
   )
 }
 
-const MethodSection = ({
+const StepsSection = ({
   values,
   handleChange
 }: {
@@ -91,16 +91,16 @@ const MethodSection = ({
 }) => {
   return (
     <FieldArray
-      name="methods"
+      name="steps"
       render={({ push, remove }) => (
         <>
-          {values.methods.map((method: string, index: number) => (
+          {values.steps.map((step: string, index: number) => (
             <IngredientsRowContainer key={index}>
               <DeleteButton onPress={() => remove(index)} />
               <PlainText>{String(index + 1) + '.'}</PlainText>
               <TextInput
-                onChangeText={handleChange(`methods[${index}]`)}
-                value={values.methods[index]}
+                onChangeText={handleChange(`steps[${index}]`)}
+                value={values.steps[index]}
                 placeholder="Type instructions here ..."
                 style={css`
                   width: 74%;
@@ -132,7 +132,7 @@ const RecipeFormFields = ({ values, handleChange }: any) => {
   const [activeTab, activeTabMeta, activeTabHelpers] = useField('activeTab')
   const { t } = useTranslation()
 
-  const tabs = [t('ingredients'), t('method')]
+  const tabs = [t('ingredients'), t('steps')]
 
   return (
     <ScrollViewWrapper>
@@ -165,7 +165,7 @@ const RecipeFormFields = ({ values, handleChange }: any) => {
           <IncredientsSection values={values} handleChange={handleChange} />
         )}
         {activeTab.value === tabs[1] && (
-          <MethodSection values={values} handleChange={handleChange} />
+          <StepsSection values={values} handleChange={handleChange} />
         )}
       </FormContainer>
     </ScrollViewWrapper>

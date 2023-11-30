@@ -77,7 +77,7 @@ const IngredientName = styled.Text`
   fontsize: ${theme.fontSizes.medium};
 `
 
-const MethodContainer = styled.Pressable`
+const StepsContainer = styled.Pressable`
   flex-direction: row;
   align-items: flex-start;
   margin-bottom: 8px;
@@ -102,21 +102,21 @@ const StepDescriptionCompleted = styled(StepDescription)`
   text-decoration-line: line-through;
 `
 
-const MethodStep = ({
+const StepNumber = ({
   stepNumber,
   description,
   onPress,
   completed
-}: MethodStepProps) => {
+}: StepNumberProps) => {
   return (
-    <MethodContainer onPress={onPress}>
+    <StepsContainer onPress={onPress}>
       <StepLabel>{`${stepNumber}: `}</StepLabel>
       {completed ? (
         <StepDescriptionCompleted>{description}</StepDescriptionCompleted>
       ) : (
         <StepDescription>{description}</StepDescription>
       )}
-    </MethodContainer>
+    </StepsContainer>
   )
 }
 
@@ -126,7 +126,7 @@ const RecipePage = () => {
   const { id } = useParams()
   const [recipe, setRecipe] = useState<RecipeObject | undefined>(undefined)
   const [activeTab, setActiveTab] = useState<string>(t('ingredients'))
-  const tabs = [t('ingredients'), t('methods')]
+  const tabs = [t('ingredients'), t('steps')]
   const [isBookmarked, setIsBookmarked] = useState(false)
   const [completedSteps, setCompletedSteps] = useState(new Set())
 
@@ -149,13 +149,13 @@ const RecipePage = () => {
   useEffect(() => {
     const fetchRecipe = async (id: number) => {
       const fetchedRecipe = await recipeService.getRecipe(id)
-      const transformedMethods = fetchedRecipe.methods.map((method, index) => ({
+      const transformedSteps = fetchedRecipe.steps.map((step, index) => ({
         step: index + 1,
-        description: method,
+        description: step,
       }))
       setRecipe({
         ...fetchedRecipe,
-        methods: transformedMethods,
+        steps: transformedSteps,
       })
     }
 
@@ -226,11 +226,11 @@ const RecipePage = () => {
           )}
           {activeTab === tabs[1] && (
             <TabContainer>
-              {recipe.methods.map((method, index) => (
-                <MethodStep
+              {recipe.steps.map((step, index) => (
+                <StepNumber
                   key={index}
                   stepNumber={index + 1}
-                  description={method.description}
+                  description={step.description}
                   onPress={() => toggleStepCompletion(index)}
                   completed={completedSteps.has(index)}
                 />

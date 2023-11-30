@@ -15,7 +15,7 @@ CREATE TABLE recipe (
   diet DIET NOT NULL,
   creator SERIAL REFERENCES truffle_user(id),
   ingredients TEXT[][3],
-  methods TEXT[],
+  steps TEXT[],
   rating DECIMAL,
   image_url TEXT
 );

@@ -25,8 +25,8 @@ const getRecipeByID = async (id: string) => {
 const addRecipe = async (recipe: any) => {
   try {
     const newRecipe = await sql`
-      INSERT INTO recipe (name, description, diet, creator, ingredients, methods, rating, image_url)
-      VALUES (${recipe.name}, ${recipe.description}, ${'vegan'}, ${1}, ${recipe.ingredients}, ${recipe.methods}, ${recipe.rating}, ${recipe.imageUrl})
+      INSERT INTO recipe (name, description, diet, creator, ingredients, steps, rating, image_url)
+      VALUES (${recipe.name}, ${recipe.description}, ${'vegan'}, ${1}, ${recipe.ingredients}, ${recipe.steps}, ${recipe.rating}, ${recipe.imageUrl})
     `
     return newRecipe
   } catch(error) {

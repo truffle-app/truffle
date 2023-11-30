@@ -17,7 +17,7 @@ export interface FormValues {
   description: string
   activeTab: string
   ingredients: [{ quantity: string; unit: string; ingredient: string }]
-  methods: [{ method: string }]
+  steps: string[]
 }
 
 const initialValues = {
@@ -25,7 +25,7 @@ const initialValues = {
   description: '',
   activeTab: 'Ingredients',
   ingredients: [{ quantity: '', unit: '', ingredient: '' }],
-  methods: [''],
+  steps: [''],
   post_text: '',
   rating: 3,
   imageUrl:
@@ -42,16 +42,14 @@ const AddRecipePage = () => {
   const navigate = useNavigate()
   const { t } = useTranslation()
 
+  console.log(submitAllowed)
+
   const onSubmit = async (values: any) => {
     try {
       setSubmitAllowed(false)
       const res = await recipeService.addRecipe(values)
-      if (res?.status === 200) {
-        navigate('/feed')
-      }
-      else {
-        setSubmitAllowed(true)
-      }
+      navigate('/feed')
+      setSubmitAllowed(true)
     } catch(error) {
       console.error(error)
       setSubmitAllowed(true)
