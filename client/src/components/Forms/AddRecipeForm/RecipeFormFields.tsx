@@ -129,7 +129,6 @@ const RecipeFormFields = ({ values, handleChange }: any) => {
   const [nameField, nameMeta, nameHelpers] = useField('name')
   const [descriptionField, descriptionMeta, descriptionHelpers] =
     useField('description')
-  const [tagField, tagMeta, tagHelpers] = useField('tags')
   const [activeTab, activeTabMeta, activeTabHelpers] = useField('activeTab')
   const { t } = useTranslation()
 
@@ -156,15 +155,6 @@ const RecipeFormFields = ({ values, handleChange }: any) => {
           placeholder={t('description')}
           value={descriptionField.value?.toString()}
           onChangeText={(text: string) => descriptionHelpers.setValue(text)}
-        />
-        <TextInput
-          style={css`
-            width: 80%;
-            margin-bottom: 8px;
-          `}
-          placeholder="#tags"
-          value={tagField.value?.toString()}
-          onChangeText={(text: string) => tagHelpers.setValue(text)}
         />
         <SectionNavbar
           tabs={tabs}

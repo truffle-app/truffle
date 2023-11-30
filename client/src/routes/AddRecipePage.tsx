@@ -15,7 +15,6 @@ import * as yup from 'yup'
 export interface FormValues {
   name: string
   description: string
-  tags: string
   activeTab: string
   ingredients: [{ quantity: string; unit: string; ingredient: string }]
   methods: [{ method: string }]
@@ -24,7 +23,6 @@ export interface FormValues {
 const initialValues = {
   name: '',
   description: '',
-  tags: '',
   activeTab: 'Ingredients',
   ingredients: [{ quantity: '', unit: '', ingredient: '' }],
   methods: [''],
