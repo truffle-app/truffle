@@ -1,8 +1,10 @@
-import styled from '@emotion/native'
-import { Image } from 'react-native'
+// import styled from '@emotion/native'
+// import { Image } from 'react-native'
 import React from 'react-native'
+import { Ionicons } from '@expo/vector-icons'
+import theme from '../../theme'
 
-const AvatarImage = styled(Image)`
+/* const AvatarImage = styled(Image)`
   height: 100%;
   width: 100%;
   margin: 0 auto;
@@ -17,15 +19,15 @@ const CircularCrop = styled.View`
   overflow: hidden;
   border-radius: 1000px;
   margin: 20px;
-`
+` */
 
 const Avatar = () => {
   return (
-    <CircularCrop>
-      <AvatarImage
-        source={{ uri: 'https://reactnative.dev/img/tiny_logo.png' }}
-      />
-    </CircularCrop>
+    <Ionicons
+      name="person-circle-outline"
+      size={150}
+      color={theme.colors.darkExtra}
+    />
   )
 }
 
