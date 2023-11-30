@@ -40,12 +40,24 @@ const validationSchema = yup.object().shape({
 
 const AddRecipePage = () => {
   const [page, setPage] = useState<number>(0)
+  const [submitAllowed, setSubmitAllowed] = useState<boolean>(true)
   const navigate = useNavigate()
   const { t } = useTranslation()
 
   const onSubmit = async (values: any) => {
-    const res = await recipeService.addRecipe(values)
-    navigate('/feed')
+    try {
+      setSubmitAllowed(false)
+      const res = await recipeService.addRecipe(values)
+      if (res?.status === 200) {
+        navigate('/feed')
+      }
+      else {
+        setSubmitAllowed(true)
+      }
+    } catch(error) {
+      console.error(error)
+      setSubmitAllowed(true)
+    }
   }
 
   return (
@@ -62,7 +74,7 @@ const AddRecipePage = () => {
             <HeaderWrapperSpaceBetween>
               <NavBackButton />
               <Title>{t('add-recipe')}</Title>
-              <SubmitButton onPress={handleSubmit}>Post</SubmitButton>
+              <SubmitButton enabled={submitAllowed} onPress={handleSubmit}>Post</SubmitButton>
             </HeaderWrapperSpaceBetween>
 
             <RecipeFormFields values={values} handleChange={handleChange} />
