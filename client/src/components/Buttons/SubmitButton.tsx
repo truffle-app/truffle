@@ -29,7 +29,7 @@ const SubmitButton = ({
   hollow,
   enabled = true
 }: {
-  children: ReactNode
+  children?: ReactNode
   onPress: () => void
   hollow?: boolean
   enabled?: boolean
@@ -38,10 +38,10 @@ const SubmitButton = ({
   return (
     <>
       {enabled && <EnabledSubmitButton hollow={hollow} onPress={onPress}>
-        <PlainText color={theme.colors.neutralLight}>{children}</PlainText>
+        <PlainText color={textColor}>{children}</PlainText>
       </EnabledSubmitButton>}
       {!enabled && <DisabledSubmitButton hollow={hollow}>
-        <PlainText color={theme.colors.neutralLight}>{children}</PlainText>
+        <PlainText color={textColor}>{children}</PlainText>
       </DisabledSubmitButton>}
     </>
   )
