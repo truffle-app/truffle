@@ -28,3 +28,19 @@ or
 ### Database
 
 1. Navigate to /flyway and copy .env.sample file and rename as .env
+
+## Git
+
+### Rebasing
+
+```sh
+    git branch -u origin/main
+
+    git rebase origin/main
+
+    # After solving merge conflicts
+
+    git rebase --continue
+
+    git push --force-with-lease origin <branch>
+```

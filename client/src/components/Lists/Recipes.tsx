@@ -13,7 +13,7 @@ const Recipes = ({ recipes, previousLocation }: RecipesProps) => {
   const handlePressFeedPost = (id: number) => {
     navigate(`/recipe/${id}`)
   }
-  return recipes.map((recipe, index) => (
+  return recipes?.map((recipe, index) => (
     <SmallRecipeDisplay
       key={index}
       recipe={recipe}
