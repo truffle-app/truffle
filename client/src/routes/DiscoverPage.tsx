@@ -13,6 +13,7 @@ import Navbar from '@components/Navbar/Navbar'
 import { useTranslation } from 'react-i18next'
 import Title from '@components/Text/Title'
 import { useSelector } from 'react-redux'
+import { RecipeObject } from '@types'
 import styled from '@emotion/native'
 
 const StyledSearchContainer = styled.View<StyledSearchContainerProps>`

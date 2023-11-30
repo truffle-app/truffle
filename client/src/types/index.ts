@@ -22,26 +22,6 @@ export interface RecipeObject {
   steps: Steps[]
 }
 
-export interface ProfileButtonProps {
-  profile: string
-  pressable?: boolean
-  onPress: () => void
-}
-
-export interface RatingButtonProps {
-  rating: number
-  pressable?: boolean
-  onPress: () => void
-  style: StyleProp<ViewStyle>
-}
-
-export interface StepNumberProps {
-  stepNumber: number
-  description: string
-  onPress: () => void
-  completed: boolean
-}
-
 export interface StyledSearchContainerProps {
   keyboardVisible: boolean
 }

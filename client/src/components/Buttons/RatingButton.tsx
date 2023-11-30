@@ -18,6 +18,13 @@ const RatingText = styled(PlainText)`
   margin-left: 3px;
 `
 
+interface RatingButtonProps {
+  rating: number
+  pressable?: boolean
+  onPress?: any
+  style?: any
+}
+
 const RatingButton = ({
   rating,
   pressable,

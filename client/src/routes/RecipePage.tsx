@@ -6,6 +6,7 @@ import SectionNavbar from '@components/Navbar/SectionNavbar'
 import { useNavigate, useParams } from 'react-router-native'
 import RatingButton from '@components/Buttons/RatingButton'
 import PageWrapper from '@components/Wrappers/PageWrapper'
+import { MethodStepProps, RecipeObject } from '@types'
 import recipeService from '@services/recipeService'
 import PlainText from '@components/Text/PlainText'
 import { FontAwesome } from '@expo/vector-icons'
@@ -101,6 +102,13 @@ const StepDescriptionCompleted = styled(StepDescription)`
   color: ${theme.colors.primaryLight};
   text-decoration-line: line-through;
 `
+
+interface StepNumberProps {
+  stepNumber: number
+  description: string
+  onPress: () => void
+  completed: boolean
+}
 
 const StepNumber = ({
   stepNumber,

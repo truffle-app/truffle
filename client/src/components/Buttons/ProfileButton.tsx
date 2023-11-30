@@ -1,5 +1,5 @@
+import PlainText from '@components/Text/PlainText'
 import { Ionicons } from '@expo/vector-icons'
-import PlainText from '../Text/PlainText'
 import { Pressable } from 'react-native'
 import styled from '@emotion/native'
 import theme from '@theme'
@@ -17,6 +17,12 @@ const ProfileText = styled(PlainText)`
   font-weight: ${theme.fontWeights.normal};
   margin-left: 2px;
 `
+
+interface ProfileButtonProps {
+  profile: any
+  pressable?: boolean
+  onPress?: any
+}
 
 const ProfileButton = ({ profile, pressable, onPress }: ProfileButtonProps) => {
   const profileContent = (

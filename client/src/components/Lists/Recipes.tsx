@@ -1,13 +1,13 @@
 import SmallRecipeDisplay from '@components/Displays/SmallRecipeDisplay'
 import { useNavigate } from 'react-router-native'
+import { RecipeObject } from '@types'
 import React from 'react'
 
 interface RecipesProps {
   recipes: RecipeObject[]
-  previousLocation: string
 }
 
-const Recipes = ({ recipes, previousLocation }: RecipesProps) => {
+const Recipes = ({ recipes }: RecipesProps) => {
   const navigate = useNavigate()
 
   const handlePressFeedPost = (id: number) => {

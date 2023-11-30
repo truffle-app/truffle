@@ -11,7 +11,7 @@ const FormContainer = styled.View`
 `
 
 const PostFormFields = () => {
-  const [postTextField, postTextMeta, postTextHelpers] = useField('post_text')
+  const [postTextField, _postTextMeta, postTextHelpers] = useField('post_text')
 
   return (
     <FormContainer>
