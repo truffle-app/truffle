@@ -110,7 +110,7 @@ const MethodStep = ({
 }: MethodStepProps) => {
   return (
     <MethodContainer onPress={onPress}>
-      <StepLabel>{`Step ${stepNumber}: `}</StepLabel>
+      <StepLabel>{`${stepNumber}: `}</StepLabel>
       {completed ? (
         <StepDescriptionCompleted>{description}</StepDescriptionCompleted>
       ) : (
@@ -126,7 +126,7 @@ const RecipePage = () => {
   const { id } = useParams()
   const [recipe, setRecipe] = useState<RecipeObject | undefined>(undefined)
   const [activeTab, setActiveTab] = useState<string>(t('ingredients'))
-  const tabs = [t('ingredients'), t('method')]
+  const tabs = [t('ingredients'), t('methods')]
   const [isBookmarked, setIsBookmarked] = useState(false)
   const [completedSteps, setCompletedSteps] = useState(new Set())
 
@@ -149,7 +149,14 @@ const RecipePage = () => {
   useEffect(() => {
     const fetchRecipe = async (id: number) => {
       const fetchedRecipe = await recipeService.getRecipe(id)
-      setRecipe(fetchedRecipe)
+      const transformedMethods = fetchedRecipe.methods.map((method, index) => ({
+        step: index + 1,
+        description: method,
+      }))
+      setRecipe({
+        ...fetchedRecipe,
+        methods: transformedMethods,
+      })
     }
 
     fetchRecipe(Number(id))
@@ -219,7 +226,7 @@ const RecipePage = () => {
           )}
           {activeTab === tabs[1] && (
             <TabContainer>
-              {recipe.method.map((method, index) => (
+              {recipe.methods.map((method, index) => (
                 <MethodStep
                   key={index}
                   stepNumber={index + 1}

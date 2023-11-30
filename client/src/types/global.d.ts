@@ -1,10 +1,10 @@
-interface Ingredient {
-  quantity: number
+interface Ingredients {
+  quantity: string
   unit: string
   name: string
 }
 
-interface Method {
+interface Methods {
   step: number
   description: string
 }
@@ -16,8 +16,8 @@ interface RecipeObject {
   rating: number
   profile: string
   description: string
-  ingredients: Ingredient[]
-  method: Method[]
+  ingredients: Ingredients[]
+  methods: Methods[]
 }
 
 interface ProfileButton {
