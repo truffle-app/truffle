@@ -149,6 +149,7 @@ const RecipePage = () => {
   useEffect(() => {
     const fetchRecipe = async (id: number) => {
       const fetchedRecipe = await recipeService.getRecipe(id)
+      console.log(fetchedRecipe)
       const transformedSteps = fetchedRecipe.steps.map((step, index) => ({
         step: index + 1,
         description: step,
@@ -219,7 +220,7 @@ const RecipePage = () => {
                 <IngredientContainer key={index}>
                   <Quantity>{ingredients.quantity}</Quantity>
                   <Unit>{ingredients.unit}</Unit>
-                  <IngredientName>{ingredients.name}</IngredientName>
+                  <IngredientName>{ingredients.ingredient}</IngredientName>
                 </IngredientContainer>
               ))}
             </TabContainer>

@@ -1,6 +1,5 @@
 import RecipeFormFields from '../components/Forms/AddRecipeForm/RecipeFormFields'
 import { HeaderWrapperSpaceBetween } from '../components/Wrappers/HeaderWrapper'
-import PostFormFields from '../components/Forms/AddRecipeForm/PostFormFields'
 import NavBackButton from '../components/Buttons/NavBackButton'
 import SubmitButton from '../components/Buttons/SubmitButton'
 import BackButton from '../components/Buttons/BackButton'
@@ -42,13 +41,11 @@ const AddRecipePage = () => {
   const navigate = useNavigate()
   const { t } = useTranslation()
 
-  console.log(submitAllowed)
-
   const onSubmit = async (values: any) => {
     try {
       setSubmitAllowed(false)
       const res = await recipeService.addRecipe(values)
-      navigate('/feed')
+      // navigate('/feed')
       setSubmitAllowed(true)
     } catch(error) {
       console.error(error)
@@ -74,17 +71,6 @@ const AddRecipePage = () => {
             </HeaderWrapperSpaceBetween>
 
             <RecipeFormFields values={values} handleChange={handleChange} />
-          </>
-        )) ||
-        (page === 1 && (
-          <>
-            <HeaderWrapperSpaceBetween>
-              <BackButton onPress={() => setPage(0)} />
-              <Title>{t('post-recipe')}</Title>
-              <SubmitButton onPress={handleSubmit}>Post</SubmitButton>
-            </HeaderWrapperSpaceBetween>
-
-            <PostFormFields />
           </>
         ))
       }

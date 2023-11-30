@@ -1,7 +1,7 @@
-interface Ingredients {
+interface Ingredient {
   quantity: string
   unit: string
-  name: string
+  ingredient: string
 }
 
 interface Steps {
@@ -16,7 +16,7 @@ interface RecipeObject {
   rating: number
   profile: string
   description: string
-  ingredients: Ingredients[]
+  ingredients: Ingredient[]
   steps: Steps[]
 }
 

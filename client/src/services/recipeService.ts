@@ -15,7 +15,7 @@ const getRecipes = async () => {
 const getRecipe = async (id: number) => {
   try {
     const res = await axios.get(baseUrl + `/${id}`)
-    return res.data[0]
+    return res.data
   } catch (error) {
     console.error(error)
   }
