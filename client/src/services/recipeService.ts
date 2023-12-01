@@ -1,3 +1,4 @@
+import { RecipeObject } from '@types'
 import axios from 'axios'
 import { RecipeObject } from '@types'
 
@@ -22,6 +23,15 @@ const getRecipe = async (id: number) => {
   }
 }
 
+const getUserRecipes = async (userId: number) => {
+  try {
+    const res = await axios.get(`${baseUrl}/user/${userId}`)
+    return res.data
+  } catch (error) {
+    console.error(error)
+  }
+}
+
 const addRecipe = async (recipe: RecipeObject) => {
   try {
     const res = await axios.post(baseUrl, { recipe: recipe })
@@ -31,4 +41,4 @@ const addRecipe = async (recipe: RecipeObject) => {
   }
 }
 
-export default { getRecipes, getRecipe, addRecipe }
+export default { getRecipes, getRecipe, getUserRecipes, addRecipe }

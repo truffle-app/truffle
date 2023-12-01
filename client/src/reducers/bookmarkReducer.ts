@@ -1,7 +1,8 @@
 import { CaseReducer, PayloadAction, createSlice } from '@reduxjs/toolkit'
+import bookmarkService from '../services/bookmarkService'
 import recipeService from '../services/recipeService'
+import { Bookmark, RecipeObject } from '@types'
 import { AppDispatch } from '../store'
-import { RecipeObject } from '@types'
 
 type State = RecipeObject[]
 
@@ -19,17 +20,25 @@ const bookmarkSlice = createSlice({
   name: 'bookmarks',
   initialState: [] as State,
   reducers: {
-    setRecipes: set,
-    appendRecipe: append
+    setBookmarks: set,
+    appendBookmark: append
   }
 })
 
-export const { setRecipes, appendRecipe } = bookmarkSlice.actions
+export const { setBookmarks, appendBookmark } = bookmarkSlice.actions
 
-export const initBookmarks = () => {
+export const initBookmarks = (userId: number) => {
   return async (dispatch: AppDispatch) => {
-    const recipes = await recipeService.getRecipes()
-    dispatch(setRecipes(recipes))
+    const bookmarks = await bookmarkService.getBookmarks(userId)
+    dispatch(setBookmarks(bookmarks))
+  }
+}
+
+export const addBookmark = (bookmark: Bookmark) => {
+  return async (dispatch: AppDispatch) => {
+    const bm = await bookmarkService.addBookmark(bookmark)
+    const recipe = await recipeService.getRecipe(bm.recipeId)
+    dispatch(appendBookmark(recipe))
   }
 }
 

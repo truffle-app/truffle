@@ -20,3 +20,8 @@ export enum Diet {
   vegetarian = 'vegetarian',
   vegan = 'vegan'
 }
+
+export interface Bookmark {
+  userId: string
+  recipeId: string
+}

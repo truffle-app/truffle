@@ -1,4 +1,5 @@
 import recipeRouter from '@routes/recipe'
+import bookmarkRouter from '@routes/bookmark'
 import { logger } from '@grotto/logysia'
 import { cors } from '@elysiajs/cors'
 import userRouter from '@routes/user'
@@ -17,6 +18,11 @@ const app = new Elysia()
           .get('/user/:userId', recipeRouter.getRecipesByUser)
           .post('', recipeRouter.postRecipe)
       )
+      .group('/bookmarks', app =>
+        app
+          .get('/:userId', bookmarkRouter.getBookmarksByUser)
+          .post('', bookmarkRouter.addBookmark)
+        )
       .group('/users', (app) => app.get('/:id', userRouter.getUserByID))
   )
 

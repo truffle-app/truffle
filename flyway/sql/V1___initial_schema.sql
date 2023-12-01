@@ -19,5 +19,11 @@ CREATE TABLE recipe (
   image_url TEXT
 );
 
+CREATE TABLE bookmark (
+  id SERIAL PRIMARY KEY,
+  user SERIAL REFERENCES truffle_user(id),
+  recipe SERIAL REFERENCES recipe(id)
+)
+
 INSERT INTO truffle_user (email, hashed_password, username)
 VALUES ('maili', 'asd', 'kayttaja');

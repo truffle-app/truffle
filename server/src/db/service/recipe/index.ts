@@ -1,4 +1,4 @@
-
+import { Diet, Recipe } from '@types'
 import sql from '../../../db'
 
 const getRecipes = async () => {

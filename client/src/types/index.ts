@@ -20,6 +20,11 @@ export interface RecipeObject {
   steps: Steps[]
 }
 
+export interface Bookmark {
+  userId: string
+  recipeId: string
+}
+
 export interface StyledSearchContainerProps {
   keyboardVisible: boolean
 }
