@@ -1,6 +1,6 @@
 import styled from '@emotion/native'
 import React from 'react-native'
-import theme from '@theme'
+import theme from '../../theme'
 
 const Input = styled.TextInput`
   text-align: justify;

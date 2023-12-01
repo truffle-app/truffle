@@ -1,7 +1,7 @@
 import React, { GestureResponderEvent } from 'react-native'
 import { Ionicons } from '@expo/vector-icons'
 import styled from '@emotion/native'
-import theme from '@theme'
+import theme from '../../theme'
 
 const StyledBackButton = styled.Pressable`
   margin-right: 10px;

@@ -3,7 +3,7 @@ import { Ionicons } from '@expo/vector-icons'
 import styled from '@emotion/native'
 import NavbarTab from './NavbarTab'
 import React from 'react-native'
-import theme from '@theme'
+import theme from '../../theme'
 
 const NavbarContainer = styled.SafeAreaView`
   display: flex;

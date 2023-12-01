@@ -1,8 +1,8 @@
-import PlainText from '@components/Text/PlainText'
 import styled, { css } from '@emotion/native'
+import PlainText from '../Text/PlainText'
 import NavbarTab from './NavbarTab'
 import React from 'react-native'
-import theme from '@theme'
+import theme from '../../theme'
 
 const SectionNavbarContainer = styled.View`
   display: flex;

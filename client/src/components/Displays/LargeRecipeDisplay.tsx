@@ -1,10 +1,10 @@
-import ProfileButton from '@components/Buttons/ProfileButton'
-import RatingButton from '@components/Buttons/RatingButton'
-import PlainText from '@components/Text/PlainText'
+import ProfileButton from '../Buttons/ProfileButton'
+import RatingButton from '../Buttons/RatingButton'
+import PlainText from '../Text/PlainText'
 import { RecipeObject } from '@types'
 import styled from '@emotion/native'
 import React from 'react-native'
-import theme from '@theme'
+import theme from '../../theme'
 
 const LargeRecipeContainer = styled.Pressable`
   display: flex;

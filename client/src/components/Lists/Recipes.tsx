@@ -1,4 +1,4 @@
-import SmallRecipeDisplay from '@components/Displays/SmallRecipeDisplay'
+import SmallRecipeDisplay from '../Displays/SmallRecipeDisplay'
 import { useNavigate } from 'react-router-native'
 import { RecipeObject } from '@types'
 import React from 'react'

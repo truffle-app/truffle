@@ -1,12 +1,12 @@
 import React, { KeyboardAvoidingView, Platform } from 'react-native'
-import SubmitButton from '@components/Buttons/SubmitButton'
-import TextInput from '@components/Input/TextInput'
-import PlainText from '@components/Text/PlainText'
+import SubmitButton from '../components/Buttons/SubmitButton'
+import TextInput from '../components/Input/TextInput'
+import PlainText from '../components/Text/PlainText'
 import { useNavigate } from 'react-router-native'
 import { useTranslation } from 'react-i18next'
 import styled, { css } from '@emotion/native'
 import { useState } from 'react'
-import theme from '@theme'
+import theme from '../theme'
 
 const Background = styled(KeyboardAvoidingView)`
   flex: 1;
