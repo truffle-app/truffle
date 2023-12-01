@@ -6,12 +6,15 @@ import SectionNavbar from '../components/Navbar/SectionNavbar'
 import RatingButton from '../components/Buttons/RatingButton'
 import PageWrapper from '../components/Wrappers/PageWrapper'
 import { useNavigate, useParams } from 'react-router-native'
+import { addBookmark } from '../reducers/bookmarkReducer'
 import recipeService from '../services/recipeService'
 import PlainText from '../components/Text/PlainText'
+import { RootState, useAppDispatch } from '../store'
 import Navbar from '../components/Navbar/Navbar'
 import { FontAwesome } from '@expo/vector-icons'
 import { useTranslation } from 'react-i18next'
 import { useEffect, useState } from 'react'
+import { useSelector } from 'react-redux'
 import { RecipeObject } from '@types'
 import styled from '@emotion/native'
 import React from 'react-native'
@@ -138,8 +141,13 @@ const RecipePage = () => {
   const [isBookmarked, setIsBookmarked] = useState(false)
   const [completedSteps, setCompletedSteps] = useState(new Set())
 
+  const dispatch = useAppDispatch()
+
+  const user: any = useSelector((state: RootState) => state.bookmarks)
+
   const toggleBookmark = () => {
     setIsBookmarked(!isBookmarked)
+    dispatch(addBookmark({ userId: user.id, recipeId: String(recipe?.id) }))
   }
 
   const toggleStepCompletion = (index: number) => {
@@ -214,7 +222,7 @@ const RecipePage = () => {
               name={isBookmarked ? 'bookmark' : 'bookmark-o'}
               size={26}
               color={isBookmarked ? theme.colors.primary : theme.colors.primary}
-              onPress={toggleBookmark}
+              onPress={isBookmarked ? () => {} : toggleBookmark}
               style={{ marginLeft: 'auto', marginRight: 20 }} // This will push the icon to the far right
             />
           </InfoContainer>

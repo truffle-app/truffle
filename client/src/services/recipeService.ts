@@ -1,5 +1,5 @@
-import axios from 'axios'
 import { RecipeObject } from '@types'
+import axios from 'axios'
 
 // This is hardcoded atm. and needs to be changed to server's ipv4 address
 const baseUrl = `${process.env.EXPO_PUBLIC_API_URL}/api/recipes`
@@ -22,6 +22,15 @@ const getRecipe = async (id: number) => {
   }
 }
 
+const getUserRecipes = async (userId: number) => {
+  try {
+    const res = await axios.get(`${baseUrl}/user/${userId}`)
+    return res.data
+  } catch (error) {
+    console.error(error)
+  }
+}
+
 const addRecipe = async (recipe: RecipeObject) => {
   try {
     const res = await axios.post(baseUrl, { recipe: recipe })
@@ -31,4 +40,4 @@ const addRecipe = async (recipe: RecipeObject) => {
   }
 }
 
-export default { getRecipes, getRecipe, addRecipe }
+export default { getRecipes, getRecipe, getUserRecipes, addRecipe }

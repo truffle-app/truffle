@@ -30,7 +30,7 @@ const ProfilePage = () => {
   const navigate = useNavigate()
   const { t } = useTranslation()
   const [activeTab, setActiveTab] = useState<string>(t('my-recipes'))
-  const tabs = [t('my-recipes')] //, t('bookmarks')]
+  const tabs = [t('my-recipes'), t('bookmarks')]
 
   const dispatch = useAppDispatch()
 

@@ -1,4 +1,4 @@
-
+import { Diet, Recipe } from '@types'
 import sql from '../../../db'
 
 const getRecipes = async () => {
@@ -6,14 +6,18 @@ const getRecipes = async () => {
     const recipes = await sql`
       SELECT * FROM recipe
     `
-    return recipes.map(recipe => {
-      return {...recipe, imageUrl: recipe.image_url, ingredients: {
-        quantity: recipe.ingredients[0],
-        unit: recipe.ingredients[1],
-        ingredient: recipe.ingredients[2]
-      }}
+    return recipes.map((recipe) => {
+      return {
+        ...recipe,
+        imageUrl: recipe.image_url,
+        ingredients: {
+          quantity: recipe.ingredients[0],
+          unit: recipe.ingredients[1],
+          ingredient: recipe.ingredients[2]
+        }
+      }
     })
-  } catch(error) {
+  } catch (error) {
     throw error
   }
 }
@@ -69,7 +73,11 @@ const addRecipe = async (recipe: Recipe) => {
         ${recipe.description},
         ${Diet.omnivorous},
         ${recipe.creator},
-        ${recipe.ingredients.map((recipe: any) => [recipe.quantity, recipe.unit, recipe.ingredient])},
+        ${recipe.ingredients.map((recipe: any) => [
+          recipe.quantity,
+          recipe.unit,
+          recipe.ingredient
+        ])},
         ${recipe.steps},
         ${recipe.rating},
         ${recipe.imageUrl}
