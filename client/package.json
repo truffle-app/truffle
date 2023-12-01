@@ -23,6 +23,7 @@
     "expo-font": "~11.4.0",
     "expo-image-picker": "~14.3.2",
     "expo-status-bar": "~1.6.0",
+    "expo-updates": "~0.18.17",
     "formik": "^2.4.5",
     "i18next": "^23.6.0",
     "i18next-http-backend": "^2.3.1",
