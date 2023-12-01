@@ -7,7 +7,7 @@ const getRecipes = async({set}: {set: any}) => {
     set.status = 200
     return recipes
   } catch(error) {
-    console.log(error)
+    console.error(error)
     set.status = 500
     return {}
   }

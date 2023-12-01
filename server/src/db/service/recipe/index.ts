@@ -6,7 +6,7 @@ const getRecipes = async () => {
       SELECT * FROM recipe
     `
     return recipes.map(recipe => {
-      return {...recipe, ingredients: {
+      return {...recipe, imageUrl: recipe.image_url, ingredients: {
         quantity: recipe.ingredients[0],
         unit: recipe.ingredients[1],
         ingredient: recipe.ingredients[2]
@@ -29,12 +29,11 @@ const getRecipeByID = async (id: string) => {
         ingredient: ingredientRow[2]
       }
     })
-    console.log(ingredients)
     const mappedRecipe = {
       ...recipe[0],
+      imageUrl: recipe[0].image_url,
       ingredients: ingredients
     }
-    console.log(mappedRecipe)
     return mappedRecipe
   } catch (error) {
     throw error

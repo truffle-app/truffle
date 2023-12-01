@@ -28,7 +28,7 @@ const initialValues = {
   post_text: '',
   rating: 3,
   imageUrl:
-    'https://hips.hearstapps.com/del.h-cdn.co/assets/cm/15/10/54f65b2182691_-_nectarine-pavlovas-recipe-fw0413-wsqkj8-xl.jpg?crop=1xw:1.0xh;center,top&resize=1200:*'
+    'https://assets.bonappetit.com/photos/58c97bc548ee007350aee2d6/16:9/w_1600%2Cc_limit/one-skillet-chicken-with-buttery-orzo.jpg'
 }
 
 const validationSchema = yup.object().shape({

@@ -149,14 +149,13 @@ const RecipePage = () => {
   useEffect(() => {
     const fetchRecipe = async (id: number) => {
       const fetchedRecipe = await recipeService.getRecipe(id)
-      console.log(fetchedRecipe)
       const transformedSteps = fetchedRecipe.steps.map((step, index) => ({
         step: index + 1,
-        description: step,
+        description: step
       }))
       setRecipe({
         ...fetchedRecipe,
-        steps: transformedSteps,
+        steps: transformedSteps
       })
     }
 
