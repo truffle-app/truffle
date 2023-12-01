@@ -18,7 +18,12 @@ const RatingText = styled(PlainText)`
   margin-left: 3px;
 `
 
-const RatingButton = ({ rating, pressable, onPress, style }: RatingButton) => {
+const RatingButton = ({
+  rating,
+  pressable,
+  onPress,
+  style
+}: RatingButtonProps) => {
   const ratingContent = (
     <>
       <Octicons name="star-fill" size={22} color={theme.colors.primary} />

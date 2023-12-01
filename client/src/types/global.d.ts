@@ -20,15 +20,15 @@ interface RecipeObject {
   steps: Steps[]
 }
 
-interface ProfileButton {
+interface ProfileButtonProps {
   profile: string
-  pressable: boolean
+  pressable?: boolean
   onPress: () => void
 }
 
-interface RatingButton {
+interface RatingButtonProps {
   rating: number
-  pressable: boolean
+  pressable?: boolean
   onPress: () => void
   style: StyleProp<ViewStyle>
 }

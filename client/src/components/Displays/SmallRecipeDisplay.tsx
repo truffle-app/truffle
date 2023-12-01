@@ -50,8 +50,12 @@ const SmallRecipeDisplay = ({
           {recipe.name}
         </PlainText>
         <InfoContainer style={{ marginBottom: 12 }}>
-          <RatingButton rating={recipe.rating} style={{ marginRight: 6 }} />
-          <ProfileButton profile={recipe.profile} />
+          <RatingButton
+            rating={recipe.rating}
+            style={{ marginRight: 6 }}
+            onPress={() => null}
+          />
+          <ProfileButton profile={recipe.profile} onPress={() => null} />
         </InfoContainer>
       </SmallRecipeInfoContainer>
     </SmallRecipeContainer>

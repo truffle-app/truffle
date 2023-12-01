@@ -54,8 +54,12 @@ const LargeRecipeDisplay = ({
           {recipe.name}
         </PlainText>
         <InfoContainer>
-          <RatingButton rating={recipe.rating} style={{ marginRight: 8 }} />
-          <ProfileButton profile={recipe.profile} />
+          <RatingButton
+            rating={recipe.rating}
+            style={{ marginRight: 8 }}
+            onPress={() => null}
+          />
+          <ProfileButton profile={recipe.profile} onPress={() => null} />
         </InfoContainer>
       </LargeRecipeInfoContainer>
     </LargeRecipeContainer>
