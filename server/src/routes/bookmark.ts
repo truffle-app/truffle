@@ -1,7 +1,13 @@
 import bookmarkService from '@database/service/bookmark'
-import { Bookmark } from '@types';
+import { Bookmark } from '@types'
 
-const getBookmarksByUser = async ({ params, set }: { params: any; set: any }) => {
+const getBookmarksByUser = async ({
+  params,
+  set
+}: {
+  params: any
+  set: any
+}) => {
   try {
     const recipes = await bookmarkService.getBookmarksByUser(params.userId)
     set.status = 200
@@ -23,7 +29,9 @@ const addBookmark = async ({
   body: any
 }) => {
   try {
-    const bookmark = await bookmarkService.addBookmark(body.bookmark as Bookmark)
+    const bookmark = await bookmarkService.addBookmark(
+      body.bookmark as Bookmark
+    )
     set.status = 200
     return bookmark
   } catch (error) {
