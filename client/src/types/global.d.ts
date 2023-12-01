@@ -39,3 +39,7 @@ interface StepNumberProps {
   onPress: () => void
   completed: boolean
 }
+
+interface StyledSearchContainerProps {
+  keyboardVisible: boolean
+}

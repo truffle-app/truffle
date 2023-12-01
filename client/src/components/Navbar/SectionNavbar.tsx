@@ -1,4 +1,4 @@
-import styled, { css } from '@emotion/native'
+import styled from '@emotion/native'
 import PlainText from '../Text/PlainText'
 import NavbarTab from './NavbarTab'
 import React from 'react-native'
@@ -7,6 +7,13 @@ import theme from '../../theme'
 const SectionNavbarContainer = styled.View`
   display: flex;
   flex-direction: row;
+`
+
+const StyledNavbarTab = styled(NavbarTab)`
+  flex: 1;
+  margin-top: 10px;
+  padding-top: 10px;
+  padding-bottom: 20px;
 `
 
 const SectionNavbar = ({
@@ -21,18 +28,13 @@ const SectionNavbar = ({
   return (
     <SectionNavbarContainer>
       {tabs.map((tab: string, i: number) => (
-        <NavbarTab
+        <StyledNavbarTab
           key={i}
-          style={css`
-            margin-top: 10px;
-            padding-top: 10px;
-            padding-bottom: 20px;
-          `}
           onPress={() => setActiveTab(tab)}
           isActive={activeTab === tab}
         >
           <PlainText color={theme.colors.darkExtra}>{tab}</PlainText>
-        </NavbarTab>
+        </StyledNavbarTab>
       ))}
     </SectionNavbarContainer>
   )
