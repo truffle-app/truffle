@@ -1,4 +1,4 @@
-import styled from '@emotion/native'
+import styled, { css } from '@emotion/native'
 import PlainText from '../Text/PlainText'
 import NavbarTab from './NavbarTab'
 import React from 'react-native'

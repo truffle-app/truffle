@@ -1,10 +1,10 @@
+import React, { KeyboardAvoidingView, Platform } from 'react-native'
 import SubmitButton from '../components/Buttons/SubmitButton'
 import TextInput from '../components/Input/TextInput'
 import PlainText from '../components/Text/PlainText'
 import { useNavigate } from 'react-router-native'
 import { useTranslation } from 'react-i18next'
 import styled, { css } from '@emotion/native'
-import React, {KeyboardAvoidingView, Platform} from 'react-native'
 import { useState } from 'react'
 import theme from '../theme'
 
@@ -45,7 +45,6 @@ const LoginPage = () => {
 
   const navigate = useNavigate()
   const { t } = useTranslation()
-
 
   // Add a hook here to check if user is already authenticated, if so, navigate straight to app
 

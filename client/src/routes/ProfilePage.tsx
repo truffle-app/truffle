@@ -13,6 +13,7 @@ import { useTranslation } from 'react-i18next'
 import Title from '../components/Text/Title'
 import { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
+import { RecipeObject } from '@types'
 import styled from '@emotion/native'
 import React from 'react-native'
 
@@ -41,9 +42,9 @@ const ProfilePage = () => {
     (state: RootState) => state.userRecipes
   )
 
-  /* const bookmarks: RecipeObject[] = useSelector(
+  const bookmarks: RecipeObject[] = useSelector(
     (state: RootState) => state.bookmarks
-  ) */
+  )
 
   return (
     <PageWrapper>
@@ -60,9 +61,8 @@ const ProfilePage = () => {
           activeTab={activeTab}
           setActiveTab={setActiveTab}
         />
-        {activeTab === tabs[0] && (
-          <Recipes recipes={recipes} previousLocation={'/profile'} />
-        )}
+        {activeTab === tabs[0] && <Recipes recipes={recipes} />}
+        {activeTab === tabs[1] && <Recipes recipes={bookmarks} />}
       </ScrollViewWrapper>
       <AddRecipeButton />
       <Navbar navigateTo={navigate}></Navbar>

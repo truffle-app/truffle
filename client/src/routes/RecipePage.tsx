@@ -12,6 +12,7 @@ import Navbar from '../components/Navbar/Navbar'
 import { FontAwesome } from '@expo/vector-icons'
 import { useTranslation } from 'react-i18next'
 import { useEffect, useState } from 'react'
+import { RecipeObject } from '@types'
 import styled from '@emotion/native'
 import React from 'react-native'
 import theme from '../theme'
@@ -102,6 +103,13 @@ const StepDescriptionCompleted = styled(StepDescription)`
   text-decoration-line: line-through;
 `
 
+interface StepNumberProps {
+  stepNumber: number
+  description: string
+  onPress: () => void
+  completed: boolean
+}
+
 const StepNumber = ({
   stepNumber,
   description,
@@ -149,10 +157,12 @@ const RecipePage = () => {
   useEffect(() => {
     const fetchRecipe = async (id: number) => {
       const fetchedRecipe = await recipeService.getRecipe(id)
-      const transformedSteps = fetchedRecipe.steps.map((step: number, index: number) => ({
-        step: index + 1,
-        description: step
-      }))
+      const transformedSteps = fetchedRecipe.steps.map(
+        (step: number, index: number) => ({
+          step: index + 1,
+          description: step
+        })
+      )
       setRecipe({
         ...fetchedRecipe,
         steps: transformedSteps

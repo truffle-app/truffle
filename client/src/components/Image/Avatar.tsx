@@ -1,7 +1,7 @@
 // import styled from '@emotion/native'
 // import { Image } from 'react-native'
-import React from 'react-native'
 import { Ionicons } from '@expo/vector-icons'
+import React from 'react-native'
 import theme from '../../theme'
 
 /* const AvatarImage = styled(Image)`

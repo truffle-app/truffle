@@ -18,6 +18,12 @@ const ProfileText = styled(PlainText)`
   margin-left: 2px;
 `
 
+interface ProfileButtonProps {
+  profile: any
+  pressable?: boolean
+  onPress?: any
+}
+
 const ProfileButton = ({ profile, pressable, onPress }: ProfileButtonProps) => {
   const profileContent = (
     <>

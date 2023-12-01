@@ -1,12 +1,11 @@
 import RecipeFormFields from '../components/Forms/AddRecipeForm/RecipeFormFields'
-import { HeaderWrapperSpaceBetween } from '../components/Wrappers/HeaderWrapper'
-import NavBackButton from '../components/Buttons/NavBackButton'
-import SubmitButton from '../components/Buttons/SubmitButton'
-import BackButton from '../components/Buttons/BackButton'
+import { HeaderWrapperSpaceBetween } from '../components//Wrappers/HeaderWrapper'
+import NavBackButton from '../components//Buttons/NavBackButton'
+import SubmitButton from '../components//Buttons/SubmitButton'
 import recipeService from '../services/recipeService'
 import { useNavigate } from 'react-router-native'
 import { useTranslation } from 'react-i18next'
-import Title from '../components/Text/Title'
+import Title from '../components//Text/Title'
 import React, { useState } from 'react'
 import { Formik } from 'formik'
 import * as yup from 'yup'
@@ -45,8 +44,11 @@ const AddRecipePage = () => {
     try {
       setSubmitAllowed(false)
       const res = await recipeService.addRecipe(values)
-      navigate('/feed')
-      setSubmitAllowed(true)
+      if (res?.status === 200) {
+        navigate('/feed')
+      } else {
+        setSubmitAllowed(true)
+      }
     } catch (error) {
       console.error(error)
       setSubmitAllowed(true)

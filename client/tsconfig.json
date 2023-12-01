@@ -1,6 +1,15 @@
 {
   "extends": "expo/tsconfig.base",
   "compilerOptions": {
+    "paths": {
+      "@routes/*": ["./src/routes/*"],
+      "@components/*": ["./src/components/*"],
+      "@reducers/*": ["./src/reducers/*"],
+      "@services/*": ["./src/services/*"],
+      "@store": ["./src/store"],
+      "@types": ["./src/types"],
+      "@theme": ["./src/theme"]
+    },
     "jsx": "react",
     "strict": false,
     "target": "ES2022",
@@ -39,11 +48,10 @@
     "react-native"
   ],
   "exclude":[
-      "build",
-      "node_modules",
-      "jest.config.js",
-      "App.ts"
-
+    "build",
+    "node_modules",
+    "jest.config.js",
+    "App.ts"
   ],
   "compileOnSave": false
 }

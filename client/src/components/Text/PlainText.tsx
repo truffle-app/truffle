@@ -2,7 +2,6 @@ import styled from '@emotion/native'
 import { ReactNode } from 'react'
 import React from 'react-native'
 import theme from '../../theme'
-
 type TextProps = {
   fontSize?: string
   fontFamily?: string

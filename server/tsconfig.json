@@ -1,5 +1,11 @@
 {
+  "include": ["src"],
   "compilerOptions": {
+    "paths": {
+      "@database/*": ["./src/db/*"],
+      "@routes/*": ["./src/routes/*"],
+      "@types": ["./src/types"]
+    },
     /* Visit https://aka.ms/tsconfig to read more about this file */
 
     /* Projects */
@@ -102,5 +108,6 @@
   },
   "filesGlob": [
     "types/global.d.ts"
-  ]
+  ],
+
 }
