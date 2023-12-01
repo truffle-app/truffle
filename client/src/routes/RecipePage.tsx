@@ -60,21 +60,21 @@ const Quantity = styled.Text`
   flex: 1;
   text-align: center;
   color: ${theme.colors.darkExtra};
-  fontsize: ${theme.fontSizes.medium};
+  font-size: ${theme.fontSizes.medium};
 `
 
 const Unit = styled.Text`
   flex: 1;
   text-align: center;
   color: ${theme.colors.darkExtra};
-  fontsize: ${theme.fontSizes.medium};
+  font-size: ${theme.fontSizes.medium};
 `
 
 const IngredientName = styled.Text`
   flex: 3;
   text-align: left;
   color: ${theme.colors.darkExtra};
-  fontsize: ${theme.fontSizes.medium};
+  font-size: ${theme.fontSizes.medium};
 `
 
 const StepsContainer = styled.Pressable`
@@ -149,7 +149,7 @@ const RecipePage = () => {
   useEffect(() => {
     const fetchRecipe = async (id: number) => {
       const fetchedRecipe = await recipeService.getRecipe(id)
-      const transformedSteps = fetchedRecipe.steps.map((step, index) => ({
+      const transformedSteps = fetchedRecipe.steps.map((step: number, index: number) => ({
         step: index + 1,
         description: step,
       }))

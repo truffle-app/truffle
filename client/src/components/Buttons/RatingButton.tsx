@@ -22,7 +22,7 @@ const RatingButton = ({ rating, pressable, onPress, style }: RatingButton) => {
   const ratingContent = (
     <>
       <Octicons name="star-fill" size={22} color={theme.colors.primary} />
-      <RatingText>{rating}/5</RatingText>
+      <RatingText>{rating}</RatingText>
     </>
   )
 

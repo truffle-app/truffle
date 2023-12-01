@@ -1,6 +1,6 @@
 import SmallRecipeDisplay from '../components/Displays/SmallRecipeDisplay'
 import ScrollViewWrapper from '../components/Wrappers/ScollViewWrapper'
-import { KeyboardAvoidingView, Keyboard, Platform } from 'react-native'
+import { KeyboardAvoidingView, Keyboard } from 'react-native'
 import { HeaderWrapper } from '../components/Wrappers/HeaderWrapper'
 import { initRecipes } from '../reducers/discoverRecipeReducer'
 import PageWrapper from '../components/Wrappers/PageWrapper'
@@ -14,12 +14,12 @@ import Title from '../components/Text/Title'
 import { useSelector } from 'react-redux'
 import styled from '@emotion/native'
 
-const StyledSearchContainer = styled.View`
+const StyledSearchContainer = styled.View<StyledSearchContainerProps>`
   padding-horizontal: 10px;
   position: absolute;
   left: 0;
   right: 0;
-  bottom: ${({ keyboardVisible }) => (keyboardVisible ? '10px' : '5px')};
+  bottom: ${({ keyboardVisible }) => (keyboardVisible ? '4%' : '2%')};
 `
 
 const DiscoverPage = () => {
@@ -72,7 +72,7 @@ const DiscoverPage = () => {
         <Title>{t('discover')}</Title>
       </HeaderWrapper>
       <KeyboardAvoidingView
-        behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+        behavior='height'
         style={{ flex: 1 }}
       >
         <ScrollViewWrapper>

@@ -1,33 +1,34 @@
-import NavBackButton from '../components/Buttons/NavBackButton'
 import SubmitButton from '../components/Buttons/SubmitButton'
 import TextInput from '../components/Input/TextInput'
 import PlainText from '../components/Text/PlainText'
 import { useNavigate } from 'react-router-native'
 import { useTranslation } from 'react-i18next'
 import styled, { css } from '@emotion/native'
-import React from 'react-native'
+import React, {KeyboardAvoidingView, Platform} from 'react-native'
 import { useState } from 'react'
 import theme from '../theme'
 
-const Background = styled.View`
-  display: flex;
+const Background = styled(KeyboardAvoidingView)`
+  flex: 1;
   justify-content: center;
   align-items: center;
   background-color: ${theme.colors.primaryLight};
-  width: 100%;
-  height: 100%;
+  behavior: ${Platform.OS === 'android' ? 'height' : 'padding'};
 `
 
 const RegisterContainer = styled.View`
+  width: 80%;
+  padding: 20px;
+  background-color: ${theme.colors.neutralLight};
+  border-radius: 1px;
+  elevation: 10;
+  shadow-color: #000;
+  shadow-offset: 0px 4px;
+  shadow-opacity: 0.1;
+  shadow-radius: 6px;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: ${theme.colors.neutralLight};
-  width: 80%;
-  height: 40%;
-  border-radius: 3px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 `
 
 const RegisterItemContainer = styled.View`
