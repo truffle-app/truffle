@@ -18,6 +18,17 @@ const prodConfig = {
   connectionString: process.env.DATABASE_URL
 }
 
-const sql = postgres(devConfig)
+let sql = null
+
+if (process.env.NODE_ENV === 'development') {
+  console.log('Initializing dev database...')
+  sql = postgres(devConfig)
+}
+else (process.env.NODE_ENV === 'production') {
+  console.log('Initializing prod database...')
+  sql = postgres(prodConfig)
+}
+
+console.log('Database initialized.')
 
 export default sql

@@ -8,7 +8,7 @@ import { Elysia } from 'elysia'
 const app = new Elysia()
   .use(cors())
   .use(logger())
-  .get('/', () => 'Welcome')
+  .get('/', () => 'Welcome to truffle')
   .group('/api', (app) =>
     app
       .group('/recipes', (app) =>
