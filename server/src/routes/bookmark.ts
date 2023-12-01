@@ -10,6 +10,7 @@ const getBookmarksByUser = async ({
 }) => {
   try {
     const recipes = await bookmarkService.getBookmarksByUser(params.userId)
+    console.log(recipes)
     set.status = 200
     return recipes
   } catch (error) {

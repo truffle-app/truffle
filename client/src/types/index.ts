@@ -21,11 +21,12 @@ export interface RecipeObject {
 }
 
 export interface Bookmark {
-  userId: string
-  recipeId: string
+  userId: number
+  recipeId: number
 }
 
 export interface User {
+  id?: number
   email?: string
   username: string
   password: string

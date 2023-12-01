@@ -47,6 +47,8 @@ services:
     environment:
       - NODE_ENV=development
       - EDITOR=nano
+    env_file:
+      - ./client/.env
     tty: true
     ports:
       - "19006:19006"

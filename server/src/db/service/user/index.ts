@@ -25,13 +25,11 @@ const addUser = async (user: User) => {
       INSERT INTO truffle_user (
         email,
         hashed_password,
-        username,
-        bookmarks
+        username
       ) VALUES (
         ${user.email},
         ${user.hashed_password},
-        ${user.username},
-        ${[]}
+        ${user.username}
       )
     `
   } catch (error) {

@@ -1,5 +1,5 @@
 import userService from '@database/service/user'
-import { isCorrectPassword } from '../utils';
+import { verifyPassword } from '../utils'
 
 const getUserByID = async ({ params, set }: { params: any; set: any }) => {
   try {
@@ -23,8 +23,15 @@ const login = async ({
   body: any
 }) => {
   try {
-    const user: any = await userService.getUserByUsername(body.credentials.username)
-    if (await isCorrectPassword(user.id, body.credentials.password)) {
+    let user: any = await userService.getUserByUsername(
+      body.credentials.username
+    )
+    user = user[0]
+    const passwordCorrect = await verifyPassword(
+      user.id,
+      body.credentials.password
+    )
+    if (passwordCorrect) {
       set.status = 200
       return user
     } else {

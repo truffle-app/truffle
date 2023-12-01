@@ -99,7 +99,6 @@ const RegisterPage = () => {
             placeholder="email"
             value={email}
             onChangeText={setEmail}
-            secureTextEntry={true}
           />
         </RegisterItemContainer>
 

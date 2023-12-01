@@ -26,7 +26,7 @@ const app = new Elysia()
       .group('/users', (app) =>
         app
           .get('/:id', userRouter.getUserByID)
-          .get('/login', userRouter.login)
+          .post('/login', userRouter.login)
           .post('/register', userRouter.addUser)
       )
   )

@@ -7,6 +7,7 @@ import userService from '../services/userService'
 import { useNavigate } from 'react-router-native'
 import { useTranslation } from 'react-i18next'
 import styled, { css } from '@emotion/native'
+import { useAppDispatch } from '../store'
 import { useState } from 'react'
 import theme from '../theme'
 
@@ -46,6 +47,7 @@ const LoginPage = () => {
   const [password, setPassword] = useState('')
   const navigate = useNavigate()
   const { t } = useTranslation()
+  const dispatch = useAppDispatch()
 
   // Add a hook here to check if user is already authenticated, if so, navigate straight to app
 
@@ -55,7 +57,7 @@ const LoginPage = () => {
       password: password
     })
     if (user) {
-      await initUser(user)
+      dispatch(initUser(user))
       navigate('/feed')
     }
   }
