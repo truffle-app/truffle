@@ -1,8 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit'
+import { User } from '@types'
+
+type State = User
 
 const userSlice = createSlice({
   name: 'user',
-  initialState: {},
+  initialState: {} as State,
   reducers: {
     setUser(_state, action) {
       return action.payload
@@ -12,10 +15,9 @@ const userSlice = createSlice({
 
 export const { setUser } = userSlice.actions
 
-export const initUsers = () => {
+export const initUser = (user: User) => {
   return async (dispatch: Function) => {
-    //const user = await userService.getUser()
-    dispatch(setUser({}))
+    dispatch(setUser(user))
   }
 }
 

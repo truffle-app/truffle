@@ -29,7 +29,7 @@ export const { setRecipes, appendRecipe } = feedRecipeSlice.actions
 export const initRecipes = () => {
   return async (dispatch: AppDispatch) => {
     const recipes = await recipeService.getRecipes()
-    dispatch(setRecipes(recipes))
+    dispatch(setRecipes(recipes.reverse()))
   }
 }
 

@@ -143,11 +143,11 @@ const RecipePage = () => {
 
   const dispatch = useAppDispatch()
 
-  const user: any = useSelector((state: RootState) => state.bookmarks)
+  const user: any = useSelector((state: RootState) => state.user)
 
   const toggleBookmark = () => {
     setIsBookmarked(!isBookmarked)
-    dispatch(addBookmark({ userId: user.id, recipeId: String(recipe?.id) }))
+    dispatch(addBookmark({ userId: user.id, recipeId: recipe?.id as number }))
   }
 
   const toggleStepCompletion = (index: number) => {

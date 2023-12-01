@@ -2,9 +2,12 @@ import React, { KeyboardAvoidingView, Platform } from 'react-native'
 import SubmitButton from '../components/Buttons/SubmitButton'
 import TextInput from '../components/Input/TextInput'
 import PlainText from '../components/Text/PlainText'
+import { initUser } from '../reducers/userReducer'
+import userService from '../services/userService'
 import { useNavigate } from 'react-router-native'
 import { useTranslation } from 'react-i18next'
 import styled, { css } from '@emotion/native'
+import { useAppDispatch } from '../store'
 import { useState } from 'react'
 import theme from '../theme'
 
@@ -42,15 +45,21 @@ const LoginItemContainer = styled.View`
 const LoginPage = () => {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
-
   const navigate = useNavigate()
   const { t } = useTranslation()
+  const dispatch = useAppDispatch()
 
   // Add a hook here to check if user is already authenticated, if so, navigate straight to app
 
-  const onSubmit = () => {
-    // Authenticate user from database
-    navigate('/feed')
+  const onSubmit = async () => {
+    const user = await userService.login({
+      username: username,
+      password: password
+    })
+    if (user) {
+      dispatch(initUser(user))
+      navigate('/feed')
+    }
   }
 
   return (

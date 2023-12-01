@@ -6,8 +6,11 @@ import recipeService from '../services/recipeService'
 import { useNavigate } from 'react-router-native'
 import { useTranslation } from 'react-i18next'
 import Title from '../components//Text/Title'
+import { useSelector } from 'react-redux'
 import React, { useState } from 'react'
+import { RootState } from '../store'
 import { Formik } from 'formik'
+import { User } from '@types'
 import * as yup from 'yup'
 
 export interface FormValues {
@@ -40,15 +43,19 @@ const AddRecipePage = () => {
   const navigate = useNavigate()
   const { t } = useTranslation()
 
+  const user: User = useSelector((state: RootState) => state.user)
+
   const onSubmit = async (values: any) => {
     try {
       setSubmitAllowed(false)
-      const res = await recipeService.addRecipe(values)
-      if (res?.status === 200) {
+      values.creator = user.id
+      await recipeService.addRecipe(values)
+      navigate('/feed')
+      /* if (res?.status === 200) {
         navigate('/feed')
       } else {
         setSubmitAllowed(true)
-      }
+      } */
     } catch (error) {
       console.error(error)
       setSubmitAllowed(true)

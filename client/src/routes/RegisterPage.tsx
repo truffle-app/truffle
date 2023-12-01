@@ -2,10 +2,12 @@ import React, { KeyboardAvoidingView, Platform } from 'react-native'
 import SubmitButton from '../components/Buttons/SubmitButton'
 import TextInput from '../components/Input/TextInput'
 import PlainText from '../components/Text/PlainText'
+import userService from '../services/userService'
 import { useNavigate } from 'react-router-native'
 import { useTranslation } from 'react-i18next'
 import styled, { css } from '@emotion/native'
 import { useState } from 'react'
+import { User } from '@types'
 import theme from '../theme'
 
 const Background = styled(KeyboardAvoidingView)`
@@ -50,9 +52,14 @@ const RegisterPage = () => {
 
   // Add a hook here to check if user is already authenticated, if so, navigate straight to app
 
-  const onSubmit = () => {
-    // Register user
-    navigate('/feed')
+  const onSubmit = async () => {
+    const user: User = {
+      email: email,
+      username: username,
+      password: password
+    }
+    await userService.register(user)
+    navigate('/')
   }
 
   return (
@@ -92,7 +99,6 @@ const RegisterPage = () => {
             placeholder="email"
             value={email}
             onChangeText={setEmail}
-            secureTextEntry={true}
           />
         </RegisterItemContainer>
 

@@ -9,19 +9,27 @@ const getUserByID = async (id: string) => {
   }
 }
 
+const getUserByUsername = async (username: string) => {
+  try {
+    return await sql`
+      SELECT id, email, username FROM truffle_user WHERE username = ${username}
+    `
+  } catch (error) {
+    throw error
+  }
+}
+
 const addUser = async (user: User) => {
   try {
     return await sql`
       INSERT INTO truffle_user (
         email,
         hashed_password,
-        username,
-        bookmarks
+        username
       ) VALUES (
         ${user.email},
         ${user.hashed_password},
-        ${user.username},
-        ${[]}
+        ${user.username}
       )
     `
   } catch (error) {
@@ -29,7 +37,4 @@ const addUser = async (user: User) => {
   }
 }
 
-export default {
-  getUserByID,
-  addUser
-}
+export default { getUserByID, getUserByUsername, addUser }
