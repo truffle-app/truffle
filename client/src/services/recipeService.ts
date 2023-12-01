@@ -1,7 +1,8 @@
 import axios from 'axios'
+import { RecipeObject } from '@types'
 
 // This is hardcoded atm. and needs to be changed to server's ipv4 address
-const baseUrl = `http://192.168.0.103:3001/api/recipes`
+const baseUrl = `${process.env.EXPO_PUBLIC_API_URL}/api/recipes`
 
 const getRecipes = async () => {
   try {
