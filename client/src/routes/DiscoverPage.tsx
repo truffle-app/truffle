@@ -1,8 +1,8 @@
 import SmallRecipeDisplay from '../components/Displays/SmallRecipeDisplay'
 import ScrollViewWrapper from '../components/Wrappers/ScollViewWrapper'
-import { KeyboardAvoidingView, Keyboard, Platform } from 'react-native'
 import { HeaderWrapper } from '../components/Wrappers/HeaderWrapper'
 import { initRecipes } from '../reducers/discoverRecipeReducer'
+import { KeyboardAvoidingView, Keyboard } from 'react-native'
 import PageWrapper from '../components/Wrappers/PageWrapper'
 import TextInput from '../components/Input/TextInput'
 import { RootState, useAppDispatch } from '../store'
@@ -38,7 +38,7 @@ const DiscoverPage = () => {
 
   const recipes: RecipeObject[] = useSelector(
     (state: RootState) => state.discoverRecipes
-  )
+  ).filter((recipe) => recipe.name.includes(searchQuery))
 
   useEffect(() => {
     const keyboardDidShowListener = Keyboard.addListener(

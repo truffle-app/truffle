@@ -23,7 +23,12 @@ const app = new Elysia()
           .get('/:userId', bookmarkRouter.getBookmarksByUser)
           .post('', bookmarkRouter.addBookmark)
       )
-      .group('/users', (app) => app.get('/:id', userRouter.getUserByID))
+      .group('/users', (app) =>
+        app
+          .get('/:id', userRouter.getUserByID)
+          .get('/login', userRouter.login)
+          .post('/register', userRouter.addUser)
+      )
   )
 
 export default app

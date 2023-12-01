@@ -11,9 +11,9 @@ import Navbar from '../components/Navbar/Navbar'
 import Avatar from '../components/Image/Avatar'
 import { useTranslation } from 'react-i18next'
 import Title from '../components/Text/Title'
+import { RecipeObject, User } from '@types'
 import { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
-import { RecipeObject } from '@types'
 import styled from '@emotion/native'
 import React from 'react-native'
 
@@ -46,6 +46,8 @@ const ProfilePage = () => {
     (state: RootState) => state.bookmarks
   )
 
+  const user: User = useSelector((state: RootState) => state.user)
+
   return (
     <PageWrapper>
       <HeaderWrapper>
@@ -54,7 +56,7 @@ const ProfilePage = () => {
       <ScrollViewWrapper>
         <AvatarView>
           <Avatar />
-          <Title>Username</Title>
+          <Title>{user.username}</Title>
         </AvatarView>
         <SectionNavbar
           tabs={tabs}

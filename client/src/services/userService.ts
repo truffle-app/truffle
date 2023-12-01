@@ -1,3 +1,4 @@
+import { User } from '@types'
 import axios from 'axios'
 
 const baseUrl = `${process.env.EXPO_PUBLIC_API_URL}/api/users`
@@ -11,6 +12,22 @@ const getUser = async (id: number) => {
   }
 }
 
-export default {
-  getUser
+const login = async (user: User) => {
+  try {
+    const res = await axios.post(`${baseUrl}/login`, { credentials: user })
+    return res.data
+  } catch (error) {
+    console.error(error)
+  }
 }
+
+const register = async (user: User) => {
+  try {
+    const res = await axios.post(`${baseUrl}/register`, { user: user })
+    return res.data
+  } catch (error) {
+    console.error(error)
+  }
+}
+
+export default { getUser, login, register }
