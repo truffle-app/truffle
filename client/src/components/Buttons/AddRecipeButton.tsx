@@ -1,13 +1,13 @@
+import { Pressable, Platform } from 'react-native'
 import { useNavigate } from 'react-router-native'
 import { AntDesign } from '@expo/vector-icons'
-import { Pressable } from 'react-native'
 import styled from '@emotion/native'
 import theme from '../../theme'
 import React from 'react'
 
 const FabContainer = styled(Pressable)`
   position: absolute;
-  bottom: 80px;
+  bottom: ${Platform.OS === 'ios' ? '100px' : '80px'};
   right: 20px;
   align-items: center;
   justify-content: center;
