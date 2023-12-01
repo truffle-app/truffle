@@ -15,7 +15,7 @@ const devConfig: {
 }
 
 const prodConfig = {
-  connectionString: process.env.DATABASE_URL
+  connectionString: process.env.POSTGRES_URL
 }
 
 let sql = null
@@ -24,8 +24,9 @@ if (process.env.NODE_ENV === 'development') {
   console.log('Initializing dev database...')
   sql = postgres(devConfig)
 }
-else (process.env.NODE_ENV === 'production') {
+else if (process.env.NODE_ENV === 'production') {
   console.log('Initializing prod database...')
+  console.log(prodConfig)
   sql = postgres(prodConfig)
 }
 

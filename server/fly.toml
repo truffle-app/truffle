@@ -11,11 +11,7 @@ primary_region = "ams"
 
 [env]
   PORT = "8080"
-  POSTGRES_DB = "truffle-database.internal"
-  POSTGRES_HOST = "truffle-database"
-  POSTGRES_PASSWORD = "1s0Hb4jzkvuYupe"
-  POSTGRES_PORT = "5432"
-  POSTGRES_USER = "postgres"
+  POSTGRES_URL="postgres://postgres:1s0Hb4jzkvuYupe@truffle-database.flycast:5432"
   NODE_ENV = "production"
 
 [http_service]
