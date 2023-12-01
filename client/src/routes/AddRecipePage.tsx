@@ -28,7 +28,7 @@ const initialValues = {
   post_text: '',
   rating: 3,
   imageUrl:
-    'https://img.ilcdn.fi/ggz4rnfnXvGUZIxsuSB61dJJf2M=/full-fit-in/920x0/img-s3.ilcdn.fi/66cd116ed50e1b40e6f2b7f7341f2da616c495c622dacb2746350268eaa797df.jpg'
+    'https://hips.hearstapps.com/del.h-cdn.co/assets/cm/15/10/54f65b2182691_-_nectarine-pavlovas-recipe-fw0413-wsqkj8-xl.jpg?crop=1xw:1.0xh;center,top&resize=1200:*'
 }
 
 const validationSchema = yup.object().shape({
@@ -45,9 +45,9 @@ const AddRecipePage = () => {
     try {
       setSubmitAllowed(false)
       const res = await recipeService.addRecipe(values)
-      // navigate('/feed')
+      navigate('/feed')
       setSubmitAllowed(true)
-    } catch(error) {
+    } catch (error) {
       console.error(error)
       setSubmitAllowed(true)
     }
@@ -62,17 +62,19 @@ const AddRecipePage = () => {
       validationSchema={validationSchema}
     >
       {({ values, handleChange, handleSubmit }) =>
-        (page === 0 && (
+        page === 0 && (
           <>
             <HeaderWrapperSpaceBetween>
               <NavBackButton />
               <Title>{t('add-recipe')}</Title>
-              <SubmitButton enabled={submitAllowed} onPress={handleSubmit}>Post</SubmitButton>
+              <SubmitButton enabled={submitAllowed} onPress={handleSubmit}>
+                Post
+              </SubmitButton>
             </HeaderWrapperSpaceBetween>
 
             <RecipeFormFields values={values} handleChange={handleChange} />
           </>
-        ))
+        )
       }
     </Formik>
   )
