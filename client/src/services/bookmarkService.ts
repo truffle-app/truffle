@@ -1,7 +1,7 @@
 import { Bookmark } from '@types'
 import axios from 'axios'
 
-const baseUrl = `http://192.168.0.103:3001/api/bookmarks`
+const baseUrl = `${process.env.EXPO_PUBLIC_API_URL}/api/bookmarks`
 
 const getBookmarks = async (userId: number) => {
   try {
