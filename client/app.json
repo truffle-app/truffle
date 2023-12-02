@@ -7,7 +7,7 @@
     "icon": "./assets/truffle.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/truffle.png",
+      "image": "./assets/truffle-padding.png",
       "resizeMode": "contain",
       "backgroundColor": "#E3BFAF"
     },
