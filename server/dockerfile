@@ -6,6 +6,6 @@ COPY package*.json bun.lockb ./
 COPY . .
 RUN bun install
 
-ENV NODE_ENV production
+ENV NODE_ENV development
 
 CMD [ "bun", "dev" ]
