@@ -38,7 +38,7 @@ const DiscoverPage = () => {
 
   const recipes: RecipeObject[] = useSelector(
     (state: RootState) => state.discoverRecipes
-  ).filter((recipe) => recipe.name.includes(searchQuery))
+  ).filter((recipe) => recipe.name.toLowerCase().includes(searchQuery))
 
   useEffect(() => {
     const keyboardDidShowListener = Keyboard.addListener(
