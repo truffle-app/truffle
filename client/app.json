@@ -4,10 +4,10 @@
     "slug": "truffle-app",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/truffle.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/truffle.png",
       "resizeMode": "contain",
       "backgroundColor": "#E3BFAF"
     },
@@ -15,7 +15,7 @@
       "**/*"
     ],
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/truffle.png"
     }
   }
 }
