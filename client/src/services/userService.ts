@@ -1,7 +1,8 @@
 import { User } from '@types'
 import axios from 'axios'
+import {API_URL} from '@env'
 
-const baseUrl = `${process.env.EXPO_PUBLIC_API_URL}/api/users`
+const baseUrl = `${API_URL}/api/users`
 
 const getUser = async (id: number) => {
   try {

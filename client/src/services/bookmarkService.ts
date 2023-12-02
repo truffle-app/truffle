@@ -1,7 +1,8 @@
 import { Bookmark } from '@types'
 import axios from 'axios'
+import {API_URL} from '@env'
 
-const baseUrl = `${process.env.EXPO_PUBLIC_API_URL}/api/bookmarks`
+const baseUrl = `${API_URL}/api/bookmarks`
 
 const getBookmarks = async (userId: number) => {
   try {

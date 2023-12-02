@@ -1,7 +1,8 @@
 import { RecipeObject } from '@types'
 import axios from 'axios'
+import {API_URL} from '@env'
 
-const baseUrl = `${process.env.EXPO_PUBLIC_API_URL}/api/recipes`
+const baseUrl = `${API_URL}/api/recipes`
 
 const getRecipes = async () => {
   try {
