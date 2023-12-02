@@ -30,6 +30,12 @@ else if (process.env.NODE_ENV === 'production') {
   sql = postgres(prodConfig)
 }
 
-console.log('Database initialized.')
+if (sql) {
+  console.log('Database initialized.')
+}
+else {
+  console.log('postgres not defined?')
+}
+
 
 export default sql
