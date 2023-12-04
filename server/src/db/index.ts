@@ -14,24 +14,20 @@ const devConfig: {
   port: Number(process.env.POSTGRES_PORT)
 }
 
-const prodConfig = {
-  connectionString: process.env.DATABASE_URL
-}
-
 let sql = null
 
 if (process.env.NODE_ENV === 'development') {
-  console.log('Initializing dev database...')
+  console.log('Connecting to dev database...')
   sql = postgres(devConfig)
 }
 else if (process.env.NODE_ENV === 'production') {
-  console.log('Initializing prod database...')
-  console.log(prodConfig)
-  sql = postgres(prodConfig)
+  console.log('Connecting to prod database...')
+  console.log(process.env.DATABASE_URL as string)
+  sql = postgres(process.env.DATABASE_URL as string)
 }
 
 if (sql) {
-  console.log('Database initialized.')
+  console.log('Connected to database.')
 }
 else {
   console.log('postgres not defined?')
