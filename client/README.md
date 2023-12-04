@@ -5,22 +5,18 @@
 This is the client app for Truffle.
 This project was created with [Expo](https://expo.dev/).
 
-## Repository contents
+## Install dependencies
 
-- `assets/`
-    - Contains images etc.
+    npm install
 
-- `src/`
-    - Contains the source code
+or
 
-- `.eslintrc`
-    - Contains project's ESLint configuration
+    bun install
 
-- `.prettierrc`
-    - Contains project's Prettier configuration
+## Running the client
 
-- `package.json`
-    - Contains project's package information and dependencies
+    npm start
 
-- `README.md`
-    - This file, contains overview and documentation of the client
+or
+
+    bun start
