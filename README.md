@@ -1,6 +1,8 @@
-# Truffle
+<center>
+    <img src="doc/truffle.png" width="200" center />
+</center>
 
-![Image](doc/truffle.png)
+# Truffle
 
 The app can be used with Expo Go with the following Expo URLs:
 - **Android:** exp://u.expo.dev/update/f1715a27-b653-4e4d-966a-2fb7bc55e57f
@@ -59,4 +61,6 @@ or
     git push --force-with-lease origin <branch>
 ```
 
-![Image](doc/ui.jpg)
+<center>
+    <img src="doc/ui.jpg" width="400" center />
+</center>
