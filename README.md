@@ -1,6 +1,6 @@
-<center>
-    <img src="doc/truffle.png" width="200" center />
-</center>
+<p style="text-align:center">
+    <img src="doc/truffle.png" width="200" />
+</p>
 
 # Truffle
 
@@ -61,6 +61,6 @@ or
     git push --force-with-lease origin <branch>
 ```
 
-<center>
-    <img src="doc/ui.jpg" width="400" center />
-</center>
+<p style="text-align:center">
+    <img src="doc/ui.jpg" width="400" />
+</p>
